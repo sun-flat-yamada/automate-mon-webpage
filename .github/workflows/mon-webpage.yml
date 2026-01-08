@@ -28,8 +28,8 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y golang-go jq
 
-        # Use the system Go version to install pup
-        go install github.com/ericchiang/pup@latest
+        # Install pup v0.3.9 (compatible with Go 1.22)
+        go install github.com/ericchiang/pup@v0.3.9
         echo "$HOME/go/bin" >> $GITHUB_PATH
         npm ci
 
