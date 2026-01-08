@@ -11,17 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      LINE_NOTIFY_TOKEN: ${{ secrets.LINE_NOTIFY_TOKEN }}
+      LINE_MESSAGING_API_TOKEN: ${{ secrets.LINE_MESSAGING_API_TOKEN }}
+      LINE_BOT_USER_ID: ${{ secrets.LINE_BOT_USER_ID }}
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup Node.js with npm cache
+    - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        cache: 'npm'
 
     - name: Install dependencies (pup, jq)
       run: |
@@ -132,20 +132,45 @@ jobs:
                 "$SLACK_WEBHOOK_URL" || echo "Failed to send Slack notification"
             fi
 
-            if [ -n "$LINE_NOTIFY_TOKEN" ]; then
-              echo "Sending LINE notification..."
+            if [ -n "$LINE_MESSAGING_API_TOKEN" ] && [ -n "$LINE_BOT_USER_ID" ]; then
+              echo "Sending LINE notification via Messaging API..."
+
+              # Base64 encode section.png for image message
               if [ -f section.png ]; then
-                curl -X POST \
-                  -H "Authorization: Bearer $LINE_NOTIFY_TOKEN" \
-                  -F "message=Update: $TARGET_NAME%0aHash: ${NEW_HASH:0:8}" \
-                  -F "imageFile=@section.png" \
-                  https://notify-api.line.me/api/notify || echo "Failed to send LINE notification"
+                IMAGE_BASE64=$(base64 -w 0 section.png)
+                # Send message with text and image
+                LINE_PAYLOAD="{
+                  \"to\": \"$LINE_BOT_USER_ID\",
+                  \"messages\": [
+                    {
+                      \"type\": \"text\",
+                      \"text\": \"🔔 Update detected: $TARGET_NAME\\nHash: ${NEW_HASH:0:8}\"
+                    },
+                    {
+                      \"type\": \"image\",
+                      \"originalContentUrl\": \"data:image/png;base64,$IMAGE_BASE64\",
+                      \"previewImageUrl\": \"data:image/png;base64,$IMAGE_BASE64\"
+                    }
+                  ]
+                }"
               else
-                curl -X POST \
-                  -H "Authorization: Bearer $LINE_NOTIFY_TOKEN" \
-                  -F "message=Update: $TARGET_NAME%0aHash: ${NEW_HASH:0:8}" \
-                  https://notify-api.line.me/api/notify || echo "Failed to send LINE notification"
+                # Send text-only message
+                LINE_PAYLOAD="{
+                  \"to\": \"$LINE_BOT_USER_ID\",
+                  \"messages\": [
+                    {
+                      \"type\": \"text\",
+                      \"text\": \"🔔 Update detected: $TARGET_NAME\\nHash: ${NEW_HASH:0:8}\"
+                    }
+                  ]
+                }"
               fi
+
+              curl -X POST \
+                -H "Authorization: Bearer $LINE_MESSAGING_API_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d "$LINE_PAYLOAD" \
+                https://api.line.biz/v2/bot/message/push || echo "Failed to send LINE notification"
             fi
 
           else
