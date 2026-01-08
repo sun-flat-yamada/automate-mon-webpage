@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.js-debug",
+    "GitHub.copilot",
+    "ms-azuretools.vscode-docker",
+    "redhat.vscode-yaml",
+    "DavidAnson.vscode-markdownlint"
+  ]
+}
