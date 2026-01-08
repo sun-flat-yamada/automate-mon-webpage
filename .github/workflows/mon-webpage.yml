@@ -27,6 +27,18 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y golang-go jq
+
+        # Upgrade Go to a newer version compatible with latest pup
+        go install golang.org/dl/go1.24@latest
+        ~/go/bin/go1.24 download
+        mkdir -p $HOME/go/bin_new
+        cp ~/go/bin/go1.24 $HOME/go/bin_new/go || true
+
+        # Use the new Go version if available, otherwise use system Go
+        if [ -f "$HOME/go/bin_new/go" ]; then
+          export PATH="$HOME/go/bin_new:$PATH"
+        fi
+
         go install github.com/ericchiang/pup@latest
         echo "$HOME/go/bin" >> $GITHUB_PATH
         npm ci
