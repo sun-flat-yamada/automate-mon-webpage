@@ -39,6 +39,16 @@ jobs:
         # Install Node.js dependencies
         npm install
 
+    - name: Commit package-lock.json if missing
+      run: |
+        if [ ! -f package-lock.json ]; then
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json
+          git commit -m "Add package-lock.json for npm cache support"
+          git push
+        fi
+
     - name: Create screenshot script
       run: |
         cat > screenshot.js << 'SCRIPT_EOF'
