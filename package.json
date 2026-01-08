@@ -1,0 +1,20 @@
+{
+  "name": "automate-mon-webpage",
+  "version": "1.0.0",
+  "description": "Automated webpage monitoring with change detection and notifications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpage",
+    "monitoring",
+    "automation",
+    "screenshot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
