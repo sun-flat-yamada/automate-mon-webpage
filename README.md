@@ -56,7 +56,7 @@ GitHub Actions が **30 分ごと**に以下を実行します。
 
 ## 🔔 通知について
 
-Slack と LINE Notify の通知は、**GitHub Secrets に設定されている場合のみ実行**されます。
+Slack と LINE Messaging API の通知は、**GitHub Secrets に設定されている場合のみ実行**されます。
 
 設定されていない場合は自動的にスキップされます。
 
@@ -75,72 +75,78 @@ SLACK_WEBHOOK_URL
 
 ---
 
-## 📱 LINE Notify Token の登録手順（詳細）
+## 📱 LINE Messaging API トークンの登録手順（詳細）
 
-LINE Notify のトークンを GitHub Secrets に登録する手順を、  
-初めての人でも迷わないように丁寧にまとめています。
+LINE Messaging API を使用して通知を送信するため、チャネルアクセストークンとボットのユーザーID を GitHub Secrets に登録する手順です。
 
 ---
 
-### 1. LINE Notify にアクセス
+### 1. LINE Developers コンソールにアクセス
 
 以下の URL を開きます：
 
-https://notify-bot.line.me/ja/
+[https://developers.line.biz/ja/](https://developers.line.biz/ja/)
 
-右上の **ログイン** を押し、LINE アカウントでログインします。
-
----
-
-### 2. マイページを開く
-
-ログイン後、右上のメニューから **マイページ** を開きます。
+LINE ビジネスアカウントでログインします。
 
 ---
 
-### 3. 「アクセストークンの発行」へ進む
+### 2. チャネルを作成（または既存のチャネルを使用）
 
-マイページ内にある：
-
-- **アクセストークンの発行（開発者向け）**
-
-をクリックします。
-
----
-
-### 4. トークンを発行する
-
-以下を設定します：
-
-- **トークン名**：任意（例：`WebMonitor`）
-- **通知を送るトークルーム**  
-  - 自分だけに送りたい → 「1:1 で LINE Notify とトーク」  
-  - グループに送りたい → グループに LINE Notify を招待して選択
-
-最後に **発行する** をクリック。
+1. **Developers Console** を開く  
+2. **チャネル作成** をクリック  
+3. **チャネルタイプ**: Messaging API を選択  
+4. 必要な情報を入力して作成
 
 ---
 
-### 5. トークンをコピーする（重要）
+### 3. チャネルアクセストークンを取得
 
-発行されたトークンが表示されます。
+1. 作成したチャネルの設定ページを開く  
+2. **Messaging API** タブを開く  
+3. 「チャネルアクセストークン」の **発行** ボタンをクリック  
+4. 表示されたトークンをコピー
 
 ⚠️ **この画面でしか表示されません。必ずコピーしてください。**
 
 ---
 
-### 6. GitHub Secrets に登録する
+### 4. ボット自身のユーザーID を取得
+
+ボットのユーザーID を取得するには、以下の方法があります：
+
+#### 方法A: LINE Official Account Manager から取得
+
+1. **LINE Official Account Manager** にアクセス：  
+   [https://manager.line.biz/](https://manager.line.biz/)
+2. アカウントを選択  
+3. **アカウント設定** → **基本情報** でボットのユーザーID を確認
+
+#### 方法B: Webhook イベントから取得
+
+1. ボットにメッセージを送信  
+2. ワークフロー実行時のログで `sourceUserId` を確認  
+3. その値をユーザーID として使用
+
+---
+
+### 5. GitHub Secrets に登録する
 
 GitHub リポジトリのページで：
 
 1. **Settings** を開く  
 2. 左メニューから **Secrets and variables → Actions**  
 3. **New repository secret** をクリック  
-4. 以下のように登録：
+4. 以下のように 2 つ登録：
 
 ```txt
-Name: LINE_NOTIFY_TOKEN
-Value: <コピーしたトークン>
+Name: LINE_MESSAGING_API_TOKEN
+Value: <チャネルアクセストークン>
+```
+
+```txt
+Name: LINE_BOT_USER_ID
+Value: <ボットのユーザーID>
 ```
 
 保存すれば完了です。
