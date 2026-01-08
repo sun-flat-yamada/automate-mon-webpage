@@ -1,0 +1,39 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/history": true
+  },
+  "jest.showCoverageOnLoad": false,
+  "npm.exclude": "**/node_modules/**",
+  "git.ignoreLimitWarning": true
+}
