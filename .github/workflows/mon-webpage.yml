@@ -79,13 +79,33 @@ jobs:
               const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox', '--disable-setuid-sandbox'] });
               const page = await browser.newPage();
               await page.goto(process.env.TARGET_URL, { waitUntil: "networkidle2" });
-              const element = await page.$(process.env.TARGET_SELECTOR);
-              if (element) {
-                await element.screenshot({ path: 'section.png' });
-              } else {
-                console.log("Selector not found");
+
+              try {
+                // Wait for selector with timeout
+                await page.waitForSelector(process.env.TARGET_SELECTOR, { timeout: 10000 });
+                const element = await page.$(process.env.TARGET_SELECTOR);
+                if (element) {
+                  await element.screenshot({ path: 'section.png' });
+                } else {
+                  console.log("Selector not found");
+                  process.exit(1);
+                }
+              } catch (timeoutError) {
+                console.error(`ERROR: Selector "${process.env.TARGET_SELECTOR}" not found within timeout`);
+                console.error("Taking full page screenshot for debugging...");
+
+                // Take full page screenshot
+                await page.screenshot({ path: 'section.png', fullPage: true });
+                console.error("Full page screenshot saved to section.png");
+
+                // Log available elements
+                console.error("Available elements sample:");
+                const allElements = await page.$$eval('*', els => els.slice(0, 20).map(el => ({ tag: el.tagName, id: el.id, class: el.className })));
+                console.error(JSON.stringify(allElements, null, 2));
+
                 process.exit(1);
               }
+
               await browser.close();
             } catch (e) {
               console.error("Puppeteer error:", e);
