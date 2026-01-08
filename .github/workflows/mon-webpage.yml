@@ -29,14 +29,28 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y jq
 
-          # Download pup v0.3.9 prebuilt binary (faster than building from source)
-          echo "Downloading pup..."
-          wget https://github.com/ericchiang/pup/releases/download/v0.3.9/pup_v0.3.9_linux_amd64.zip -O /tmp/pup.zip
-          echo "Extracting pup..."
-          unzip -q /tmp/pup.zip -d /tmp
-          sudo mv /tmp/pup /usr/local/bin/pup
-          sudo chmod +x /usr/local/bin/pup
-          rm /tmp/pup.zip
+          # Install pup (HTML parser)
+          # Try downloading latest release, fallback to building from source
+          echo "Installing pup..."
+
+          # Get the latest release URL
+          LATEST_RELEASE=$(curl -s https://api.github.com/repos/ericchiang/pup/releases/latest | jq -r '.assets[] | select(.name | contains("linux_amd64")) | .browser_download_url' | head -1)
+
+          if [ -n "$LATEST_RELEASE" ] && wget -q "$LATEST_RELEASE" -O /tmp/pup.zip; then
+            echo "Extracting pup from release..."
+            unzip -q /tmp/pup.zip -d /tmp
+            sudo mv /tmp/pup /usr/local/bin/pup
+            sudo chmod +x /usr/local/bin/pup
+            rm -f /tmp/pup.zip
+          else
+            echo "Building pup from source..."
+            sudo apt-get install -y golang-go git
+            cd /tmp && git clone https://github.com/ericchiang/pup.git
+            cd pup && go build -o pup .
+            sudo mv pup /usr/local/bin/
+            sudo chmod +x /usr/local/bin/pup
+          fi
+
           pup --version
 
           # Install Node.js dependencies
