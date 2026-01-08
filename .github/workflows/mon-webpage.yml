@@ -1,0 +1,169 @@
+name: Webpage Monitor
+
+on:
+  schedule:
+  - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      LINE_NOTIFY_TOKEN: ${{ secrets.LINE_NOTIFY_TOKEN }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js with npm cache
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies (pup, jq)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y golang-go jq
+        go install github.com/ericchiang/pup@latest
+        echo "$HOME/go/bin" >> $GITHUB_PATH
+        npm ci
+
+    - name: Create screenshot script
+      run: |
+        cat > screenshot.js << 'SCRIPT_EOF'
+        const puppeteer = require('puppeteer');
+        (async () => {
+          try {
+            const browser = await puppeteer.launch({ headless: "new" });
+            const page = await browser.newPage();
+            await page.goto(process.env.TARGET_URL, { waitUntil: "networkidle2" });
+            const element = await page.$(process.env.TARGET_SELECTOR);
+            if (element) {
+              await element.screenshot({ path: 'section.png' });
+            } else {
+              console.log("Selector not found");
+              process.exit(1);
+            }
+            await browser.close();
+          } catch (e) {
+            console.error("Puppeteer error:", e);
+            process.exit(1);
+          }
+        })();
+        SCRIPT_EOF
+
+    - name: Process all targets
+      shell: bash
+      run: |
+        set -e -o pipefail
+
+        TARGET_COUNT=$(jq '.targets | length' config.json)
+
+        for i in $(seq 0 $(($TARGET_COUNT - 1))); do
+          echo "=== Processing target index $i ==="
+
+          TARGET_NAME=$(jq -r ".targets[$i].name" config.json)
+          TARGET_URL=$(jq -r ".targets[$i].url" config.json)
+          TARGET_SELECTOR=$(jq -r ".targets[$i].selector" config.json)
+
+          echo "Target: $TARGET_NAME"
+
+          mkdir -p "history/$TARGET_NAME"
+
+          echo "Fetching page..."
+          if ! curl -sL "$TARGET_URL" -o page.html; then
+            echo "ERROR: Failed to fetch $TARGET_URL"
+            continue
+          fi
+
+          echo "Extracting section..."
+          if ! pup "$TARGET_SELECTOR html{}" < page.html > section.html; then
+            echo "ERROR: Failed to extract selector from $TARGET_URL"
+            continue
+          fi
+
+          echo "Computing hash..."
+          NEW_HASH=$(sha256sum section.html | awk '{print $1}')
+          echo "$NEW_HASH" > new_hash.txt
+
+          CHANGED=false
+          LAST_HASH_FILE="history/$TARGET_NAME/last_hash.txt"
+          if [ ! -f "$LAST_HASH_FILE" ]; then
+            CHANGED=true
+          elif ! cmp -s new_hash.txt "$LAST_HASH_FILE"; then
+            CHANGED=true
+          fi
+
+          if [ "$CHANGED" = true ]; then
+            echo "Change detected for $TARGET_NAME"
+
+            TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
+            BASE_DIR="history/${TARGET_NAME}/${TIMESTAMP}"
+            mkdir -p "$BASE_DIR"
+
+            echo "Taking screenshot..."
+            export TARGET_URL
+            export TARGET_SELECTOR
+            if node screenshot.js; then
+              cp section.png "$BASE_DIR/" || echo "Warning: Screenshot file not created"
+            else
+              echo "Warning: Puppeteer screenshot failed"
+            fi
+
+            cp section.html "$BASE_DIR/"
+
+            DETECTED_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+            echo "Detected at: $DETECTED_TIME" > "$BASE_DIR/meta.txt"
+            echo "URL: $TARGET_URL" >> "$BASE_DIR/meta.txt"
+            echo "Selector: $TARGET_SELECTOR" >> "$BASE_DIR/meta.txt"
+            echo "Hash: $NEW_HASH" >> "$BASE_DIR/meta.txt"
+
+            echo "Saving new hash..."
+            cp new_hash.txt "$LAST_HASH_FILE"
+
+            if [ -n "$SLACK_WEBHOOK_URL" ]; then
+              echo "Sending Slack notification..."
+              SLACK_DATA="{\"text\":\"🔔 Update detected: *$TARGET_NAME*\\nHash: \`${NEW_HASH:0:8}\`\\nTime: $DETECTED_TIME\"}"
+              curl -X POST -H 'Content-type: application/json' \
+                --data "$SLACK_DATA" \
+                "$SLACK_WEBHOOK_URL" || echo "Failed to send Slack notification"
+            fi
+
+            if [ -n "$LINE_NOTIFY_TOKEN" ]; then
+              echo "Sending LINE notification..."
+              if [ -f section.png ]; then
+                curl -X POST \
+                  -H "Authorization: Bearer $LINE_NOTIFY_TOKEN" \
+                  -F "message=Update: $TARGET_NAME%0aHash: ${NEW_HASH:0:8}" \
+                  -F "imageFile=@section.png" \
+                  https://notify-api.line.me/api/notify || echo "Failed to send LINE notification"
+              else
+                curl -X POST \
+                  -H "Authorization: Bearer $LINE_NOTIFY_TOKEN" \
+                  -F "message=Update: $TARGET_NAME%0aHash: ${NEW_HASH:0:8}" \
+                  https://notify-api.line.me/api/notify || echo "Failed to send LINE notification"
+              fi
+            fi
+
+          else
+            echo "No change for $TARGET_NAME"
+          fi
+
+        done
+
+    - name: Commit and push changes
+      shell: bash
+      run: |
+        set -e
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add history/
+        if git diff --staged --exit-code > /dev/null; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update history for all monitored sites"
+          git push
+        fi
