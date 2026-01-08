@@ -2,9 +2,8 @@ name: Webpage Monitor
 
 on:
   schedule:
-  - cron: "*/30 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
-
 
 jobs:
   check:
@@ -15,198 +14,202 @@ jobs:
       LINE_BOT_USER_ID: ${{ secrets.LINE_BOT_USER_ID }}
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "npm"
 
-    - name: Install dependencies (pup, jq)
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y jq
+      - name: Install dependencies (pup, jq)
+        run: |
+          set -e
+          sudo apt-get update
+          sudo apt-get install -y jq
 
-        # Download pup v0.3.9 prebuilt binary (faster than building from source)
-        wget -q https://github.com/ericchiang/pup/releases/download/v0.3.9/pup_v0.3.9_linux_amd64.zip
-        unzip -q pup_v0.3.9_linux_amd64.zip -d /tmp
-        sudo mv /tmp/pup /usr/local/bin/pup
-        sudo chmod +x /usr/local/bin/pup
-        rm pup_v0.3.9_linux_amd64.zip
+          # Download pup v0.3.9 prebuilt binary (faster than building from source)
+          echo "Downloading pup..."
+          wget https://github.com/ericchiang/pup/releases/download/v0.3.9/pup_v0.3.9_linux_amd64.zip -O /tmp/pup.zip
+          echo "Extracting pup..."
+          unzip -q /tmp/pup.zip -d /tmp
+          sudo mv /tmp/pup /usr/local/bin/pup
+          sudo chmod +x /usr/local/bin/pup
+          rm /tmp/pup.zip
+          pup --version
 
-        # Install Node.js dependencies
-        npm install
+          # Install Node.js dependencies
+          npm install
 
-    - name: Commit package-lock.json if missing
-      run: |
-        if [ ! -f package-lock.json ]; then
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package-lock.json
-          git commit -m "Add package-lock.json for npm cache support"
-          git push
-        fi
+      - name: Commit package-lock.json if missing
+        run: |
+          if [ ! -f package-lock.json ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package-lock.json
+            git commit -m "Add package-lock.json for npm cache support"
+            git push
+          fi
 
-    - name: Create screenshot script
-      run: |
-        cat > screenshot.js << 'SCRIPT_EOF'
-        const puppeteer = require('puppeteer');
-        (async () => {
-          try {
-            const browser = await puppeteer.launch({ headless: "new" });
-            const page = await browser.newPage();
-            await page.goto(process.env.TARGET_URL, { waitUntil: "networkidle2" });
-            const element = await page.$(process.env.TARGET_SELECTOR);
-            if (element) {
-              await element.screenshot({ path: 'section.png' });
-            } else {
-              console.log("Selector not found");
+      - name: Create screenshot script
+        run: |
+          cat > screenshot.js << 'SCRIPT_EOF'
+          const puppeteer = require('puppeteer');
+          (async () => {
+            try {
+              const browser = await puppeteer.launch({ headless: "new" });
+              const page = await browser.newPage();
+              await page.goto(process.env.TARGET_URL, { waitUntil: "networkidle2" });
+              const element = await page.$(process.env.TARGET_SELECTOR);
+              if (element) {
+                await element.screenshot({ path: 'section.png' });
+              } else {
+                console.log("Selector not found");
+                process.exit(1);
+              }
+              await browser.close();
+            } catch (e) {
+              console.error("Puppeteer error:", e);
               process.exit(1);
             }
-            await browser.close();
-          } catch (e) {
-            console.error("Puppeteer error:", e);
-            process.exit(1);
-          }
-        })();
-        SCRIPT_EOF
+          })();
+          SCRIPT_EOF
 
-    - name: Process all targets
-      shell: bash
-      run: |
-        set -e -o pipefail
+      - name: Process all targets
+        shell: bash
+        run: |
+          set -e -o pipefail
 
-        TARGET_COUNT=$(jq '.targets | length' config.json)
+          TARGET_COUNT=$(jq '.targets | length' config.json)
 
-        for i in $(seq 0 $(($TARGET_COUNT - 1))); do
-          echo "=== Processing target index $i ==="
+          for i in $(seq 0 $(($TARGET_COUNT - 1))); do
+            echo "=== Processing target index $i ==="
 
-          TARGET_NAME=$(jq -r ".targets[$i].name" config.json)
-          TARGET_URL=$(jq -r ".targets[$i].url" config.json)
-          TARGET_SELECTOR=$(jq -r ".targets[$i].selector" config.json)
+            TARGET_NAME=$(jq -r ".targets[$i].name" config.json)
+            TARGET_URL=$(jq -r ".targets[$i].url" config.json)
+            TARGET_SELECTOR=$(jq -r ".targets[$i].selector" config.json)
 
-          echo "Target: $TARGET_NAME"
+            echo "Target: $TARGET_NAME"
 
-          mkdir -p "history/$TARGET_NAME"
+            mkdir -p "history/$TARGET_NAME"
 
-          echo "Fetching page..."
-          if ! curl -sL "$TARGET_URL" -o page.html; then
-            echo "ERROR: Failed to fetch $TARGET_URL"
-            continue
-          fi
-
-          echo "Extracting section..."
-          if ! pup "$TARGET_SELECTOR html{}" < page.html > section.html; then
-            echo "ERROR: Failed to extract selector from $TARGET_URL"
-            continue
-          fi
-
-          echo "Computing hash..."
-          NEW_HASH=$(sha256sum section.html | awk '{print $1}')
-          echo "$NEW_HASH" > new_hash.txt
-
-          CHANGED=false
-          LAST_HASH_FILE="history/$TARGET_NAME/last_hash.txt"
-          if [ ! -f "$LAST_HASH_FILE" ]; then
-            CHANGED=true
-          elif ! cmp -s new_hash.txt "$LAST_HASH_FILE"; then
-            CHANGED=true
-          fi
-
-          if [ "$CHANGED" = true ]; then
-            echo "Change detected for $TARGET_NAME"
-
-            TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
-            BASE_DIR="history/${TARGET_NAME}/${TIMESTAMP}"
-            mkdir -p "$BASE_DIR"
-
-            echo "Taking screenshot..."
-            export TARGET_URL
-            export TARGET_SELECTOR
-            if node screenshot.js; then
-              cp section.png "$BASE_DIR/" || echo "Warning: Screenshot file not created"
-            else
-              echo "Warning: Puppeteer screenshot failed"
+            echo "Fetching page..."
+            if ! curl -sL "$TARGET_URL" -o page.html; then
+              echo "ERROR: Failed to fetch $TARGET_URL"
+              continue
             fi
 
-            cp section.html "$BASE_DIR/"
-
-            DETECTED_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-            echo "Detected at: $DETECTED_TIME" > "$BASE_DIR/meta.txt"
-            echo "URL: $TARGET_URL" >> "$BASE_DIR/meta.txt"
-            echo "Selector: $TARGET_SELECTOR" >> "$BASE_DIR/meta.txt"
-            echo "Hash: $NEW_HASH" >> "$BASE_DIR/meta.txt"
-
-            echo "Saving new hash..."
-            cp new_hash.txt "$LAST_HASH_FILE"
-
-            if [ -n "$SLACK_WEBHOOK_URL" ]; then
-              echo "Sending Slack notification..."
-              SLACK_DATA="{\"text\":\"🔔 Update detected: *$TARGET_NAME*\\nHash: \`${NEW_HASH:0:8}\`\\nTime: $DETECTED_TIME\"}"
-              curl -X POST -H 'Content-type: application/json' \
-                --data "$SLACK_DATA" \
-                "$SLACK_WEBHOOK_URL" || echo "Failed to send Slack notification"
+            echo "Extracting section..."
+            if ! pup "$TARGET_SELECTOR html{}" < page.html > section.html; then
+              echo "ERROR: Failed to extract selector from $TARGET_URL"
+              continue
             fi
 
-            if [ -n "$LINE_MESSAGING_API_TOKEN" ] && [ -n "$LINE_BOT_USER_ID" ]; then
-              echo "Sending LINE notification via Messaging API..."
+            echo "Computing hash..."
+            NEW_HASH=$(sha256sum section.html | awk '{print $1}')
+            echo "$NEW_HASH" > new_hash.txt
 
-              # Base64 encode section.png for image message
-              if [ -f section.png ]; then
-                IMAGE_BASE64=$(base64 -w 0 section.png)
-                # Send message with text and image
-                LINE_PAYLOAD="{
-                  \"to\": \"$LINE_BOT_USER_ID\",
-                  \"messages\": [
-                    {
-                      \"type\": \"text\",
-                      \"text\": \"🔔 Update detected: $TARGET_NAME\\nHash: ${NEW_HASH:0:8}\"
-                    },
-                    {
-                      \"type\": \"image\",
-                      \"originalContentUrl\": \"data:image/png;base64,$IMAGE_BASE64\",
-                      \"previewImageUrl\": \"data:image/png;base64,$IMAGE_BASE64\"
-                    }
-                  ]
-                }"
+            CHANGED=false
+            LAST_HASH_FILE="history/$TARGET_NAME/last_hash.txt"
+            if [ ! -f "$LAST_HASH_FILE" ]; then
+              CHANGED=true
+            elif ! cmp -s new_hash.txt "$LAST_HASH_FILE"; then
+              CHANGED=true
+            fi
+
+            if [ "$CHANGED" = true ]; then
+              echo "Change detected for $TARGET_NAME"
+
+              TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
+              BASE_DIR="history/${TARGET_NAME}/${TIMESTAMP}"
+              mkdir -p "$BASE_DIR"
+
+              echo "Taking screenshot..."
+              export TARGET_URL
+              export TARGET_SELECTOR
+              if node screenshot.js; then
+                cp section.png "$BASE_DIR/" || echo "Warning: Screenshot file not created"
               else
-                # Send text-only message
-                LINE_PAYLOAD="{
-                  \"to\": \"$LINE_BOT_USER_ID\",
-                  \"messages\": [
-                    {
-                      \"type\": \"text\",
-                      \"text\": \"🔔 Update detected: $TARGET_NAME\\nHash: ${NEW_HASH:0:8}\"
-                    }
-                  ]
-                }"
+                echo "Warning: Puppeteer screenshot failed"
               fi
 
-              curl -X POST \
-                -H "Authorization: Bearer $LINE_MESSAGING_API_TOKEN" \
-                -H "Content-Type: application/json" \
-                -d "$LINE_PAYLOAD" \
-                https://api.line.biz/v2/bot/message/push || echo "Failed to send LINE notification"
+              cp section.html "$BASE_DIR/"
+
+              DETECTED_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+              echo "Detected at: $DETECTED_TIME" > "$BASE_DIR/meta.txt"
+              echo "URL: $TARGET_URL" >> "$BASE_DIR/meta.txt"
+              echo "Selector: $TARGET_SELECTOR" >> "$BASE_DIR/meta.txt"
+              echo "Hash: $NEW_HASH" >> "$BASE_DIR/meta.txt"
+
+              echo "Saving new hash..."
+              cp new_hash.txt "$LAST_HASH_FILE"
+
+              if [ -n "$SLACK_WEBHOOK_URL" ]; then
+                echo "Sending Slack notification..."
+                SLACK_DATA="{\"text\":\"🔔 Update detected: *$TARGET_NAME*\\nHash: \`${NEW_HASH:0:8}\`\\nTime: $DETECTED_TIME\"}"
+                curl -X POST -H 'Content-type: application/json' \
+                  --data "$SLACK_DATA" \
+                  "$SLACK_WEBHOOK_URL" || echo "Failed to send Slack notification"
+              fi
+
+              if [ -n "$LINE_MESSAGING_API_TOKEN" ] && [ -n "$LINE_BOT_USER_ID" ]; then
+                echo "Sending LINE notification via Messaging API..."
+
+                # Base64 encode section.png for image message
+                if [ -f section.png ]; then
+                  IMAGE_BASE64=$(base64 -w 0 section.png)
+                  # Send message with text and image
+                  LINE_PAYLOAD="{
+                    \"to\": \"$LINE_BOT_USER_ID\",
+                    \"messages\": [
+                      {
+                        \"type\": \"text\",
+                        \"text\": \"🔔 Update detected: $TARGET_NAME\\nHash: ${NEW_HASH:0:8}\"
+                      },
+                      {
+                        \"type\": \"image\",
+                        \"originalContentUrl\": \"data:image/png;base64,$IMAGE_BASE64\",
+                        \"previewImageUrl\": \"data:image/png;base64,$IMAGE_BASE64\"
+                      }
+                    ]
+                  }"
+                else
+                  # Send text-only message
+                  LINE_PAYLOAD="{
+                    \"to\": \"$LINE_BOT_USER_ID\",
+                    \"messages\": [
+                      {
+                        \"type\": \"text\",
+                        \"text\": \"🔔 Update detected: $TARGET_NAME\\nHash: ${NEW_HASH:0:8}\"
+                      }
+                    ]
+                  }"
+                fi
+
+                curl -X POST \
+                  -H "Authorization: Bearer $LINE_MESSAGING_API_TOKEN" \
+                  -H "Content-Type: application/json" \
+                  -d "$LINE_PAYLOAD" \
+                  https://api.line.biz/v2/bot/message/push || echo "Failed to send LINE notification"
+              fi
+
+            else
+              echo "No change for $TARGET_NAME"
             fi
 
+          done
+
+      - name: Commit and push changes
+        shell: bash
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add history/
+          if git diff --staged --exit-code > /dev/null; then
+            echo "No changes to commit"
           else
-            echo "No change for $TARGET_NAME"
+            git commit -m "Update history for all monitored sites"
+            git push
           fi
-
-        done
-
-    - name: Commit and push changes
-      shell: bash
-      run: |
-        set -e
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add history/
-        if git diff --staged --exit-code > /dev/null; then
-          echo "No changes to commit"
-        else
-          git commit -m "Update history for all monitored sites"
-          git push
-        fi
