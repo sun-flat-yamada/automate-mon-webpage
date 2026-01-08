@@ -76,7 +76,7 @@ jobs:
           const puppeteer = require('puppeteer');
           (async () => {
             try {
-              const browser = await puppeteer.launch({ headless: "new" });
+              const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox', '--disable-setuid-sandbox'] });
               const page = await browser.newPage();
               await page.goto(process.env.TARGET_URL, { waitUntil: "networkidle2" });
               const element = await page.$(process.env.TARGET_SELECTOR);
