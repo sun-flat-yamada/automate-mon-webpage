@@ -3,7 +3,7 @@
     {
       "name": "dell_outlets_workstations",
       "url": "https://jpstore.dell.com/dfo/config.asp?prod=workstation&nav=all",
-      "selector": "#inventoryTable"
+      "selector": ""
     }
   ]
 }
