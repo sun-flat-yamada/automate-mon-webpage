@@ -165,7 +165,8 @@ jobs:
               echo "Change detected for $TARGET_NAME"
 
               TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
-              BASE_DIR="history/${TARGET_NAME}/${TIMESTAMP}"
+              TIMESTAMP_YEAR_MONTH=${TIMESTAMP:0:7}
+              BASE_DIR="history/${TARGET_NAME}/${TIMESTAMP_YEAR_MONTH}/${TIMESTAMP}"
               mkdir -p "$BASE_DIR"
 
               echo "Taking screenshot..."
