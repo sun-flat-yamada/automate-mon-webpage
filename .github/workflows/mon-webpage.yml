@@ -139,9 +139,14 @@ jobs:
             fi
 
             echo "Extracting section..."
-            if ! pup "$TARGET_SELECTOR html{}" < page.html > section.html; then
-              echo "ERROR: Failed to extract selector from $TARGET_URL"
-              continue
+            if [ -z "$TARGET_SELECTOR" ]; then
+              echo "No selector specified, using full page HTML"
+              cp page.html section.html
+            else
+              if ! pup "$TARGET_SELECTOR html{}" < page.html > section.html; then
+                echo "ERROR: Failed to extract selector from $TARGET_URL"
+                continue
+              fi
             fi
 
             echo "Computing hash..."
