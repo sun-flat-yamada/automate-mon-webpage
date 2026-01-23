@@ -1,29 +1,28 @@
 # Webpage Monitor
 
-このリポジトリは、**GitHub Actions を使って複数の Web ページを自動監視し、変化があればスクリーンショット付きで通知し、履歴として保存する仕組み** の実験用です。
+This repository is for experimenting with a system that **automatically monitors multiple web pages using GitHub Actions, notifies you with screenshots if there are changes, and saves the history**.
 
-監視対象は `config.json` に定義し、  
-GitHub Actions が **30 分ごと**に以下を実行します。
+Monitoring targets are defined in `config.json`, and GitHub Actions executes the following **every 30 minutes**:
 
-- ページを取得  
-- 指定した CSS セレクタ部分を抽出  
-- ハッシュ比較で変化を検出  
-- 変化があればスクリーンショット撮影（Puppeteer）  
-- Slack / LINE Notify に通知（設定されている場合のみ）  
-- 履歴（HTML・スクショ・メタ情報）を `history/` に保存  
-- `last_hash.txt` をサイトごとに更新  
+- Fetch the page
+- Extract the specified CSS selector section
+- Detect changes by comparing hashes
+- If there is a change, take a screenshot (Puppeteer)
+- Notify via Slack / LINE (only if configured)
+- Save history (HTML, screenshot, meta information) in `history/`
+- Update `last_hash.txt` for each site
 
 ---
 
-## 📁 ディレクトリ構成
+## 📁 Directory Structure
 
 ```txt
 /
 ├── .github/
 │   └── workflows/
-│       └── mon-webpage.yml   # GitHub Actions 本体
-├── config.json                # 監視対象の設定
-├── history/                   # サイトごとの履歴
+│       └── mon-webpage.yml   # GitHub Actions workflow
+├── config.json                # Monitoring target configuration
+├── history/                   # History for each site
      └── <TARGET_NAME>/
          ├── last_hash.txt
          └── 2026-01-08-2130/
@@ -34,9 +33,9 @@ GitHub Actions が **30 分ごと**に以下を実行します。
 
 ---
 
-## ⚙️ 監視対象の設定（config.json）
+## ⚙️ Monitoring Configuration (config.json)
 
-監視対象は `config.json` に定義します。
+Monitoring targets are defined in `config.json`.
 
 ```json
 {
@@ -50,24 +49,23 @@ GitHub Actions が **30 分ごと**に以下を実行します。
 }
 ```
 
-複数サイトを監視したい場合は、配列に追加するだけです。
+To monitor multiple sites, simply add them to the array.
 
 ---
 
-## 🔔 通知について
+## 🔔 Notifications
 
-Slack と LINE Messaging API の通知は、**GitHub Secrets に設定されている場合のみ実行**されます。
+Slack and LINE Messaging API notifications are **only executed if they are set in GitHub Secrets**.
 
-設定されていない場合は自動的にスキップされます。
+If they are not set, they will be automatically skipped.
 
 ---
 
-## 🧩 GitHub Secrets の設定方法
+## 🧩 How to Set Up GitHub Secrets
 
-### 1. Slack Webhook URL（任意）
+### 1. Slack Webhook URL (Optional)
 
-Slack の Incoming Webhook を作成し、  
-GitHub Secrets に以下の名前で登録します。
+Create a Slack Incoming Webhook and register it in GitHub Secrets with the following name:
 
 ```txt
 SLACK_WEBHOOK_URL
@@ -75,103 +73,103 @@ SLACK_WEBHOOK_URL
 
 ---
 
-## 📱 LINE Messaging API トークンの登録手順（詳細）
+## 📱 Registering LINE Messaging API Tokens (Details)
 
-LINE Messaging API を使用して通知を送信するため、チャネルアクセストークンとボットのユーザーID を GitHub Secrets に登録する手順です。
-
----
-
-### 1. LINE Developers コンソールにアクセス
-
-以下の URL を開きます：
-
-[https://developers.line.biz/ja/](https://developers.line.biz/ja/)
-
-LINE ビジネスアカウントでログインします。
+Steps to register the Channel Access Token and Bot User ID in GitHub Secrets to send notifications using the LINE Messaging API.
 
 ---
 
-### 2. チャネルを作成（または既存のチャネルを使用）
+### 1. Access the LINE Developers Console
 
-1. **Developers Console** を開く  
-2. **チャネル作成** をクリック  
-3. **チャネルタイプ**: Messaging API を選択  
-4. 必要な情報を入力して作成
+Open the following URL:
 
----
+[https://developers.line.biz/en/](https://developers.line.biz/en/)
 
-### 3. チャネルアクセストークンを取得
-
-1. 作成したチャネルの設定ページを開く  
-2. **Messaging API** タブを開く  
-3. 「チャネルアクセストークン」の **発行** ボタンをクリック  
-4. 表示されたトークンをコピー
-
-⚠️ **この画面でしか表示されません。必ずコピーしてください。**
+Log in with your LINE Business account.
 
 ---
 
-### 4. ボット自身のユーザーID を取得
+### 2. Create a Channel (or Use an Existing One)
 
-ボットのユーザーID を取得するには、以下の方法があります：
+1. Open the **Developers Console**
+2. Click **Create a new channel**
+3. **Channel type**: Select Messaging API
+4. Enter the required information and create it
 
-#### 方法A: LINE Official Account Manager から取得
+---
 
-1. **LINE Official Account Manager** にアクセス：  
+### 3. Get the Channel Access Token
+
+1. Open the settings page for the created channel
+2. Open the **Messaging API** tab
+3. Click the **Issue** button for "Channel access token"
+4. Copy the displayed token
+
+⚠️ **It will only be displayed on this screen once. Make sure to copy it.**
+
+---
+
+### 4. Get the Bot User ID
+
+There are several ways to get the Bot User ID:
+
+#### Method A: Get from LINE Official Account Manager
+
+1. Access **LINE Official Account Manager**:  
    [https://manager.line.biz/](https://manager.line.biz/)
-2. アカウントを選択  
-3. **アカウント設定** → **基本情報** でボットのユーザーID を確認
+2. Select the account
+3. Check the Bot User ID in **Settings** → **Basic Settings**
 
-#### 方法B: Webhook イベントから取得
+#### Method B: Get from Webhook Events
 
-1. ボットにメッセージを送信  
-2. ワークフロー実行時のログで `sourceUserId` を確認  
-3. その値をユーザーID として使用
+1. Send a message to the bot
+2. Check `sourceUserId` in the logs when the workflow runs
+3. Use that value as the User ID
 
 ---
 
-### 5. GitHub Secrets に登録する
+### 5. Register in GitHub Secrets
 
-GitHub リポジトリのページで：
+On your GitHub repository page:
 
-1. **Settings** を開く  
-2. 左メニューから **Secrets and variables → Actions**  
-3. **New repository secret** をクリック  
-4. 以下のように 2 つ登録：
+1. Open **Settings**
+2. From the left menu, select **Secrets and variables → Actions**
+3. Click **New repository secret**
+4. Register the following two:
 
 ```txt
 Name: LINE_MESSAGING_API_TOKEN
-Value: <チャネルアクセストークン>
+Value: <Channel Access Token>
 ```
 
 ```txt
 Name: LINE_BOT_USER_ID
-Value: <ボットのユーザーID>
+Value: <Bot User ID>
 ```
 
-保存すれば完了です。
+Save and you're done.
 
 ---
 
-## 🚀 GitHub Actions の動作
+## 🚀 GitHub Actions Operation
 
-`.github/workflows/mon-webpage.yml` が 30 分ごとに実行されます。
+`.github/workflows/mon-webpage.yml` runs every 30 minutes.
 
-各ターゲットについて：
+For each target:
 
-1. ページ取得  
-2. 指定セレクタ抽出  
-3. ハッシュ比較  
-4. 変化があれば  
-   - スクショ撮影  
-   - 履歴保存  
-   - Slack / LINE に通知  
-5. `last_hash.txt` を更新  
-6. 最後にまとめてコミット  
+1. Fetch page
+2. Extract specified selector
+3. Compare hash
+4. If changed:
+   - Take screenshot
+   - Save history
+   - Notify Slack / LINE
+5. Update `last_hash.txt`
+6. Finally, commit changes together
 
 ---
 
-## 📸 履歴の例
+## 📸 History Example
 
 ```txt
 history/dell_inventory/2026-01-08-2130/
@@ -180,7 +178,7 @@ history/dell_inventory/2026-01-08-2130/
 └── meta.txt
 ```
 
-`meta.txt` には以下が記録されます：
+`meta.txt` records the following:
 
 ```txt
 Detected at: 2026-01-08 21:30:00
@@ -191,11 +189,11 @@ Hash: 1234567890abcdef...
 
 ---
 
-## 🧪 ローカルでのテスト方法
+## 🧪 How to Test Locally
 
-Puppeteer を使うため、Node.js が必要です。
+Node.js is required to use Puppeteer.
 
 ```bash
 npm install
-node screenshot.js
+node scripts/screenshot.js
 ```
