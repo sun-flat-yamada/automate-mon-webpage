@@ -70,80 +70,6 @@ jobs:
             git push
           fi
 
-      - name: Create screenshot script
-        run: |
-          cat > screenshot.js << 'SCRIPT_EOF'
-          const puppeteer = require('puppeteer');
-
-          (async () => {
-            try {
-              const browser = await puppeteer.launch({
-                headless: true,
-                executablePath: '/usr/bin/chromium-browser',
-                args: [
-                  '--no-sandbox',
-                  '--disable-setuid-sandbox',
-                  '--disable-dev-shm-usage',
-                  '--disable-gpu',
-                  '--disable-background-networking',
-                  '--disable-background-timer-throttling',
-                  '--disable-renderer-backgrounding',
-                  '--disable-infobars',
-                  '--window-size=1280,2000'
-                ]
-              });
-
-              const page = await browser.newPage();
-              await page.setViewport({ width: 1280, height: 2000 });
-
-              await page.goto(process.env.TARGET_URL, {
-                waitUntil: 'networkidle2',
-                timeout: 30000
-              });
-
-              try
-              {
-                // Wait for selector with timeout
-                await page.waitForSelector(process.env.TARGET_SELECTOR, { timeout: 10000 });
-                const element = await page.$(process.env.TARGET_SELECTOR);
-
-                if (element)
-                {
-                await element.screenshot({ path: 'section.png' });
-                }
-                else
-                {
-                  console.log("Selector not found");
-                  throw e;
-                }
-              }
-              catch (timeoutError)
-              {
-                console.error(`ERROR: Selector "${process.env.TARGET_SELECTOR}" not found within timeout`);
-                console.error("Taking full page screenshot for debugging...");
-
-                // Take full page screenshot
-                await page.screenshot({ path: 'section.png', fullPage: true });
-                console.error("Full page screenshot saved to section.png");
-
-                // Log available elements
-                console.error("Available elements sample:");
-                const allElements = await page.$$eval('*', els => els.slice(0, 20).map(el => ({ tag: el.tagName, id: el.id, class: el.className })));
-                console.error(JSON.stringify(allElements, null, 2));
-
-                throw e;
-              }
-
-              await browser.close();
-            }
-            catch (e)
-            {
-              console.error("Puppeteer error:", e);
-              process.exit(1);
-            }
-          })();
-          SCRIPT_EOF
-
       - name: Process all targets
         shell: bash
         run: |
@@ -202,13 +128,22 @@ jobs:
               echo "Taking screenshot..."
               export TARGET_URL
               export TARGET_SELECTOR
-              if node screenshot.js; then
-                cp section.png "$BASE_DIR/" || echo "Warning: Screenshot file not created"
+
+              # Run screenshot.js. Even if it fails (exit code 1), it might have produced a debug screenshot.
+              if node scripts/screenshot.js; then
+                echo "Screenshot success"
               else
-                echo "Warning: Puppeteer screenshot failed"
+                echo "Warning: screenshot.js returned error, checking for debug screenshot..."
+              fi
+
+              if [ -f section.png ]; then
+                  cp section.png "$BASE_DIR/" || echo "Warning: Failed to copy screenshot"
+              else
+                  echo "Warning: No screenshot file created"
               fi
 
               cp section.html "$BASE_DIR/"
+
 
               DETECTED_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
               echo "Detected at: $DETECTED_TIME" > "$BASE_DIR/meta.txt"
