@@ -38,6 +38,8 @@ The system uses the following GitHub Actions secrets for notifications:
 ### Language
 
 - **Standard**: All responses and communications with the USER must be in **Japanese** (全てのプロンプト応答・対話は日本語で行うこと).
+- **Documentation**: コード変更を行った際は、必ず対応するドキュメントを見直し、新機能や変更内容が反映されるよう更新すること。これはエージェントとしての必須責務である。
+- **Self-Sync**: 常に `GEMINI.md` の指示を最優先し、自己の状態とドキュメントの整合性を保つこと。
 
 ### Modifying Logic
 
