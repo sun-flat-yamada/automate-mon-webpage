@@ -4,7 +4,8 @@
 
 # GitHubへのデプロイ
 
-1. ステージング、コミット、およびプッシュ：
+1. コードの変更内容を反映させるため、ドキュメントを見直し、更新します。
+2. ステージング、コミット、およびプッシュ：
    ```bash
    git add .
    git commit -m "Update configuration and logic"

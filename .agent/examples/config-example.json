@@ -1,0 +1,8 @@
+[
+  {
+    "name": "google-news",
+    "url": "https://news.google.com/topstories?hl=ja&gl=JP&ceid=JP:ja",
+    "selector": "article h3",
+    "description": "Google ニュースのトップストーリーの見出しを監視します。"
+  }
+]
