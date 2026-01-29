@@ -4,7 +4,8 @@ description: Deploy changes to GitHub
 
 // turbo
 
-1. Stage, commit, and push:
+1. Review and update documentation to reflect code changes.
+2. Stage, commit, and push:
    ```bash
    git add .
    git commit -m "Update configuration and logic"

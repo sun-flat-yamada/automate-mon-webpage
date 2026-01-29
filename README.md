@@ -8,7 +8,7 @@ Monitoring targets are defined in `config.json`, and GitHub Actions executes the
 - Extract the specified CSS selector section
 - Detect changes by comparing hashes
 - If there is a change, take a screenshot (Puppeteer)
-- Notify via Slack / LINE (only if configured)
+- Notify via Slack / LINE / Discord (only if configured)
 - Save history (HTML, screenshot, meta information) in `history/`
 - Update `last_hash.txt` for each site
 
@@ -55,7 +55,7 @@ To monitor multiple sites, simply add them to the array.
 
 ## 🔔 Notifications
 
-Slack and LINE Messaging API notifications are **only executed if they are set in GitHub Secrets**.
+Slack, LINE, and Discord notifications are **only executed if they are set in GitHub Secrets**.
 
 If they are not set, they will be automatically skipped.
 
@@ -69,6 +69,16 @@ Create a Slack Incoming Webhook and register it in GitHub Secrets with the follo
 
 ```txt
 SLACK_WEBHOOK_URL
+```
+
+---
+
+### 2. Discord Webhook URL (Optional)
+
+Create a Discord Webhook and register it in GitHub Secrets with the following name:
+
+```txt
+DISCORD_WEBHOOK_URL
 ```
 
 ---
@@ -163,7 +173,7 @@ For each target:
 4. If changed:
    - Take screenshot
    - Save history
-   - Notify Slack / LINE
+   - Notify Slack / LINE / Discord
 5. Update `last_hash.txt`
 6. Finally, commit changes together
 

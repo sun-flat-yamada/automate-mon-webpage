@@ -15,6 +15,7 @@ jobs:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       LINE_MESSAGING_API_TOKEN: ${{ secrets.LINE_MESSAGING_API_TOKEN }}
       LINE_BOT_USER_ID: ${{ secrets.LINE_BOT_USER_ID }}
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
@@ -142,6 +143,10 @@ jobs:
                   echo "Warning: No screenshot file created"
               fi
 
+              if [ -f data.json ]; then
+                  cp data.json "$BASE_DIR/" || echo "Warning: Failed to copy data.json"
+              fi
+
               cp section.html "$BASE_DIR/"
 
 
@@ -201,6 +206,23 @@ jobs:
                   -H "Content-Type: application/json" \
                   -d "$LINE_PAYLOAD" \
                   https://api.line.biz/v2/bot/message/push || echo "Failed to send LINE notification"
+              fi
+
+              if [ -n "$DISCORD_WEBHOOK_URL" ]; then
+                echo "Sending Discord notification..."
+                DISCORD_PAYLOAD='{"embeds":[{"title":"🔔 Update detected: '$TARGET_NAME'","url":"'$TARGET_URL'","color":5814783,"fields":[{"name":"Hash","value":"`'${NEW_HASH:0:8}'`","inline":true},{"name":"Time (UTC)","value":"'$DETECTED_TIME'","inline":true}],"image":{"url":"attachment://section.png"}}]}'
+
+                if [ -f section.png ]; then
+                  curl -X POST \
+                    -F "payload_json=$DISCORD_PAYLOAD" \
+                    -F "file=@section.png" \
+                    "$DISCORD_WEBHOOK_URL" || echo "Failed to send Discord notification with image"
+                else
+                  # Fallback to no image if file missing
+                  curl -X POST -H 'Content-type: application/json' \
+                    --data "{\"embeds\": [{\"title\": \"🔔 Update detected: $TARGET_NAME\", \"url\": \"$TARGET_URL\", \"color\": 5814783, \"fields\": [{\"name\": \"Hash\", \"value\": \"\`${NEW_HASH:0:8}\`\", \"inline\": true}, {\"name\": \"Time (UTC)\", \"value\": \"$DETECTED_TIME\", \"inline\": true}]}]}" \
+                    "$DISCORD_WEBHOOK_URL" || echo "Failed to send Discord notification"
+                fi
               fi
 
             else

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "gitkraken": {
+      "command": "node",
+      "args": ["path/to/gitkraken-mcp/index.js"],
+      "enabled": true,
+      "description": "Git リポジトリ操作のための MCP サーバー"
+    }
+  }
+}
