@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository (`automate-mon-webpage`) is a periodic webpage monitoring system running on **GitHub Actions**. It detects visual or content changes in specified webpages, takes screenshots, sends notifications (Slack/LINE), and archives the history in the repository itself.
+This repository (`automate-mon-webpage`) is a periodic webpage monitoring system running on **GitHub Actions**. It detects visual or content changes in specified webpages, takes screenshots, sends notifications (Slack/LINE/Discord), and archives the history in the repository itself.
 
 ## Architecture
 
@@ -32,6 +32,7 @@ The system uses the following GitHub Actions secrets for notifications:
 - `SLACK_WEBHOOK_URL`
 - `LINE_MESSAGING_API_TOKEN`
 - `LINE_BOT_USER_ID`
+- `DISCORD_WEBHOOK_URL`
 
 ## Agent Guidelines
 
@@ -57,6 +58,24 @@ The system uses the following GitHub Actions secrets for notifications:
 - **Run Local**: See `.agent/workflows/run_local.md`
 - **Deploy**: See `.agent/workflows/deploy.md`
 
-## Skills
-
 - **Find Selector**: See `.agent/skills/find_selector/SKILL.md` for help identifying robust CSS selectors.
+
+## Strategic Structure
+
+### .agent Directory Overview
+
+| Category         | Description                                                    |
+| :--------------- | :------------------------------------------------------------- |
+| **rules/**       | Always-follow guidelines for the agent.                        |
+| **skills/**      | Complex workflows and domain expertise.                        |
+| **agents/**      | Specialized subagents definitions (e.g., `screenshot-expert`). |
+| **workflows/**   | Slash commands and automated workflows.                        |
+| **examples/**    | Configuration and notification samples.                        |
+| **hooks/**       | Definitions for pre/post tool execution hooks.                 |
+| **mcp-configs/** | MCP server configuration references.                           |
+| **plugins/**     | Extension plugin index.                                        |
+
+### Subagents
+
+- [screenshot-expert](file:///.agent/agents/screenshot-expert.md): Specialist for Puppeteer and element extraction.
+- [config-manager](file:///.agent/agents/config-manager.md): Specialist for `config.json` management.
