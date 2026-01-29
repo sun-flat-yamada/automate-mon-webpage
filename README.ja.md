@@ -13,7 +13,7 @@ GitHub Actions が **30 分ごと**に以下を実行します。
 - 指定した CSS セレクタ部分を抽出
 - ハッシュ比較で変化を検出
 - 変化があればスクリーンショット撮影（Puppeteer）
-- Slack / LINE Notify に通知（設定されている場合のみ）
+- Slack / LINE / Discord に通知（設定されている場合のみ）
 - 履歴（HTML・スクショ・メタ情報）を `history/` に保存
 - `last_hash.txt` をサイトごとに更新
 
@@ -60,7 +60,7 @@ GitHub Actions が **30 分ごと**に以下を実行します。
 
 ## 🔔 通知について
 
-Slack と LINE Messaging API の通知は、**GitHub Secrets に設定されている場合のみ実行**されます。
+Slack、LINE、Discord の通知は、**GitHub Secrets に設定されている場合のみ実行**されます。
 
 設定されていない場合は自動的にスキップされます。
 
@@ -75,6 +75,17 @@ GitHub Secrets に以下の名前で登録します。
 
 ```txt
 SLACK_WEBHOOK_URL
+```
+
+---
+
+### 2. Discord Webhook URL（任意）
+
+Discord の Webhook を作成し、
+GitHub Secrets に以下の名前で登録します。
+
+```txt
+DISCORD_WEBHOOK_URL
 ```
 
 ---
@@ -169,7 +180,7 @@ Value: <ボットのユーザーID>
 4. 変化があれば
    - スクショ撮影
    - 履歴保存
-   - Slack / LINE に通知
+   - Slack / LINE / Discord に通知
 5. `last_hash.txt` を更新
 6. 最後にまとめてコミット
 

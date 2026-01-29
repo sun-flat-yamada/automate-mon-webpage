@@ -10,3 +10,4 @@ description: Add a new webpage monitoring target
    - `selector`: The CSS selector to capture (or leave empty for full page, though selector is recommended).
 4. Validate that the file is still valid JSON.
 5. (Optional) Run the local test workflow (`/run_local`) to verify the selector works.
+6. Review and update documentation if necessary (e.g., `GEMINI.md`).
