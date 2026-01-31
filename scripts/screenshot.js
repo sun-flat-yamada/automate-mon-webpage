@@ -31,6 +31,10 @@ const puppeteer = require("puppeteer");
         await page.waitForSelector(targetSelector, { timeout: 30000 });
         const element = await page.$(targetSelector);
         if (element) {
+          // Auto-scroll to ensure lazy loaded content is visible
+          console.log("Scrolling page to trigger lazy loading...");
+          await autoScroll(page);
+
           console.log("Element found. Taking screenshot...");
           await element.screenshot({ path: "section.png" });
 
@@ -125,6 +129,10 @@ const puppeteer = require("puppeteer");
         process.exit(1);
       }
     } else {
+      // Auto-scroll for full page capture too
+      console.log("Scrolling page to trigger lazy loading...");
+      await autoScroll(page);
+
       console.log("Taking full page screenshot...");
       await page.screenshot({ path: "section.png", fullPage: true });
       // Create empty data.json if no selector
@@ -139,3 +147,28 @@ const puppeteer = require("puppeteer");
     process.exit(1);
   }
 })();
+
+async function autoScroll(page) {
+  await page.evaluate(async () => {
+    await new Promise((resolve) => {
+      let totalHeight = 0;
+      const distance = 400; // Small chunks for smooth loading
+      const timer = setInterval(() => {
+        const scrollHeight = document.body.scrollHeight;
+        window.scrollBy(0, distance);
+        totalHeight += distance;
+
+        if (totalHeight >= scrollHeight - window.innerHeight) {
+          // Scroll back to top if needed, or just stop.
+          // For screenshots, we usually want to stay at bottom?
+          // Actually, Puppeteer fullPage screenshot works best if we just let it handle the stitching,
+          // but we scrolled to trigger lazy load.
+          clearInterval(timer);
+          resolve();
+        }
+      }, 200); // Partial wait
+    });
+  });
+  // Extra wait for final settle
+  await new Promise((r) => setTimeout(r, 1000));
+}

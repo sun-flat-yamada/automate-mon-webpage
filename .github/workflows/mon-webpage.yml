@@ -32,7 +32,7 @@ jobs:
         run: |
           set -e
           sudo apt-get update
-          sudo apt-get install -y jq chromium-browser unzip
+          sudo apt-get install -y jq chromium-browser unzip fonts-noto-cjk
 
           # Install pup (HTML parser)
           # Try downloading latest release, fallback to building from source
