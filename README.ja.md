@@ -1,5 +1,12 @@
 # Automate Webpage Monitor
 
+[English](./README.md) | [日本語](./README.ja.md)
+
+[![CI (Build & Test)](https://github.com/sun-flat-yamada/automate-mon-webpage/actions/workflows/ci.yml/badge.svg)](https://github.com/sun-flat-yamada/automate-mon-webpage/actions/workflows/ci.yml)
+[![Webpage Monitor](https://github.com/sun-flat-yamada/automate-mon-webpage/actions/workflows/mon-webpage.yml/badge.svg)](https://github.com/sun-flat-yamada/automate-mon-webpage/actions/workflows/mon-webpage.yml)
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sun.flat.yamada)
+
 **GitHub Actions** と **TypeScript** を活用した堅牢なウェブページ監視システムです。視覚的な変化やコンテンツの変更を検知し、スクリーンショットを撮影し、構造化データを抽出し、Slack, LINE, Discord に通知を送信します。
 
 ## 🚀 機能 (Features)
@@ -16,7 +23,7 @@
 - **CI ワークフロー**: `.github/workflows/ci.yml` がビルド、テスト、コンパイル済みファイルの更新を担当します。
 - **監視ワークフロー**: `.github/workflows/mon-webpage.yml` が30分ごとに実行され、変更を追跡します。
 - **エンジン**: ブラウザ自動化のための Puppeteer (Chromium)。
-- **ロジック**: 
+- **ロジック**:
   - `src/main.ts`: 監視とスクリーンショットのエントリーポイント。エンコーディング破損を防ぐため、生のファイルバイト列を扱います。
   - `src/extractor.ts`: 非構造化テーブルに対するフォールバック戦略を備えた、モジュール式データ抽出エンジン。
 - **インフラ**: 定期実行とデプロイのための GitHub Actions。
@@ -49,14 +56,19 @@
 変更を行う際は、以下の手順に従ってください：
 
 1. **依存関係のインストール**:
+
    ```bash
    npm install
    ```
+
 2. **コンパイル**:
+
    ```bash
    npm run build
    ```
+
 3. **テスト**:
+
    ```bash
    # カバレッジ付き単体テストの実行
    npm run test:coverage
@@ -70,6 +82,7 @@
    # アーティファクト検証の実行 (main.js 実行後)
    node scripts/test-cli.js
    ```
+
 4. **ローカル検証**:
    VS Code のデバッグ構成 "Debug: Main Script (Local Mock)" を使用するか、環境変数を設定して `node dist/main.js` を実行します。
 
@@ -114,13 +127,14 @@
 通知を使用するには、以下の Secrets を設定してください。設定されていないチャネルはスキップされます。
 
 | Secret 名 | 説明 | 取得方法 |
-|-----------|------|----------|
+| --- | --- | --- |
 | `SLACK_WEBHOOK_URL` | Slack Incoming Webhook URL | [Slack API](https://api.slack.com/messaging/webhooks) で作成 |
 | `DISCORD_WEBHOOK_URL` | Discord Webhook URL (カンマ区切りで複数指定可) | サーバー設定 → 連携サービス → ウェブフック |
 | `LINE_MESSAGING_API_TOKEN` | LINE Messaging API チャネルアクセストークン | [LINE Developers](https://developers.line.biz/) で Bot を作成 |
 | `LINE_BOT_USER_ID` | 通知先の LINE ユーザー ID | LINE Developers コンソールで確認 |
 
 **手順**:
+
 1. リポジトリの **Settings** → **Secrets and variables** → **Actions** を開く
 2. **New repository secret** をクリック
 3. Name と Value を入力して保存
@@ -134,12 +148,14 @@ CI ワークフロー (`ci.yml`) は、特別な設定を行わなくても自�
 >
 > **Free/Pro プラン（個人リポジトリ）の場合:**
 > GitHub の Free プランでは、Bot による保護のバイパスがサポートされていません。CI をパスさせるには以下の手順を推奨します：
+>
 > 1. ローカルで変更後、プッシュ前に `npm run build` を実行する。
 > 2. 更新された `dist/` ディレクトリの内容を手動でコミットに含める。
 > 3. プッシュする（これにより、リポジトリ上の `dist/` がすでに最新状態になるため、CI ワークフローによる自動プッシュが発生せず、エラーを回避できます）。
 >
 > **Enterprise/Organization プランの場合:**
 > 以下の設定により、Bot によるバイパスを許可できます：
+>
 > 1. リポジトリの **Settings** → **Branches** → 対象ルールの **Edit** をクリック。
 > 2. **"Allow specified actors to bypass required pull requests"** をチェック。
 > 3. `github-actions[bot]` を検索して追加。
@@ -187,12 +203,19 @@ CI ワークフロー (`ci.yml`) は、特別な設定を行わなくても自�
 
 ## 🔔 通知 (Notifications)
 
- GitHub Secrets の設定が必要です（上記の「Secrets の設定」を参照）。
+GitHub Secrets の設定が必要です（上記の「Secrets の設定」を参照）。
 
- 各チャネルの動作:
- - **Slack**: テキストメッセージ + 製品リスト
- - **Discord**: 埋め込みメッセージ + スクリーンショット画像
- - **LINE**: テキストメッセージ + Base64 エンコード画像 (Messaging API 使用)
+各チャネルの動作:
+
+- **Slack**: テキストメッセージ + 製品リスト
+- **Discord**: 埋め込みメッセージ + スクリーンショット画像
+- **LINE**: テキストメッセージ + Base64 エンコード画像 (Messaging API 使用)
+
+## 🤝 Contribution & Support
+
+Contributions are welcome! If you find this extension useful, please consider supporting its development.
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sun.flat.yamada)
 
 ## 📜 ライセンス (License)
 

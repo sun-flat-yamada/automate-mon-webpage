@@ -1,5 +1,12 @@
 # Automate Webpage Monitor
 
+[English](./README.md) | [日本語](./README.ja.md)
+
+[![CI (Build & Test)](https://github.com/sun-flat-yamada/automate-mon-webpage/actions/workflows/ci.yml/badge.svg)](https://github.com/sun-flat-yamada/automate-mon-webpage/actions/workflows/ci.yml)
+[![Webpage Monitor](https://github.com/sun-flat-yamada/automate-mon-webpage/actions/workflows/mon-webpage.yml/badge.svg)](https://github.com/sun-flat-yamada/automate-mon-webpage/actions/workflows/mon-webpage.yml)
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sun.flat.yamada)
+
 A robust webpage monitoring system powered by **GitHub Actions** and **TypeScript**. It detects visual or content changes, captures screenshots, extracts structured data, and sends notifications via Slack, LINE, and Discord.
 
 ## 🚀 Features
@@ -16,7 +23,7 @@ A robust webpage monitoring system powered by **GitHub Actions** and **TypeScrip
 - **CI Workflow**: `.github/workflows/ci.yml` handles building, testing, and updating compiled files.
 - **Monitoring Workflow**: `.github/workflows/mon-webpage.yml` runs every 30 minutes to track changes.
 - **Engine**: Puppeteer (Chromium) for browser automation.
-- **Logic**: 
+- **Logic**:
   - `src/main.ts`: Entry point for monitoring and screenshots. Handles raw file bytes to prevent encoding corruption.
   - `src/extractor.ts`: Modular data extraction engine with fallback strategies for unstructured tables.
 - **Infrastructure**: GitHub Actions for periodic execution and deployment.
@@ -49,14 +56,19 @@ A robust webpage monitoring system powered by **GitHub Actions** and **TypeScrip
 Follow this logical sequence for any changes:
 
 1. **Install Dependencies**:
+
    ```bash
    npm install
    ```
+
 2. **Compile**:
+
    ```bash
    npm run build
    ```
+
 3. **Test**:
+
    ```bash
    # Run Unit Tests with Coverage
    npm run test:coverage
@@ -70,6 +82,7 @@ Follow this logical sequence for any changes:
    # Run Artifact Validation (after main.js execution)
    node scripts/test-cli.js
    ```
+
 4. **Local Verification**:
    Use the VS Code debug configuration "Debug: Main Script (Local Mock)" or set environment variables and run `node dist/main.js`.
 
@@ -114,13 +127,14 @@ These settings are **mandatory** for the repository to function correctly.
 To use notifications, configure the following Secrets. Unconfigured channels will be skipped.
 
 | Secret Name | Description | How to Obtain |
-|-------------|-------------|---------------|
+| --- | --- | --- |
 | `SLACK_WEBHOOK_URL` | Slack Incoming Webhook URL | Create at [Slack API](https://api.slack.com/messaging/webhooks) |
 | `DISCORD_WEBHOOK_URL` | Discord Webhook URL (Comma-separated for multiple) | Server Settings → Integrations → Webhooks |
 | `LINE_MESSAGING_API_TOKEN` | LINE Messaging API Channel Access Token | Create Bot at [LINE Developers](https://developers.line.biz/) |
 | `LINE_BOT_USER_ID` | Target LINE User ID | Check in LINE Developers Console |
 
 **Steps**:
+
 1. Go to repository **Settings** → **Secrets and variables** → **Actions**
 2. Click **New repository secret**
 3. Enter Name and Value, then save
@@ -134,12 +148,14 @@ The CI workflow (`ci.yml`) works automatically without any configuration. Howeve
 >
 > **For Free/Pro Plans (Personal Repositories):**
 > GitHub does not support bypassing protection rules for Bots on the Free plan. To ensure CI passes:
+>
 > 1. Run `npm run build` locally before commiting.
 > 2. Commit the updated `dist/` files manually.
 > 3. Push your changes. (This ensures `dist/` is already up-to-date, so the CI workflow will skip the commit step).
 >
 > **For Enterprise/Organization Plans:**
 > You can allow the bot to bypass the rules:
+>
 > 1. Go to **Settings** → **Branches** → **Edit** (next to your rule).
 > 2. Check **"Allow specified actors to bypass required pull requests"**.
 > 3. Search for and add `github-actions[bot]`.
@@ -186,13 +202,20 @@ Automate security updates for dependencies.
 ---
 
 ## 🔔 Notifications
- 
- Requires GitHub Secrets configuration (see "Configure Secrets" above).
- 
- Channel Behavior:
- - **Slack**: Text message + Product list
- - **Discord**: Embedded message + Screenshot image
- - **LINE**: Text message + Base64 encoded image (Uses Messaging API)
+
+Requires GitHub Secrets configuration (see "Configure Secrets" above).
+
+Channel Behavior:
+
+- **Slack**: Text message + Product list
+- **Discord**: Embedded message + Screenshot image
+- **LINE**: Text message + Base64 encoded image (Uses Messaging API)
+
+## 🤝 Contribution & Support
+
+Contributions are welcome! If you find this extension useful, please consider supporting its development.
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sun.flat.yamada)
 
 ## 📜 License
 
