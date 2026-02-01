@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\286,000",
+    "specifications": "Dell Tower Plus Desktop EBT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W),Graphite",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (1X32GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+    "video_controller": "NVIDIA GeForce RTX 5070 12GB GDDR7",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\302,500",
+    "specifications": "Dell Tower Plus Desktop EBT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W),Graphite",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "2TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA GeForce RTX 5070 12GB GDDR7",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  }
+]
