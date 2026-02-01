@@ -1,24 +1,105 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Node.js Debug",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/index.js",
-      "restart": true,
-      "console": "integratedTerminal",
-      "skipFiles": ["<node_internals>/**"],
-      "env": {
-        "NODE_ENV": "development"
-      }
-    },
-    {
-      "name": "Node.js: Attach to Process",
-      "type": "node",
-      "request": "attach",
-      "processId": "${command:PickProcess}",
-      "skipFiles": ["<node_internals>/**"]
-    }
-  ]
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug: Main Script (Local Mock)",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/src/main.ts",
+            "preLaunchTask": "npm: build",
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+            "env": {
+                "TARGET_URL": "file:///${workspaceFolder}/tests/mock_extraction.html",
+                "TARGET_SELECTOR": "#target-element",
+                "EXTRACTOR_TYPE": "dell-outlet",
+                "OUTPUT_DIR": "tests/logs"
+            },
+            "runtimeArgs": ["--loader", "ts-node/esm"],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug: Main Script (Local History Data)",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/src/main.ts",
+            "preLaunchTask": "npm: build",
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+            "env": {
+                "TARGET_URL": "file:///${workspaceFolder}/history/dell_outlets_desktops_biz/2026-01/2026-01-31-113507/section.html",
+                "TARGET_SELECTOR": "",
+                "EXTRACTOR_TYPE": "dell-outlet",
+                "OUTPUT_DIR": "tests/logs"
+            },
+            "runtimeArgs": ["--loader", "ts-node/esm"],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug: Current Jest Test",
+            "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
+            "args": [
+                "${file}",
+                "--config",
+                "jest.config.cjs",
+                "--runInBand"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "runtimeArgs": [
+                "--nocrashbrowser",
+                "--experimental-vm-modules"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug: Artifact Validation (test-cli)",
+            "program": "${workspaceFolder}/scripts/test-cli.js",
+            "skipFiles": ["<node_internals>/**"],
+            "console": "integratedTerminal",
+            "env": {
+                "OUTPUT_DIR": "tests/logs"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug: Logic Regression",
+            "program": "${workspaceFolder}/scripts/test-logic-regression.js",
+            "skipFiles": ["<node_internals>/**"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Build Only",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/typescript/bin/tsc",
+            "args": ["--project", "${workspaceFolder}/tsconfig.json"],
+            "console": "integratedTerminal",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "name": "Run All Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
+            "args": [
+                "--config",
+                "jest.config.cjs",
+                "--verbose",
+                "--coverage"
+            ],
+            "runtimeArgs": [
+                "--experimental-vm-modules"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
 }

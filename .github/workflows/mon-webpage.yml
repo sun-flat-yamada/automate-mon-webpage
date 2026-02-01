@@ -59,17 +59,7 @@ jobs:
           pup --version
 
           # Install Node.js dependencies
-          npm install
-
-      - name: Commit package-lock.json if missing
-        run: |
-          if [ ! -f package-lock.json ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add package-lock.json
-            git commit -m "Add package-lock.json for npm cache support"
-            git push
-          fi
+          npm ci
 
       - name: Process all targets
         shell: bash
@@ -84,6 +74,7 @@ jobs:
             TARGET_NAME=$(jq -r ".targets[$i].name" config.json)
             TARGET_URL=$(jq -r ".targets[$i].url" config.json)
             TARGET_SELECTOR=$(jq -r ".targets[$i].selector" config.json)
+            EXTRACTOR_TYPE=$(jq -r ".targets[$i].extractor_type // \"\"" config.json)
 
             echo "Target: $TARGET_NAME"
 
@@ -127,14 +118,11 @@ jobs:
               mkdir -p "$BASE_DIR"
 
               echo "Taking screenshot..."
-              export TARGET_URL
-              export TARGET_SELECTOR
-
-              # Run screenshot.js. Even if it fails (exit code 1), it might have produced a debug screenshot.
-              if node scripts/screenshot.js; then
+              # Run main.js (TS build).
+              if TARGET_URL="$TARGET_URL" TARGET_SELECTOR="$TARGET_SELECTOR" EXTRACTOR_TYPE="$EXTRACTOR_TYPE" node dist/main.js; then
                 echo "Screenshot success"
               else
-                echo "Warning: screenshot.js returned error, checking for debug screenshot..."
+                echo "Warning: main.js returned error"
               fi
 
               if [ -f section.png ]; then
@@ -151,7 +139,9 @@ jobs:
 
 
               DETECTED_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+              DETECTED_TIME_JST=$(TZ=Asia/Tokyo date +"%Y-%m-%dT%H:%M:%S+09:00")
               echo "Detected at: $DETECTED_TIME" > "$BASE_DIR/meta.txt"
+              echo "Detected at (JST): $DETECTED_TIME_JST" >> "$BASE_DIR/meta.txt"
               echo "URL: $TARGET_URL" >> "$BASE_DIR/meta.txt"
               echo "Selector: $TARGET_SELECTOR" >> "$BASE_DIR/meta.txt"
               echo "Hash: $NEW_HASH" >> "$BASE_DIR/meta.txt"
@@ -159,27 +149,41 @@ jobs:
               echo "Saving new hash..."
               cp new_hash.txt "$LAST_HASH_FILE"
 
+              # === 通知用の共通変数を事前計算 ===
+              HAS_SCREENSHOT=false
+              if [ -f section.png ]; then
+                HAS_SCREENSHOT=true
+              fi
+
+              PRODUCT_LIST=""
+              if [ -f data.json ]; then
+                PRODUCT_LIST=$(jq -r '.[] | "- " + .specifications + " (" + .price + ")"' data.json | head -n 10)
+              fi
+              if [ -z "$PRODUCT_LIST" ]; then
+                PRODUCT_LIST="No product details extracted"
+              fi
+
+              # === Slack 通知 ===
               if [ -n "$SLACK_WEBHOOK_URL" ]; then
                 echo "Sending Slack notification..."
-                SLACK_DATA="{\"text\":\"🔔 Update detected: *$TARGET_NAME*\\nHash: \`${NEW_HASH:0:8}\`\\nTime: $DETECTED_TIME\"}"
+                SLACK_DATA="{\"text\":\"🔔 Update detected: *$TARGET_NAME*\\nTime: $DETECTED_TIME_JST (JST)\\n\\n*Products:*\\n$PRODUCT_LIST\"}"
                 curl -X POST -H 'Content-type: application/json' \
                   --data "$SLACK_DATA" \
                   "$SLACK_WEBHOOK_URL" || echo "Failed to send Slack notification"
               fi
 
+              # === LINE 通知 ===
               if [ -n "$LINE_MESSAGING_API_TOKEN" ] && [ -n "$LINE_BOT_USER_ID" ]; then
                 echo "Sending LINE notification via Messaging API..."
 
-                # Base64 encode section.png for image message
-                if [ -f section.png ]; then
+                if [ "$HAS_SCREENSHOT" = true ]; then
                   IMAGE_BASE64=$(base64 -w 0 section.png)
-                  # Send message with text and image
                   LINE_PAYLOAD="{
                     \"to\": \"$LINE_BOT_USER_ID\",
                     \"messages\": [
                       {
                         \"type\": \"text\",
-                        \"text\": \"🔔 Update detected: $TARGET_NAME\\nHash: ${NEW_HASH:0:8}\"
+                        \"text\": \"🔔 Update detected: $TARGET_NAME\\nTime: $DETECTED_TIME_JST (JST)\\n\\nProducts:\\n$PRODUCT_LIST\"
                       },
                       {
                         \"type\": \"image\",
@@ -189,13 +193,12 @@ jobs:
                     ]
                   }"
                 else
-                  # Send text-only message
                   LINE_PAYLOAD="{
                     \"to\": \"$LINE_BOT_USER_ID\",
                     \"messages\": [
                       {
                         \"type\": \"text\",
-                        \"text\": \"🔔 Update detected: $TARGET_NAME\\nHash: ${NEW_HASH:0:8}\"
+                        \"text\": \"🔔 Update detected: $TARGET_NAME\\nTime: $DETECTED_TIME_JST (JST)\\n\\nProducts:\\n$PRODUCT_LIST\"
                       }
                     ]
                   }"
@@ -208,27 +211,43 @@ jobs:
                   https://api.line.biz/v2/bot/message/push || echo "Failed to send LINE notification"
               fi
 
+              # === Discord 通知 ===
               if [ -n "$DISCORD_WEBHOOK_URL" ]; then
                 echo "Sending Discord notification..."
-                DISCORD_PAYLOAD='{"embeds":[{"title":"🔔 Update detected: '$TARGET_NAME'","url":"'$TARGET_URL'","color":5814783,"fields":[{"name":"Hash","value":"`'${NEW_HASH:0:8}'`","inline":true},{"name":"Time (UTC)","value":"'$DETECTED_TIME'","inline":true}],"image":{"url":"attachment://section.png"}}]}'
+
+                DISCORD_PAYLOAD=$(jq -n \
+                  --arg title "🔔 Update detected: $TARGET_NAME" \
+                  --arg url "$TARGET_URL" \
+                  --arg time "$DETECTED_TIME_JST (JST)" \
+                  --arg products "$PRODUCT_LIST" \
+                  '{
+                    embeds: [{
+                      title: $title,
+                      url: $url,
+                      color: 5814783,
+                      fields: [
+                        { name: "Time (JST)", value: $time, inline: false },
+                        { name: "Products", value: ($products | (if length > 1024 then .[0:1020] + "..." else . end)), inline: false }
+                      ],
+                      image: { url: "attachment://section.png" }
+                    }]
+                  }')
 
                 # Split comma-separated URLs
                 IFS=',' read -ra DISCORD_URLS <<< "$DISCORD_WEBHOOK_URL"
                 for WEBHOOK_URL in "${DISCORD_URLS[@]}"; do
-                  # Trim whitespace
                   WEBHOOK_URL=$(echo "$WEBHOOK_URL" | xargs)
                   if [ -z "$WEBHOOK_URL" ]; then continue; fi
 
                   echo "Sending to Discord webhook..."
-                  if [ -f section.png ]; then
+                  if [ "$HAS_SCREENSHOT" = true ]; then
                     curl -X POST \
                       -F "payload_json=$DISCORD_PAYLOAD" \
                       -F "file=@section.png" \
                       "$WEBHOOK_URL" || echo "Failed to send Discord notification with image"
                   else
-                    # Fallback to no image if file missing
                     curl -X POST -H 'Content-type: application/json' \
-                      --data "{\"embeds\": [{\"title\": \"🔔 Update detected: $TARGET_NAME\", \"url\": \"$TARGET_URL\", \"color\": 5814783, \"fields\": [{\"name\": \"Hash\", \"value\": \"\`${NEW_HASH:0:8}\`\", \"inline\": true}, {\"name\": \"Time (UTC)\", \"value\": \"$DETECTED_TIME\", \"inline\": true}]}]}" \
+                      --data "$(echo "$DISCORD_PAYLOAD" | jq 'del(.embeds[0].image)')" \
                       "$WEBHOOK_URL" || echo "Failed to send Discord notification"
                   fi
                 done

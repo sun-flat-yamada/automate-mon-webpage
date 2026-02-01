@@ -3,17 +3,20 @@
     {
       "name": "dell_outlets_workstations",
       "url": "https://jpstore.dell.com/dfo/config.asp?prod=workstation&nav=all",
-      "selector": ""
+      "selector": "",
+      "extractor_type": "dell-outlet"
     },
     {
       "name": "dell_outlets_desktops",
       "url": "https://jpstore.dell.com/dfo/config.asp?prod=dimension&nav=all",
-      "selector": ""
+      "selector": "",
+      "extractor_type": "dell-outlet"
     },
     {
       "name": "dell_outlets_desktops_biz",
       "url": "https://jpstore.dell.com/dfo/config.asp?prod=optiplex&nav=all",
-      "selector": ""
+      "selector": "",
+      "extractor_type": "dell-outlet"
     }
   ]
 }
