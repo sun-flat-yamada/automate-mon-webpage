@@ -1,33 +1,38 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "npm: install",
-      "type": "shell",
-      "command": "npm",
-      "args": ["install"],
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "label": "npm: test",
-      "type": "shell",
-      "command": "npm",
-      "args": ["test"],
-      "problemMatcher": []
-    },
-    {
-      "label": "Run Node Script",
-      "type": "shell",
-      "command": "node",
-      "args": ["${fileBasename}"],
-      "group": "test",
-      "presentation": {
-        "reveal": "always"
-      }
-    }
-  ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$tsc"],
+            "label": "npm: build",
+            "detail": "Compile TypeScript sources to dist/"
+        },
+        {
+            "type": "npm",
+            "script": "test",
+            "group": "test",
+            "label": "npm: test",
+            "detail": "Run all Jest unit tests"
+        },
+        {
+            "type": "npm",
+            "script": "watch",
+            "label": "npm: watch",
+            "isBackground": true,
+            "problemMatcher": ["$tsc-watch"],
+            "detail": "Watch TypeScript sources for changes"
+        },
+        {
+            "label": "Check Artifacts",
+            "type": "shell",
+            "command": "node scripts/test-cli.js",
+            "problemMatcher": [],
+            "detail": "Validate current section.png and data.json"
+        }
+    ]
 }
