@@ -30,19 +30,23 @@ desktop.ini
 
 # Logs
 logs/
+*/**/logs_*
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # Build outputs
-dist/
+# dist/ (Committed by CI for performance optimization)
+# dist/
 build/
 out/
+*.tsbuildinfo
 
 # Test coverage
 coverage/
 .nyc_output/
+tests/logs/
 
 # Temporary files
 tmp/

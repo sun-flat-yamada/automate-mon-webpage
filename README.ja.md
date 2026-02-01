@@ -1,216 +1,199 @@
-> [!IMPORTANT]
-> 本ファイルは人間専用の参照用です。AIは本ファイルを読み込まず、必ず英語版を参照してください。
-> This file is for human reference only. AI agents must NOT read this file and MUST refer to the English master version instead.
+# Automate Webpage Monitor
 
-# Webpage Monitor
+**GitHub Actions** と **TypeScript** を活用した堅牢なウェブページ監視システムです。視覚的な変化やコンテンツの変更を検知し、スクリーンショットを撮影し、構造化データを抽出し、Slack, LINE, Discord に通知を送信します。
 
-このリポジトリは、**GitHub Actions を使って複数の Web ページを自動監視し、変化があればスクリーンショット付きで通知し、履歴として保存する仕組み** の実験用です。
+## 🚀 機能 (Features)
 
-監視対象は `config.json` に定義し、
-GitHub Actions が **30 分ごと**に以下を実行します。
+- **自動スケジュール実行**: GitHub Actions により30分ごとに実行されます。
+- **モジュール式データ抽出**: TypeScript ベースのモジュールエンジンを使用して、製品データ（価格、仕様など）をインテリジェントに抽出します。
+- **視覚的証拠**: Puppeteer を使用して、特定の要素またはページ全体のスクリーンショットを撮影します。
+- **マルチチャネル通知**: JSTタイムスタンプと製品リストを含むリアルタイムアラートを Slack, LINE, Discord に送信します。
+- **堅牢なエンコーディングサポート**: ブラウザ側での文字コード検出とアトミックなバイト転送により、Shift_JIS（過去データ）と UTF-8（最新データ）が混在する環境でも自動的に処理します。
+- **回復力のあるデータ抽出**: テーブルヘッダーが欠損していたり文字化けしている場合でも、データ内容から列インデックス（価格、仕様）を推論するフォールバックロジックを実装しています。
 
-- ページを取得
-- 指定した CSS セレクタ部分を抽出
-- ハッシュ比較で変化を検出
-- 変化があればスクリーンショット撮影（Puppeteer）
-- Slack / LINE / Discord に通知（設定されている場合のみ）
-- 履歴（HTML・スクショ・メタ情報）を `history/` に保存
-- `last_hash.txt` をサイトごとに更新
+## 🏗 アーキテクチャ (Architecture)
 
----
+- **CI ワークフロー**: `.github/workflows/ci.yml` がビルド、テスト、コンパイル済みファイルの更新を担当します。
+- **監視ワークフロー**: `.github/workflows/mon-webpage.yml` が30分ごとに実行され、変更を追跡します。
+- **エンジン**: ブラウザ自動化のための Puppeteer (Chromium)。
+- **ロジック**: 
+  - `src/main.ts`: 監視とスクリーンショットのエントリーポイント。エンコーディング破損を防ぐため、生のファイルバイト列を扱います。
+  - `src/extractor.ts`: 非構造化テーブルに対するフォールバック戦略を備えた、モジュール式データ抽出エンジン。
+- **インフラ**: 定期実行とデプロイのための GitHub Actions。
 
-## 📁 ディレクトリ構成
+## 🔄 ワークフロー (Workflows)
 
-```txt
-/
-├── .github/
-│   └── workflows/
-│       └── mon-webpage.yml   # GitHub Actions 本体
-├── config.json                # 監視対象の設定
-├── history/                   # サイトごとの履歴
-     └── <TARGET_NAME>/
-         ├── last_hash.txt
-         └── 2026-01-08-2130/
-               ├── section.png
-               ├── section.html
-               └── meta.txt
-```
+### 1. Webpage Monitor (`mon-webpage.yml`)
 
----
+- **スケジュール**: 30分ごとに実行。
+- **機能**: 更新チェック、スクリーンショット撮影、データ抽出、通知送信。
+- **自動コミット**: 結果を `history/` ディレクトリに保存します。
 
-## ⚙️ 監視対象の設定（config.json）
+### 2. CI / Build & Test (`ci.yml`)
 
-監視対象は `config.json` に定義します。
+- **トリガー**: `main` ブランチへの Push または Pull Request。
+- **機能**: 依存関係のインストール、`npm run build`、テストの実行。
+- **自動コミット**: `dist/`（コンパイル済みJS）に変更があった場合、自動的にコミットしてリポジトリにプッシュします。これにより、手動でコンパイルしなくてもランタイムコードが常に最新に保たれます。
+
+## 📂 プロジェクト構成
+
+- `src/`: TypeScript ソースコード (信頼できる唯一の情報源)。
+- `dist/`: コンパイル済み JavaScript (GitHub Actions から参照)。
+- `tests/`: 抽出ロジックと回帰テストのためのテストスイート。
+- `scripts/`: テストやメンテナンス用のユーティリティスクリプト。
+- `history/`: 変更検知の履歴 (アーティファクト)。
+- `config.json`: 監視対象の定義。
+
+## 🛠 開発ワークフロー
+
+変更を行う際は、以下の手順に従ってください：
+
+1. **依存関係のインストール**:
+   ```bash
+   npm install
+   ```
+2. **コンパイル**:
+   ```bash
+   npm run build
+   ```
+3. **テスト**:
+   ```bash
+   # カバレッジ付き単体テストの実行
+   npm run test:coverage
+
+   # ロジック回帰テストの実行 (履歴データが必要)
+   node scripts/test-logic-regression.js
+
+   # エンコーディング堅牢性テストの実行 (Shift_JIS/UTF-8 検証)
+   npm run test:encoding
+
+   # アーティファクト検証の実行 (main.js 実行後)
+   node scripts/test-cli.js
+   ```
+4. **ローカル検証**:
+   VS Code のデバッグ構成 "Debug: Main Script (Local Mock)" を使用するか、環境変数を設定して `node dist/main.js` を実行します。
+
+## ⚙️ 設定 (`config.json`)
 
 ```json
 {
   "targets": [
     {
-      "name": "dell_outlets_workstations",
-      "url": "https://jpstore.dell.com/dfo/config.asp?prod=workstation&nav=all",
-      "selector": "#inventoryTable"
+      "name": "target_identifier",
+      "url": "https://example.com/item",
+      "selector": "#target-element",
+      "extractor_type": "dell-outlet"
     }
   ]
 }
 ```
 
-複数サイトを監視したい場合は、配列に追加するだけです。
+- `extractor_type`: 抽出戦略を指定します。現在は `dell-outlet` をサポートしています。省略した場合、データ抽出 (`data.json`) はスキップされます。
 
 ---
 
-## 🔔 通知について
+## 🔧 GitHub セットアップ
 
-Slack、LINE、Discord の通知は、**GitHub Secrets に設定されている場合のみ実行**されます。
+このリポジトリを GitHub 上で設定するための手順です。
 
-設定されていない場合は自動的にスキップされます。
+### ✅ 必須設定 (Required Settings)
 
----
+リポジトリが正しく機能するためには、以下の設定が**必須**です。
 
-## 🧩 GitHub Secrets の設定方法
+#### 1. GitHub Actions の有効化
 
-### 1. Slack Webhook URL（任意）
+1. リポジトリの **Settings** → **Actions** → **General** を開く
+2. **Actions permissions** で「Allow all actions and reusable workflows」を選択
+3. 「Save」をクリック
 
-Slack の Incoming Webhook を作成し、
-GitHub Secrets に以下の名前で登録します。
+> [!NOTE]
+> 各ワークフロー（`mon-webpage.yml`, `ci.yml`）内で `permissions: contents: write` を独自に定義しているため、グローバル設定で「Read and write permissions」を有効にする必要は**ありません**。デフォルトの「Read repository contents...」のままで安全かつ十分です。
 
-```txt
-SLACK_WEBHOOK_URL
-```
+#### 2. Secrets の設定（通知用）
 
----
+通知を使用するには、以下の Secrets を設定してください。設定されていないチャネルはスキップされます。
 
-### 2. Discord Webhook URL（任意）
+| Secret 名 | 説明 | 取得方法 |
+|-----------|------|----------|
+| `SLACK_WEBHOOK_URL` | Slack Incoming Webhook URL | [Slack API](https://api.slack.com/messaging/webhooks) で作成 |
+| `DISCORD_WEBHOOK_URL` | Discord Webhook URL (カンマ区切りで複数指定可) | サーバー設定 → 連携サービス → ウェブフック |
+| `LINE_MESSAGING_API_TOKEN` | LINE Messaging API チャネルアクセストークン | [LINE Developers](https://developers.line.biz/) で Bot を作成 |
+| `LINE_BOT_USER_ID` | 通知先の LINE ユーザー ID | LINE Developers コンソールで確認 |
 
-Discord の Webhook を作成し、
-GitHub Secrets に以下の名前で登録します。
+**手順**:
+1. リポジトリの **Settings** → **Secrets and variables** → **Actions** を開く
+2. **New repository secret** をクリック
+3. Name と Value を入力して保存
 
-```txt
-DISCORD_WEBHOOK_URL
-```
+#### 3. CI ワークフロー設定（オプション）
 
----
+CI ワークフロー (`ci.yml`) は、特別な設定を行わなくても自動的に動作します。ただし、以下の点に注意してください。
 
-## 📱 LINE Messaging API トークンの登録手順（詳細）
-
-LINE Messaging API を使用して通知を送信するため、チャネルアクセストークンとボットのユーザーID を GitHub Secrets に登録する手順です。
-
----
-
-### 1. LINE Developers コンソールにアクセス
-
-以下の URL を開きます：
-
-[https://developers.line.biz/ja/](https://developers.line.biz/ja/)
-
-LINE ビジネスアカウントでログインします。
-
----
-
-### 2. チャネルを作成（または既存のチャネルを使用）
-
-1. **Developers Console** を開く
-2. **チャネル作成** をクリック
-3. **チャネルタイプ**: Messaging API を選択
-4. 必要な情報を入力して作成
+> [!WARNING]
+> `main` ブランチに対して **ブランチ保護ルール**を有効にしている場合、CI ワークフローの **自動コミット機能**（コンパイル済みファイルを `main` にプッシュする機能）は失敗します（Bot が保護をバイパスできないため）。
+>
+> **Free/Pro プラン（個人リポジトリ）の場合:**
+> GitHub の Free プランでは、Bot による保護のバイパスがサポートされていません。CI をパスさせるには以下の手順を推奨します：
+> 1. ローカルで変更後、プッシュ前に `npm run build` を実行する。
+> 2. 更新された `dist/` ディレクトリの内容を手動でコミットに含める。
+> 3. プッシュする（これにより、リポジトリ上の `dist/` がすでに最新状態になるため、CI ワークフローによる自動プッシュが発生せず、エラーを回避できます）。
+>
+> **Enterprise/Organization プランの場合:**
+> 以下の設定により、Bot によるバイパスを許可できます：
+> 1. リポジトリの **Settings** → **Branches** → 対象ルールの **Edit** をクリック。
+> 2. **"Allow specified actors to bypass required pull requests"** をチェック。
+> 3. `github-actions[bot]` を検索して追加。
+> 4. **Save changes** をクリック。
 
 ---
 
-### 3. チャネルアクセストークンを取得
+### 💡 推奨設定 (Best Practices)
 
-1. 作成したチャネルの設定ページを開く
-2. **Messaging API** タブを開く
-3. 「チャネルアクセストークン」の **発行** ボタンをクリック
-4. 表示されたトークンをコピー
+安定運用のための推奨設定です。
 
-⚠️ **この画面でしか表示されません。必ずコピーしてください。**
+#### ブランチ保護ルール (Branch Protection Rules)
 
----
+意図しない変更を防ぐため、メインブランチを保護します。
 
-### 4. ボット自身のユーザーID を取得
+1. **Settings** → **Branches** → **Add branch protection rule**
+2. **Branch name pattern**: `main`
+3. 推奨オプション:
+   - ✅ Require a pull request before merging
+   - ✅ Require status checks to pass before merging
+   - ✅ Require branches to be up to date before merging
+   - ⬜ Do not require approvals (個人リポジトリの場合)
 
-ボットのユーザーID を取得するには、以下の方法があります：
+> [!NOTE]
+> GitHub Actions Bot (`github-actions[bot]`) によるコミットは、これらのルールをバイパスして自動的にプッシュされます。
 
-#### 方法A: LINE Official Account Manager から取得
+#### Dependabot の有効化
 
-1. **LINE Official Account Manager** にアクセス：
-   [https://manager.line.biz/](https://manager.line.biz/)
-2. アカウントを選択
-3. **アカウント設定** → **基本情報** でボットのユーザーID を確認
+依存関係のセキュリティ更新を自動化します。
 
-#### 方法B: Webhook イベントから取得
+1. **Settings** → **Code security and analysis**
+2. **Dependabot alerts**: Enable
+3. **Dependabot security updates**: Enable
 
-1. ボットにメッセージを送信
-2. ワークフロー実行時のログで `sourceUserId` を確認
-3. その値をユーザーID として使用
+#### スケジュール実行に関する注意点
 
----
+- GitHub Actions の cron スケジュールは UTC 基準です。
+- `*/30 * * * *` は「30分ごと」に実行されます（注: GitHub の負荷により数分の遅延が発生する場合があります）。
+- 長期間アクティビティがないリポジトリでは、スケジュール実行が自動的に無効化される場合があります。
 
-### 5. GitHub Secrets に登録する
-
-GitHub リポジトリのページで：
-
-1. **Settings** を開く
-2. 左メニューから **Secrets and variables → Actions**
-3. **New repository secret** をクリック
-4. 以下のように 2 つ登録：
-
-```txt
-Name: LINE_MESSAGING_API_TOKEN
-Value: <チャネルアクセストークン>
-```
-
-```txt
-Name: LINE_BOT_USER_ID
-Value: <ボットのユーザーID>
-```
-
-保存すれば完了です。
+> [!TIP]
+> スケジュール実行が停止した場合は、`workflow_dispatch` 経由で手動実行することで再開できます。
 
 ---
 
-## 🚀 GitHub Actions の動作
+## 🔔 通知 (Notifications)
 
-`.github/workflows/mon-webpage.yml` が 30 分ごとに実行されます。
+ GitHub Secrets の設定が必要です（上記の「Secrets の設定」を参照）。
 
-各ターゲットについて：
+ 各チャネルの動作:
+ - **Slack**: テキストメッセージ + 製品リスト
+ - **Discord**: 埋め込みメッセージ + スクリーンショット画像
+ - **LINE**: テキストメッセージ + Base64 エンコード画像 (Messaging API 使用)
 
-1. ページ取得
-2. 指定セレクタ抽出
-3. ハッシュ比較
-4. 変化があれば
-   - スクショ撮影
-   - 履歴保存
-   - Slack / LINE / Discord に通知
-5. `last_hash.txt` を更新
-6. 最後にまとめてコミット
+## 📜 ライセンス (License)
 
----
-
-## 📸 履歴の例
-
-```txt
-history/dell_inventory/2026-01-08-2130/
-├── section.png
-├── section.html
-└── meta.txt
-```
-
-`meta.txt` には以下が記録されます：
-
-```txt
-Detected at: 2026-01-08 21:30:00
-URL: https://jpstore.dell.com/...
-Selector: #inventoryTable
-Hash: 1234567890abcdef...
-```
-
----
-
-## 🧪 ローカルでのテスト方法
-
-Puppeteer を使うため、Node.js が必要です。
-
-```bash
-npm install
-node scripts/screenshot.js
-```
+MIT
