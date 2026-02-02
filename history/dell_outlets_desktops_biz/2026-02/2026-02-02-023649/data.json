@@ -1,0 +1,47 @@
+[
+  {
+    "price": "\\96,800",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\124,300",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core Ultra 5 235 (14 Core, Up to 5.00GHz, 24MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (2X8GB) Up to 6400MT/s DDR5 CUDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\96,800",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "16GB (2X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe NVMe Gen 4 Class 25 QLC Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KB216 Wired Black Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+  },
+  {
+    "price": "\\96,800",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\132,000",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core Ultra 5 235 (14 Core, Up to 5.00GHz, 24MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "2 x 1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KM5221W Pro Wireless Keyboard and Mouse,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  }
+]
