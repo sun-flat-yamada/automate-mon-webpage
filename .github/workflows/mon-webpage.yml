@@ -157,7 +157,7 @@ jobs:
 
               PRODUCT_LIST=""
               if [ -f data.json ]; then
-                PRODUCT_LIST=$(jq -r '.[] | "- " + .specifications + "\n  💾 " + .memory + " | 💿 " + .hdd + " (" + .price + ")"' data.json | head -n 10)
+                PRODUCT_LIST=$(jq -r '.[] | "- " + .price + " : " + .specifications + " " + .memory + " " + .video_controller + " " + .hdd' data.json | head -n 10)
               fi
               if [ -z "$PRODUCT_LIST" ]; then
                 PRODUCT_LIST="No product details extracted"
