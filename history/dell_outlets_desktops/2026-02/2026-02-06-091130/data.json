@@ -1,0 +1,92 @@
+[
+  {
+    "price": "\\148,500",
+    "specifications": "Dell Tower Desktop ECT1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (1X32GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\148,500",
+    "specifications": "Dell Tower Desktop ECT1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (1X32GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\148,500",
+    "specifications": "Dell Tower Desktop ECT1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (1X32GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\81,400",
+    "specifications": "Dell Slim Desktop ECS1250,Intel Core 14th Generation i5-14400 (10 Core, Up to 4.70GHz, 20MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "8GB (1X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel UHD Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\300,300",
+    "specifications": "Alienware Aurora Gaming Desktop ACT1250,Intel Core Ultra 7 265KF (20 Core, Up to 5.50GHz, 30MB Cache, 125W),Basalt Black",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (2X16GB) 6400MT/s Dual Channel DDR5 XMP",
+    "hdd": "2TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA GeForce RTX 5060 8GB GDDR7",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\107,800",
+    "specifications": "Dell Slim Desktop ECS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\165,000",
+    "specifications": "Dell Slim Desktop ECS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel(R) UHD Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\95,700",
+    "specifications": "Dell Slim Desktop ECS1250,Intel Core 14th Generation i5-14400 (10 Core, Up to 4.70GHz, 20MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel UHD Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\165,000",
+    "specifications": "Dell Slim Desktop ECS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel(R) UHD Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\113,300",
+    "specifications": "Dell Slim Desktop ECS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  }
+]
