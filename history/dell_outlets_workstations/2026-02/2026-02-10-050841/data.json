@@ -1,0 +1,29 @@
+[
+  {
+    "price": "\\194,700",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (2X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe NVMe Gen 4 Class 25 QLC Solid State Drive",
+    "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP adapters)",
+    "others": "Dell KB216 Wired Black Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\242,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM ECC",
+    "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX 2000 Ada 16GB GDDR6 (4 mDP to DP adapters)",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\401,500",
+    "specifications": "Dell Pro Max 16 Plus Laptop MB16250,Intel Core Ultra 7 265HX (20 Core, Up to 5.30GHz, 30MB Cache, 55W),16 inch FHD+ (1920 x 1200) 60Hz 300-nits 45% NTSC Non-Touch Display, WLAN Capable,8MP IR with USB Synapctics Camera, HDR with UPD ready, TNR5,Non-Touch,",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (2X16GB) Up to 6400MT/s DDR5 CSoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX PRO 4000 Blackwell Generation 16GB GDDR7",
+    "others": "6-Cell, 96 WHr Lithium Ion Battery (Express Charge Capable, Long Life Cycle),Single Pointing Backlit Copilot key Keyboard with Numeric Keypad,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  }
+]
