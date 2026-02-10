@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\96,800",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KB216 Wired Black Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\96,800",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  }
+]
