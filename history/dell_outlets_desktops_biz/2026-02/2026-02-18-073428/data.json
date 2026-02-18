@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\159,500",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (1X32GB) Up to 6400MT/s DDR5 CUDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KM5221W Pro Copilot key Black Keyboard and Mouse,No Wireless LAN Card"
+  },
+  {
+    "price": "\\159,500",
+    "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (1X32GB) Up to 6400MT/s DDR5 CUDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KM5221W Pro Copilot key Black Keyboard and Mouse,No Wireless LAN Card"
+  }
+]
