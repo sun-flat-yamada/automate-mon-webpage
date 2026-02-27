@@ -1,0 +1,11 @@
+[
+  {
+    "price": "\\225,500",
+    "specifications": "Precision 3680 Tower Workstation,Intel Core 14th Generation i7-14700K Processor (20 Core, Up to 5.60GHz, 33MB Cache, 125W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive + 2TB 3.5inch SATA Hard Drive (7200 RPM)",
+    "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP)",
+    "others": "Dell KM5221W Pro Wireless Keyboard and Mouse,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+  }
+]

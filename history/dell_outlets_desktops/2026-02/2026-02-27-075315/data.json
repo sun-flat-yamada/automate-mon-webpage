@@ -1,0 +1,29 @@
+[
+  {
+    "price": "\\583,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 9 285 (24 Core, Up to 5.60GHz, 36MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "128GB (4X32GB) Up to 5600MT/s DDR5 UDIMM ECC",
+    "hdd": "2 x 4TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapter)",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\198,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP adapters)",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\583,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 9 285 (24 Core, Up to 5.60GHz, 36MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "128GB (4X32GB) Up to 5600MT/s DDR5 UDIMM ECC",
+    "hdd": "2 x 4TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapter)",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  }
+]
