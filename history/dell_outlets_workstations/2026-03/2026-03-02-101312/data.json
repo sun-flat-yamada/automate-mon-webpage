@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\181,500",
+    "specifications": "Precision 15 - 3591 Laptop,Intel Core Ultra 7 Processor 165H (16 Core, Up to 5.00GHz, 24MB Cache, 28W),15.6 inch FHD (1920 x 1080) Wide View Angle Anti-Glare 60Hz 250-nits Non-Touch Display,FHD HDR RGB Camera with Shutter, Temporal Noise Reduction and Mic",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (1X32GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+    "video_controller": "NVIDIA RTX 500 Ada Generation 4GB GDDR6",
+    "others": "4-Cell, 64 WHr Lithium Ion Battery (Long Life Cycle),Backlit Copilot key Keyboard with Numeric Keypad,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+  },
+  {
+    "price": "\\225,500",
+    "specifications": "Precision 3680 Tower Workstation,Intel Core 14th Generation i7-14700K Processor (20 Core, Up to 5.60GHz, 33MB Cache, 125W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive + 2TB 3.5inch SATA Hard Drive (7200 RPM)",
+    "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP)",
+    "others": "Dell KM5221W Pro Wireless Keyboard and Mouse,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+  }
+]
