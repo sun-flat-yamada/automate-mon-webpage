@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\140,800",
+    "specifications": "Dell Pro Micro Plus Desktop QBM1250,Intel Core Ultra 7 265T (20 Core, Up to 5.30GHz, 30MB Cache, 35W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "512GB PCIe NVMe Gen 4 Class 25 QLC Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+  },
+  {
+    "price": "\\151,800",
+    "specifications": "Dell Pro Micro Plus Desktop QBM1250,Intel Core Ultra 7 265T (20 Core, Up to 5.30GHz, 30MB Cache, 35W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (1X32GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+  }
+]
