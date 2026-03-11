@@ -1,0 +1,38 @@
+[
+  {
+    "price": "\\550,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 9 285 (24 Core, Up to 5.60GHz, 36MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "128GB (4X32GB) Up to 5600MT/s DDR5 UDIMM ECC",
+    "hdd": "2 x 4TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapter)",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\550,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 9 285 (24 Core, Up to 5.60GHz, 36MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "128GB (4X32GB) Up to 5600MT/s DDR5 UDIMM ECC",
+    "hdd": "2 x 4TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapter)",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\264,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "2TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA GeForce RTX 5060 8GB GDDR7",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\308,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "64GB (2X32GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive + 2TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP adapters)",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Qualcomm FastConnect 7800 Wi-Fi 7 2x2 MIMO, HBS, Bluetooth Wireless Card"
+  }
+]
