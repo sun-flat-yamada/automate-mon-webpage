@@ -1,0 +1,12 @@
+# CODEOWNERS - Define code ownership for review requirements
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for all files
+* @sun-flat-yamada
+
+# Critical: Workflow files require owner review
+.github/workflows/ @sun-flat-yamada
+
+# Critical: Security-sensitive configuration
+config.json @sun-flat-yamada
+SECURITY.md @sun-flat-yamada
