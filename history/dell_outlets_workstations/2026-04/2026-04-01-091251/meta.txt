@@ -1,0 +1,5 @@
+Detected at: 2026-04-01T09:12:55Z
+Detected at (JST): 2026-04-01T18:12:55+09:00
+URL: https://jpstore.dell.com/dfo/config.asp?prod=workstation&nav=all
+Selector: 
+Hash: 5a14c30e4a28cc05dcfc4fc6f5b04f26340f37c6d823b40918410ab262ceecb1
