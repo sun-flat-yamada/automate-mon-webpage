@@ -5,8 +5,8 @@
   "description": "Automated webpage monitoring with change detection and notifications",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "test:encoding": "node --loader ts-node/esm scripts/test-encoding-robustness.js",
     "build": "tsc"
   },
