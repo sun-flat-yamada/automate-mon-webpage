@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "types": ["jest", "node", "jsdom"],
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": false
+  },
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
