@@ -3,10 +3,11 @@
   "compilerOptions": {
     "rootDir": "./",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "target": "esnext",
     "types": ["jest", "node", "jsdom"],
     "esModuleInterop": true,
+    "ignoreDeprecations": "6.0",
     "verbatimModuleSyntax": false
   },
   "include": ["src/**/*", "tests/**/*"],
