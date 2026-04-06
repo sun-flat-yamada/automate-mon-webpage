@@ -6,7 +6,7 @@
  *
  * @jest-environment jsdom
  */
-import { getExtractor, DellOutletExtractor, type Product } from '../src/extractor';
+import { getExtractor, DellOutletExtractor, type Product } from '../src/extractor.js';
 
 describe('getExtractor ファクトリ関数', () => {
     test('有効な型名 "dell-outlet" を渡すと DellOutletExtractor を返す', () => {

@@ -2,10 +2,10 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "target": "esnext",
-    "types": ["jest", "node", "jsdom"],
+    "types": ["node"],
     "lib": ["esnext", "dom"],
     "sourceMap": true,
     "declaration": true,
@@ -17,7 +17,6 @@
     "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "ignoreDeprecations": "6.0",
     "skipLibCheck": true,
     "moduleDetection": "force"
   },
