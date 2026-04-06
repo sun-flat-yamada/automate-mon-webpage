@@ -2,12 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": "./",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "target": "esnext",
     "types": ["jest", "node", "jsdom"],
     "esModuleInterop": true,
-    "ignoreDeprecations": "6.0",
     "verbatimModuleSyntax": false
   },
   "include": ["src/**/*", "tests/**/*"],
