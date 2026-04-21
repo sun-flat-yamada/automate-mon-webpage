@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\83,600",
+    "specifications": "OptiPlex 7020 Micro Form Factor,Intel Core 14th Generation i5-14500T Processor (14 Core, Up to 4.80GHz, 24MB Cache, 35W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+    "video_controller": "Intel UHD Graphics",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Realtek RTL 8852BE Wi-Fi 6 2x2 802.11ax MU-MIMO Wireless Card"
+  },
+  {
+    "price": "\\83,600",
+    "specifications": "OptiPlex 7020 Micro Form Factor,Intel Core 14th Generation i5-14500T Processor (14 Core, Up to 4.80GHz, 24MB Cache, 35W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+    "video_controller": "Intel UHD Graphics",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Realtek RTL 8852BE Wi-Fi 6 2x2 802.11ax MU-MIMO Wireless Card"
+  }
+]
