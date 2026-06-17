@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\126,500",
+    "specifications": "Dell Tower Desktop ECT1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\126,500",
+    "specifications": "Dell Tower Desktop ECT1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W),Black",
+    "os_office": "Windows 11 Home",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  }
+]
