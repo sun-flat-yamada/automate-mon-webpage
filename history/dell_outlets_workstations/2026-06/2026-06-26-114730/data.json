@@ -1,0 +1,29 @@
+[
+  {
+    "price": "\\572,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "128GB (4X32GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive + 2 x 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA GeForce RTX 5070 12GB GDDR7 (1xHDMI, 3xDP)",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\313,500",
+    "specifications": "Precision 3680 Tower Workstation,Intel Core 14th Generation i9-14900 Processor (24 Core, Up to 5.80GHz, 36MB Cache, 65W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM ECC",
+    "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX 2000 Ada 16GB GDDR6 (4 mDP to DP adapter)",
+    "others": "Dell KB216 Wired Black Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+  },
+  {
+    "price": "\\330,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 5 245K (14 Core, Up to 5.20GHz, 24MB Cache, 125W),Black",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM ECC",
+    "hdd": "1TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive + 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA RTX 2000 Ada 16GB GDDR6 (4 mDP to DP adapters)",
+    "others": "Dell KB216 Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  }
+]
