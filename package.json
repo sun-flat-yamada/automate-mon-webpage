@@ -19,8 +19,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "iconv-lite": "^0.7.2",
-    "puppeteer": "^25.1.0"
+    "iconv-lite": "^0.7.3",
+    "puppeteer": "^25.3.0"
   },
   "devDependencies": {
     "@types/iconv-lite": "^0.0.1",
