@@ -22,6 +22,22 @@ const VERBOSE = process.env.VERBOSE === "true";
 function readHtmlWithEncoding(filePath) {
   const buffer = fs.readFileSync(filePath);
 
+  const isHistoryFile = filePath.replace(/\\/g, "/").includes("/history/");
+  if (isHistoryFile) {
+    let html = buffer.toString("utf-8");
+    // 整理: Metaタグを除去して UTF-8 を明示
+    html = html.replace(/<meta[^>]*http-equiv=["']?content-type["']?[^>]*>/gi, "");
+    html = html.replace(/<meta[^>]*charset=["']?[a-zA-Z0-9_-]+["']?[^>]*>/gi, "");
+
+    const utf8Meta = '<meta charset="utf-8">';
+    if (html.toLowerCase().includes("<head>")) {
+      html = html.replace(/<head>/i, '<head>' + utf8Meta);
+    } else {
+      html = utf8Meta + html;
+    }
+    return html;
+  }
+
   // Heuristic 1: Charset meta tag
   const snippet = buffer.toString("ascii", 0, 10000);
   const charsetMatch = snippet.match(/charset=["']?([a-zA-Z0-9_-]+)/i);
@@ -86,6 +102,7 @@ async function runTest() {
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await browser.newPage();
+    page.on("console", (msg) => console.log("PAGE LOG:", msg.text()));
 
     for (const target of testTargets) {
       const result = await runSingleTest(page, target);

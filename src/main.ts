@@ -19,31 +19,38 @@ import * as iconv from "iconv-lite";
 function readHtmlWithEncoding(filePath: string): string {
   const buffer = fs.readFileSync(filePath);
 
-  // Heuristic 1: Charset meta tag
-  const snippet = buffer.toString("ascii", 0, 10000);
-  const charsetMatch = snippet.match(/charset=["']?([a-zA-Z0-9_-]+)/i);
-
+  const isHistoryFile = filePath.replace(/\\/g, "/").includes("/history/");
   let html: string;
-  const isDellHistory = filePath.includes("dell_outlets");
 
-  if (charsetMatch && charsetMatch[1]) {
-    const charset = charsetMatch[1].toLowerCase();
-    console.log(`  🔍 Detected charset from meta tag: ${charset}`);
-    if (charset.includes("shift") || charset.includes("sjis")) {
+  if (isHistoryFile) {
+    console.log(`  🔍 Detected history file: defaulting to UTF-8`);
+    html = buffer.toString("utf-8");
+  } else {
+    // Heuristic 1: Charset meta tag
+    const snippet = buffer.toString("ascii", 0, 10000);
+    const charsetMatch = snippet.match(/charset=["']?([a-zA-Z0-9_-]+)/i);
+
+    const isDellHistory = filePath.includes("dell_outlets");
+
+    if (charsetMatch && charsetMatch[1]) {
+      const charset = charsetMatch[1].toLowerCase();
+      console.log(`  🔍 Detected charset from meta tag: ${charset}`);
+      if (charset.includes("shift") || charset.includes("sjis")) {
+        html = iconv.decode(buffer, "Shift_JIS");
+      } else {
+        html = buffer.toString("utf-8");
+      }
+    } else if (
+      buffer.includes(Buffer.from([0x89, 0xbf, 0x8a, 0x69])) || // "価格" in SJIS
+      buffer.includes(Buffer.from([0xb1, 0xb3, 0xc4, 0xda])) || // "ｱｳﾄﾚ" (half-width) in SJIS
+      isDellHistory
+    ) {
+      console.log(`  🔍 Detected Shift_JIS by heuristic (bytes or path: ${isDellHistory})`);
       html = iconv.decode(buffer, "Shift_JIS");
     } else {
+      console.log("  🔍 No specific encoding detected, defaulting to UTF-8");
       html = buffer.toString("utf-8");
     }
-  } else if (
-    buffer.includes(Buffer.from([0x89, 0xbf, 0x8a, 0x69])) || // "価格" in SJIS
-    buffer.includes(Buffer.from([0xb1, 0xb3, 0xc4, 0xda])) || // "ｱｳﾄﾚ" (half-width) in SJIS
-    isDellHistory
-  ) {
-    console.log(`  🔍 Detected Shift_JIS by heuristic (bytes or path: ${isDellHistory})`);
-    html = iconv.decode(buffer, "Shift_JIS");
-  } else {
-    console.log("  🔍 No specific encoding detected, defaulting to UTF-8");
-    html = buffer.toString("utf-8");
   }
 
   console.log(`  🔍 Decoded HTML length: ${html.length}`);
