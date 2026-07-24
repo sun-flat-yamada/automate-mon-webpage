@@ -1,0 +1,5 @@
+Detected at: 2026-07-24T15:02:32Z
+Detected at (JST): 2026-07-25T00:02:32+09:00
+URL: https://jpstore.dell.com/dfo/config.asp?prod=optiplex&nav=all
+Selector: 
+Hash: 63d7195c49860689e0f863fe570adfa6eab9ff696ed8589ff41abd18ce4440cb
