@@ -1,0 +1,5 @@
+Detected at: 2026-08-12T13:16:08Z
+Detected at (JST): 2026-08-12T22:16:08+09:00
+URL: https://jpstore.dell.com/dfo/config.asp?prod=dimension&nav=all
+Selector: 
+Hash: 8ee97b0cf150554ab5358f54996d4ccef1bc9ada4f1f6cd9d23370a58e19f631
