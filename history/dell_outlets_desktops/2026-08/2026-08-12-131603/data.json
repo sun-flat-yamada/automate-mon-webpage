@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\145,200",
+    "specifications": "Dell Slim Desktop ECS1250,Intel Core 14th Generation i7-14700 (20 Core, Up to 5.40GHz, 33MB Cache, 65W)",
+    "os_office": "Windows 11 Home",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel UHD Graphics",
+    "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\198,000",
+    "specifications": "Dell Slim Desktop ECS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+    "os_office": "Windows 11 Home",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  }
+]
