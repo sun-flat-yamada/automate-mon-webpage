@@ -1,0 +1,29 @@
+[
+  {
+    "price": "\\201,300",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (2X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "2TB 3.5inch SATA Hard Drive (7200 RPM);2x 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Qualcomm FastConnect 7800 Wi-Fi 7 2x2 MIMO, HBS, Bluetooth Wireless Card"
+  },
+  {
+    "price": "\\187,000",
+    "specifications": "Dell Pro Max 16 Laptop MC16250,Intel Core Ultra 7 255H (16 Core, Up to 5.10GHz, 24MB Cache, 28W),16 inch FHD+ (1920 x 1200) Wide View Angle Anti-Glare 400-nits Non-Touch Display, WLAN Capable,FHD HDR IR Camera with Shutter, Intelligent Privacy, Temporal N",
+    "os_office": "Windows 11 Pro",
+    "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "Integrated Graphics",
+    "others": "4-Cell, 64 WHr Lithium Ion Battery (Express Charge Capable),Single Pointing Backlit Copilot key Keyboard with Numeric Keypad,Intel Wi-Fi 7 BE201 Wireless Card"
+  },
+  {
+    "price": "\\269,500",
+    "specifications": "Dell Pro Max 16 Plus Laptop MB16250,Intel Core Ultra 9 285HX (24 Core, Up to 5.50GHz, 36MB Cache, 55W),16 inch UHD+ OLED (3840 x 2400) VESA HDR-1000 TrueBlack 500-nits Touch Display, WLAN Capable,8MP 30 fps HDR RGB+IR camera with Ambient light sensor and",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 6400MT/s DDR5 CSoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "6-Cell, 96 WHr Lithium Ion Battery (Express Charge Capable),Single Pointing Backlit Copilot key Keyboard with Numeric Keypad,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  }
+]
