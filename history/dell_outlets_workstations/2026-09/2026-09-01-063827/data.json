@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\330,000",
+    "specifications": "Dell Pro Max Tower T2 Desktop FCT2250 (Dell Outlet),Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+    "hdd": "1TB PCIe M.2 NVMe Opal 2.0 TLC Self Encrypting Gen 5 Class 40 Solid State Drive",
+    "video_controller": "NVIDIA GeForce RTX 5070 12GB GDDR7 (1xHDMI, 3xDP)",
+    "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  },
+  {
+    "price": "\\269,500",
+    "specifications": "Dell Pro Max 16 Plus Laptop MB16250,Intel Core Ultra 9 285HX (24 Core, Up to 5.50GHz, 36MB Cache, 55W),16 inch UHD+ OLED (3840 x 2400) VESA HDR-1000 TrueBlack 500-nits Touch Display, WLAN Capable,8MP 30 fps HDR RGB+IR camera with Ambient light sensor and",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 6400MT/s DDR5 CSoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "6-Cell, 96 WHr Lithium Ion Battery (Express Charge Capable),Single Pointing Backlit Copilot key Keyboard with Numeric Keypad,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+  }
+]
