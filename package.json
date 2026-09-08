@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "iconv-lite": "^0.7.3",
-    "puppeteer": "^25.3.0"
+    "puppeteer": "^25.10.0"
   },
   "devDependencies": {
     "@types/iconv-lite": "^0.0.1",
@@ -30,6 +30,6 @@
     "jest-environment-jsdom": "^30.5.1",
     "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   }
 }
