@@ -34,7 +34,7 @@ A robust webpage monitoring system powered by **GitHub Actions** and **TypeScrip
 
 - **Schedule**: Runs every 30 minutes.
 - **Function**: Checks for updates, captures screenshots, extracts data, and sends notifications.
-- **Auto-Commit**: Saves results to `history/` directory.
+- **Data-Isolated Commit**: Automatically saves results to a dedicated, isolated data branch (`history` branch). The `main` branch contains only code and configuration, allowing effortless upstream synchronization (Sync Fork) without merge conflicts.
 
 ### 2. CI / Build & Test (`ci.yml`)
 
@@ -46,9 +46,10 @@ A robust webpage monitoring system powered by **GitHub Actions** and **TypeScrip
 
 - `src/`: TypeScript source code (The Source of Truth).
 - `dist/`: Compiled JavaScript (Referenced by GitHub Actions).
-- `tests/`: Test suite for extraction logic and regressions.
+- `tests/`: Test suite for extraction logic and regressions (`tests/fixtures/` contains static fixtures for regression tests).
 - `scripts/`: Utility scripts for testing and maintenance.
-- `history/`: Change detection history (artifacts).
+- `history/`: Change detection history (artifacts, isolated on dedicated `history` branch).
+- `.agent/`: Specialized skills and rules for AI agents (Fork management knowledge, selector finding, etc.).
 - `config.json`: Monitoring targets definition.
 
 ## 🛠 Development Workflow
@@ -211,7 +212,29 @@ Channel Behavior:
 - **Discord**: Embedded message + Screenshot image
 - **LINE**: Text message + Base64 encoded image (Uses Messaging API)
 
-## 🤝 Contribution & Support
+---
+
+## 🍴 Fork Management & Knowledge
+
+If you fork this repository to monitor your own target pages, you benefit from built-in fork-friendly architecture:
+
+### Key Features
+- **Zero-Conflict Sync Fork**: Runtime monitoring data is stored in the dedicated `history` branch. Synchronizing upstream code changes never triggers merge conflicts.
+- **Zero-Config on Fork**: When GitHub Actions runs for the first time in a fork, the workflow automatically initializes an isolated `history` branch.
+- **Clean Pull Requests**: When submitting enhancements or fixes to upstream, runtime data will not leak into your PR.
+
+### Fork Management Agent Knowledge (Rules & Skills)
+The repository embeds specialized agent instructions and skills:
+- **Rules**: `.agent/rules/fork_management.md` (Role definitions of `upstream` vs `origin`, branch isolation)
+- **Skills**: `.agent/skills/fork_management/SKILL.md`
+- **Helper Script**:
+  ```bash
+  # Check remotes and data isolation status
+  node .agent/skills/fork_management/scripts/fork-helper.js status
+
+  # Safely sync latest main from upstream
+  node .agent/skills/fork_management/scripts/fork-helper.js sync
+  ```
 
 Contributions are welcome! If you find this extension useful, please consider supporting its development.
 

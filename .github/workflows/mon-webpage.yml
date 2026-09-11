@@ -61,6 +61,28 @@ jobs:
           # Install Node.js dependencies
           npm ci
 
+      - name: Setup history data branch
+        shell: bash
+        run: |
+          set -e
+          git config --global credential.helper store
+          echo "https://x-access-token:${GITHUB_TOKEN}@github.com" > ~/.git-credentials
+
+          # Check if history branch exists on origin remote
+          if git ls-remote --exit-code --heads origin history > /dev/null 2>&1; then
+            echo "Branch 'history' found on origin. Cloning history data..."
+            git clone --branch history --single-branch "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" history
+          else
+            echo "Branch 'history' not found on origin. Initializing new isolated history branch (Fork-compatible)..."
+            mkdir -p history
+            cd history
+            git init -b history
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            cd ..
+          fi
+
       - name: Process all targets
         shell: bash
         run: |
@@ -142,6 +164,7 @@ jobs:
               DETECTED_TIME_JST=$(TZ=Asia/Tokyo date +"%Y-%m-%dT%H:%M:%S+09:00")
               echo "Detected at: $DETECTED_TIME" > "$BASE_DIR/meta.txt"
               echo "Detected at (JST): $DETECTED_TIME_JST" >> "$BASE_DIR/meta.txt"
+              echo "Repository: $GITHUB_REPOSITORY" >> "$BASE_DIR/meta.txt"
               echo "URL: $TARGET_URL" >> "$BASE_DIR/meta.txt"
               echo "Selector: $TARGET_SELECTOR" >> "$BASE_DIR/meta.txt"
               echo "Hash: $NEW_HASH" >> "$BASE_DIR/meta.txt"
@@ -259,18 +282,25 @@ jobs:
 
           done
 
-      - name: Commit and push changes
+      - name: Commit and push history changes
         shell: bash
         run: |
           set -e
+          cd history
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global credential.helper store
           echo "https://x-access-token:${GITHUB_TOKEN}@github.com" > ~/.git-credentials
-          git add history/
+
+          # Ensure origin remote is set with current repository
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" 2>/dev/null || \
+            git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          git add .
           if git diff --staged --exit-code > /dev/null; then
-            echo "No changes to commit"
+            echo "No changes in history to commit"
           else
-            git commit -m "Update history for all monitored sites"
-            git push origin main
+            git commit -m "Update history for all monitored sites [skip ci]"
+            git push -u origin history
+            echo "Successfully pushed history updates to 'history' branch"
           fi

@@ -52,3 +52,7 @@ tests/logs/
 tmp/
 temp/
 *.tmp
+
+# Monitoring history (managed in dedicated 'history' branch, isolated from code)
+history/
+
