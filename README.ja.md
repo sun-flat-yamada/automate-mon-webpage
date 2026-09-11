@@ -34,7 +34,7 @@
 
 - **スケジュール**: 30分ごとに実行。
 - **機能**: 更新チェック、スクリーンショット撮影、データ抽出、通知送信。
-- **自動コミット**: 結果を `history/` ディレクトリに保存します。
+- **データ分離コミット**: 結果を独立したデータ専用ブランチ（`history` ブランチ）に自動保存します。`main` ブランチにはコードのみが保持されるため、リポジトリを Fork（フォーク）した場合でも本家からの更新同期（Sync Fork）がコンフリクトなく行えます。
 
 ### 2. CI / Build & Test (`ci.yml`)
 
@@ -46,9 +46,10 @@
 
 - `src/`: TypeScript ソースコード (信頼できる唯一の情報源)。
 - `dist/`: コンパイル済み JavaScript (GitHub Actions から参照)。
-- `tests/`: 抽出ロジックと回帰テストのためのテストスイート。
+- `tests/`: 抽出ロジックと回帰テストのためのテストスイート（`tests/fixtures/` に回帰テスト用フィクスチャを同梱）。
 - `scripts/`: テストやメンテナンス用のユーティリティスクリプト。
-- `history/`: 変更検知の履歴 (アーティファクト)。
+- `history/`: 変更検知の履歴 (アーティファクト、専用の `history` ブランチで分離管理)。
+- `.agent/`: エージェント用スキル・ルール（Fork 運用ナレッジ、セレクタ探索など）。
 - `config.json`: 監視対象の定義。
 
 ## 🛠 開発ワークフロー
@@ -211,7 +212,29 @@ GitHub Secrets の設定が必要です（上記の「Secrets の設定」を参
 - **Discord**: 埋め込みメッセージ + スクリーンショット画像
 - **LINE**: テキストメッセージ + Base64 エンコード画像 (Messaging API 使用)
 
-## 🤝 Contribution & Support
+---
+
+## 🍴 Fork（フォーク）して運用する場合 (Fork Management)
+
+本リポジトリを Fork して独自のウェブページ監視を行う場合、以下の利点と手順があります：
+
+### 特徴
+- **競合ゼロの Sync Fork**: 監視履歴データは独立した `history` ブランチに保存されるため、本家（`upstream`）の機能更新を取り込む際に Git コンフリクトが一切発生しません。
+- **Zero-Config on Fork**: Fork 直後、`history` ブランチが存在しない場合でも、初回実行時にワークフローが自動的に orphan ブランチとして初期化してプッシュします。
+- **クリーンな PR**: 本家に機能改善やバグ修正の Pull Request を送る際、監視データが混入しません。
+
+### Fork 運用ナレッジ（Skills & Rules）
+リポジトリ内にエージェント向けの Fork 運用ナレッジが組み込まれています：
+- **Rules**: `.agent/rules/fork_management.md`（upstream と origin の区別、データ分離の原則）
+- **Skills**: `.agent/skills/fork_management/SKILL.md`
+- **ヘルパースクリプト**:
+  ```bash
+  # リモート設定とデータ分離状態の確認
+  node .agent/skills/fork_management/scripts/fork-helper.js status
+
+  # upstream からの安全な最新コード同期
+  node .agent/skills/fork_management/scripts/fork-helper.js sync
+  ```
 
 Contributions are welcome! If you find this extension useful, please consider supporting its development.
 

@@ -15,7 +15,7 @@ This repository (`automate-mon-webpage`) is a periodic webpage monitoring system
 - **Core Logic**: `scripts/screenshot.js` (Puppeteer for visual capture).
 - **Parser**: `pup` (CLI HTML parser) and `jq` are used in the GitHub Actions environment for content extraction and comparison.
 - **Config**: `config.json` defines monitoring targets.
-- **History**: `history/<target_name>/` stores artifacts.
+- **History**: `history/<target_name>/` stores artifacts, isolated on the dedicated `history` branch.
 
 ## Documentation Policy
 
@@ -30,4 +30,4 @@ This repository (`automate-mon-webpage`) is a periodic webpage monitoring system
 ## Safety and Integrity
 
 - **Config Validation**: `config.json` must be valid JSON with unique names.
-- **History Preservation**: do not delete `history/` files unless explicitly requested.
+- **Data Isolation**: Never commit runtime `history/` data to the `main` branch. Persistent data belongs strictly to the `history` branch.

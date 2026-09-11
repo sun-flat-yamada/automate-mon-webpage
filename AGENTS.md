@@ -14,6 +14,8 @@
 - **Config Discovery**: 新しいサイトを追加する際は、`extractor_type` フィールドを `config.json` に追加し、対応するクラスを `extractor.ts` のファクトリに登録せよ。
 - **Zero-Downtime CI**: `.github/workflows/ci.yml` はビルドとテストが必須ステップとなっている。これらをスキップする変更は許容されない。このワークフローは `dist/` の自動コミットを行うが、ブランチ保護ルールによりブロックされる可能性がある点に留意せよ。
 - **Encoding Invariant**: 日本語サイト（特に Shift_JIS 混在）を扱うため、ブラウザ側での文字コード検出と、Node.js 側での `iconv-lite` / `fetch` (atomic byte transfer) の併用を徹底せよ。Unicode エスケープ（例: ﾒﾓﾘ `\uff92\uff93\uff98`）の使用時は正確性を検証せよ。
+- **Data Isolation Invariant**: 監視履歴データ（`history/`）は `main` ブランチにコミットしてはならない。永続化データは独立した `history` ブランチで管理され、Fork 先でもコンフリクトなく `upstream/main` と同期できる構造を厳格に維持せよ。
+- **Fork Safety**: Fork 先での運用時は `upstream`（本家）と `origin`（フォーク先）を明確に区別せよ。`.agent/rules/fork_management.md` および `.agent/skills/fork_management/` を遵守せよ。
 
 ## 🔄 標準開発フロー (Required Development Flow)
 

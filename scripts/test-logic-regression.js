@@ -22,8 +22,8 @@ const VERBOSE = process.env.VERBOSE === "true";
 function readHtmlWithEncoding(filePath) {
   const buffer = fs.readFileSync(filePath);
 
-  const isHistoryFile = filePath.replace(/\\/g, "/").includes("/history/");
-  if (isHistoryFile) {
+  const isHistoryOrFixture = filePath.replace(/\\/g, "/").includes("/history/") || filePath.replace(/\\/g, "/").includes("/fixtures/");
+  if (isHistoryOrFixture) {
     let html = buffer.toString("utf-8");
     // 整理: Metaタグを除去して UTF-8 を明示
     html = html.replace(/<meta[^>]*http-equiv=["']?content-type["']?[^>]*>/gi, "");
@@ -144,40 +144,56 @@ async function runTest() {
 
 function findTestTargets() {
   const targets = [];
+  const FIXTURES_DIR = path.join(process.cwd(), "tests", "fixtures", "regression");
 
-  if (!fs.existsSync(HISTORY_DIR)) {
-    return targets;
-  }
+  if (fs.existsSync(HISTORY_DIR)) {
+    const targetDirs = fs.readdirSync(HISTORY_DIR, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
 
-  const targetDirs = fs.readdirSync(HISTORY_DIR, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => d.name);
-
-  for (const targetName of targetDirs) {
-    const targetPath = path.join(HISTORY_DIR, targetName);
-    const monthDirs = fs.readdirSync(targetPath, { withFileTypes: true })
-      .filter((d) => d.isDirectory() && /^\d{4}-\d{2}$/.test(d.name))
-      .map((d) => d.name)
-      .sort()
-      .reverse();
-
-    for (const month of monthDirs) {
-      const monthPath = path.join(targetPath, month);
-      const snapshots = fs.readdirSync(monthPath, { withFileTypes: true })
-        .filter((d) => d.isDirectory())
+    for (const targetName of targetDirs) {
+      const targetPath = path.join(HISTORY_DIR, targetName);
+      const monthDirs = fs.readdirSync(targetPath, { withFileTypes: true })
+        .filter((d) => d.isDirectory() && /^\d{4}-\d{2}$/.test(d.name))
         .map((d) => d.name)
         .sort()
         .reverse();
 
-      if (snapshots.length > 0) {
-        const htmlPath = path.join(monthPath, snapshots[0], "section.html");
-        if (fs.existsSync(htmlPath)) {
-          targets.push({
-            name: `${targetName}/${month}/${snapshots[0]}`,
-            htmlPath,
-          });
-          break;
+      for (const month of monthDirs) {
+        const monthPath = path.join(targetPath, month);
+        const snapshots = fs.readdirSync(monthPath, { withFileTypes: true })
+          .filter((d) => d.isDirectory())
+          .map((d) => d.name)
+          .sort()
+          .reverse();
+
+        if (snapshots.length > 0) {
+          const htmlPath = path.join(monthPath, snapshots[0], "section.html");
+          if (fs.existsSync(htmlPath)) {
+            targets.push({
+              name: `${targetName}/${month}/${snapshots[0]}`,
+              htmlPath,
+            });
+            break;
+          }
         }
+      }
+    }
+  }
+
+  // Fallback: If no history targets found, use static fixtures for CI/Fork reliability
+  if (targets.length === 0 && fs.existsSync(FIXTURES_DIR)) {
+    const fixtureDirs = fs.readdirSync(FIXTURES_DIR, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
+
+    for (const fixtureName of fixtureDirs) {
+      const htmlPath = path.join(FIXTURES_DIR, fixtureName, "section.html");
+      if (fs.existsSync(htmlPath)) {
+        targets.push({
+          name: `fixtures/${fixtureName}`,
+          htmlPath,
+        });
       }
     }
   }
