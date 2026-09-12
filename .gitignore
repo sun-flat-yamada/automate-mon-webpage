@@ -56,3 +56,8 @@ temp/
 # Monitoring history (managed in dedicated 'history' branch, isolated from code)
 history/
 
+# Analytics report build artifacts (managed in dedicated 'gh-pages' branch, isolated from code)
+site/
+gh_pages_deploy/
+
+

@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   check:
@@ -88,6 +90,7 @@ jobs:
         run: |
           set -e -o pipefail
 
+          ANY_CHANGED=false
           TARGET_COUNT=$(jq '.targets | length' config.json)
 
           for i in $(seq 0 $(($TARGET_COUNT - 1))); do
@@ -133,6 +136,7 @@ jobs:
 
             if [ "$CHANGED" = true ]; then
               echo "Change detected for $TARGET_NAME"
+              ANY_CHANGED=true
 
               TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
               TIMESTAMP_YEAR_MONTH=${TIMESTAMP:0:7}
@@ -282,6 +286,8 @@ jobs:
 
           done
 
+          echo "ANY_CHANGED=$ANY_CHANGED" >> "$GITHUB_ENV"
+
       - name: Commit and push history changes
         shell: bash
         run: |
@@ -304,3 +310,76 @@ jobs:
             git push -u origin history
             echo "Successfully pushed history updates to 'history' branch"
           fi
+
+      - name: Generate analytics report
+        if: env.ANY_CHANGED == 'true' || github.event_name == 'workflow_dispatch'
+        shell: bash
+        run: |
+          set -e
+          echo "Change detected or manual trigger. Generating latest analytics report..."
+          node dist/analytics/cli.js --history history --output site --config config.json
+          # Create .nojekyll to prevent Jekyll from ignoring files
+          touch site/.nojekyll
+
+      - name: Deploy report to gh-pages branch (Fork-Safe)
+        if: env.ANY_CHANGED == 'true' || github.event_name == 'workflow_dispatch'
+        shell: bash
+        run: |
+          set -e
+          echo "Deploying report to 'gh-pages' branch..."
+          git config --global credential.helper store
+          echo "https://x-access-token:${GITHUB_TOKEN}@github.com" > ~/.git-credentials
+
+          if git ls-remote --exit-code --heads origin gh-pages > /dev/null 2>&1; then
+            echo "Branch 'gh-pages' found on origin. Cloning..."
+            git clone --branch gh-pages --single-branch "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh_pages_deploy
+          else
+            echo "Branch 'gh-pages' not found on origin. Initializing new isolated gh-pages branch (Fork-compatible)..."
+            mkdir -p gh_pages_deploy
+            cd gh_pages_deploy
+            git init -b gh-pages
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            cd ..
+          fi
+
+          # Sync generated site files
+          cp -rf site/* gh_pages_deploy/
+          cp -f site/.nojekyll gh_pages_deploy/ 2>/dev/null || true
+
+          cd gh_pages_deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Ensure origin remote is set with current repository
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" 2>/dev/null || \
+            git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          git add .
+          if git diff --staged --exit-code > /dev/null; then
+            echo "No changes in analytics report to commit"
+          else
+            git commit -m "Update analytics report on GitHub Pages [skip ci]"
+            git push -u origin gh-pages
+            echo "Successfully pushed report updates to 'gh-pages' branch"
+          fi
+          cd ..
+
+      - name: Setup Pages
+        if: env.ANY_CHANGED == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/configure-pages@v5
+        continue-on-error: true
+
+      - name: Upload Pages artifact
+        if: env.ANY_CHANGED == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "site"
+        continue-on-error: true
+
+      - name: Deploy to GitHub Pages
+        if: env.ANY_CHANGED == 'true' || github.event_name == 'workflow_dispatch'
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true

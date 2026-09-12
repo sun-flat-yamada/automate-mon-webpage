@@ -22,12 +22,13 @@
 - 実行時の監視データ（`history/`）やローカルの一時生成物を `main` に**コミットしてはなりません**。
 - フォーク先では、`main` を常に `upstream/main` と同期させておきます。フォーク先で `main` に直接コミットせず、変更は必ずトピックブランチ上で行います。
 
-### 2. 永続化データ専用の `history` ブランチ
+### 2. 永続化データおよびレポート専用の `history` と `gh-pages` ブランチ
 - すべての監視データ（`section.html`, `section.png`, `data.json`, `meta.txt`, `last_hash.txt`）は、**`history` ブランチ** にのみ永続化されます。
-- `history` ブランチはリポジトリごとに完全に独立して動作します：
-  - `upstream` では公式の監視履歴を記録します。
-  - `origin`（フォーク先）では、本家に影響を与えることなくフォーク先独自の監視履歴を記録します。
-- `history` が `main` から完全に分離されているため、フォーク先は GitHub の「Sync Fork」ボタンや `git merge --ff-only upstream/main` を使用して、**コンフリクトゼロ** でいつでも本家の最新コードを取り込むことができます。
+- 生成された分析レポート・ダッシュボード（`index.html`, `report.json`）は、**`gh-pages` ブランチ**（および GitHub Pages アーティファクト）にのみデプロイされます。
+- `history` および `gh-pages` ブランチはリポジトリごとに完全に独立して動作します：
+  - `upstream` では公式の監視履歴およびレポートを記録します。
+  - `origin`（フォーク先）では、本家に影響を与えることなくフォーク先独自の監視履歴およびレポートを記録します。
+- `history` と `gh-pages` が `main` から完全に分離されているため、フォーク先は GitHub の「Sync Fork」ボタンや `git merge --ff-only upstream/main` を使用して、**コンフリクトゼロ** でいつでも本家の最新コードを取り込むことができます。
 
 ### 3. フォークからの Pull Request ガイドライン
 - 本家（`upstream`）に対して Pull Request を送信する場合：

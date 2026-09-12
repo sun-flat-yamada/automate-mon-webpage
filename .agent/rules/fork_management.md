@@ -23,12 +23,13 @@ When this repository (`automate-mon-webpage`) is forked, development and operati
 - **NEVER** commit runtime monitoring data (`history/`) or local artifacts to `main`.
 - In a fork, keep `main` aligned with `upstream/main`. Do not make direct commits on `main` in the fork. Always create feature branches for changes.
 
-### 2. Dedicated `history` Branch for Persistent Data
-- All runtime monitoring data (`section.html`, `section.png`, `data.json`, `meta.txt`, `last_hash.txt`) is persisted strictly on the **`history`** branch.
-- The `history` branch operates independently per repository:
-  - In `upstream`, it records canonical monitoring history.
-  - In `origin` (the fork), it records the fork's own monitoring history without affecting upstream.
-- Because `history` is completely isolated from `main`, forks can synchronize with `upstream/main` anytime using GitHub's "Sync Fork" or `git merge --ff-only upstream/main` with **zero merge conflicts**.
+### 2. Dedicated `history` and `gh-pages` Branches for Persistent Data & Reports
+- All runtime monitoring raw data (`section.html`, `section.png`, `data.json`, `meta.txt`, `last_hash.txt`) is persisted strictly on the **`history`** branch.
+- Generated analytics reports and dashboards (`index.html`, `report.json`) are deployed strictly to the **`gh-pages`** branch (and GitHub Pages artifacts).
+- Both `history` and `gh-pages` branches operate independently per repository:
+  - In `upstream`, they record canonical monitoring history and reports.
+  - In `origin` (the fork), they record the fork's own monitoring history and reports without affecting upstream.
+- Because `history` and `gh-pages` are completely isolated from `main`, forks can synchronize with `upstream/main` anytime using GitHub's "Sync Fork" or `git merge --ff-only upstream/main` with **zero merge conflicts**.
 
 ### 3. Pull Request Guidelines for Fork Contributors
 - When creating a Pull Request to `upstream`:
