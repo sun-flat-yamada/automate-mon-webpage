@@ -348,7 +348,7 @@ Hash: abc12345`;
 
   describe("レポート生成およびファイル出力", () => {
     test("renderReportHtml: HTML が正しくレンダリングされ、重要キーワードが含まれる", () => {
-      const report = analyzeHistory("/non/existent/dir", []);
+      const report = analyzeHistory("/non/existent/dir", [], { repository: "custom-user/custom-repo" });
       const html = renderReportHtml(report);
       expect(html).toContain("Dell Outlet 在庫監視・予測ダッシュボード");
       expect(html).toContain("在庫滞留時間 (最短)");
@@ -356,6 +356,8 @@ Hash: abc12345`;
       expect(html).toContain("在庫増の遷移");
       expect(html).toContain("在庫減の遷移");
       expect(html).toContain("予測情報");
+      expect(html).toContain("https://github.com/custom-user/custom-repo");
+      expect(html).toContain("custom-user/custom-repo");
     });
 
     test("generateReportFiles: 一時ディレクトリに index.html と report.json を出力する", () => {

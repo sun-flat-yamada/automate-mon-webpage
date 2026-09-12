@@ -113,6 +113,10 @@ export function renderReportHtml(report: FullAnalysisReport): string {
     ? `${overall.stockIn.peakHour.hour}:00 〜 ${overall.stockIn.peakHour.hour + 1}:00 (${overall.stockIn.peakHour.count}件, ${overall.stockIn.peakHour.percentage}%)`
     : "集計中";
 
+  const repo = report.repository || "";
+  const repoUrl = repo ? `https://github.com/${repo}` : "https://github.com";
+  const repoDisplayName = repo ? repo : "GitHub Repository";
+
   // 全ターゲットデータ埋め込み用 JSON
   const reportDataJson = JSON.stringify(report).replace(/</g, "\\u003c");
 
@@ -448,6 +452,42 @@ export function renderReportHtml(report: FullAnalysisReport): string {
       font-family: var(--mono);
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .github-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .github-link-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .github-icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
     .text-mono { font-family: var(--mono); font-size: 0.8125rem; }
     .text-bold { font-weight: 700; }
     .text-accent { color: var(--accent); }
@@ -478,7 +518,13 @@ export function renderReportHtml(report: FullAnalysisReport): string {
           最終更新: <strong id="header-updated">${escapeHtml(report.generatedAtJst)}</strong> (JST)
         </div>
       </div>
-      <div>
+      <div class="header-actions">
+        <a id="repo-link" class="github-link-btn" href="${repoUrl}" target="_blank" rel="noopener noreferrer">
+          <svg class="github-icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+          </svg>
+          <span id="repo-name">${escapeHtml(repoDisplayName)}</span>
+        </a>
         <span class="badge" style="background: var(--success-light); color: var(--success); border: 1px solid var(--success); font-size: 0.875rem;">
           ● 監視稼働中 (自動更新)
         </span>
@@ -659,12 +705,45 @@ export function renderReportHtml(report: FullAnalysisReport): string {
   <footer>
     <div class="container">
       <p>Automate Mon Webpage Analytics Report &bull; Data Isolation &amp; Fork-Safe GitHub Pages</p>
+      <p style="margin-top: 6px;">
+        <a id="footer-repo-link" href="${repoUrl}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">
+          GitHub Repository
+        </a>
+      </p>
     </div>
   </footer>
 
   <!-- クライアントサイドでの動的ターゲット切り替えロジック -->
   <script>
     const reportData = ${reportDataJson};
+
+    // クライアント側での動的リポジトリURL補正（Fork 互換）
+    (function resolveDynamicRepoLink() {
+      const repoLinkEl = document.getElementById("repo-link");
+      const repoNameEl = document.getElementById("repo-name");
+      const footerLinkEl = document.getElementById("footer-repo-link");
+
+      let repo = reportData.repository;
+      // GitHub Pages (xxx.github.io/yyy/) での動的検出
+      if (!repo && window.location.hostname.endsWith(".github.io")) {
+        const owner = window.location.hostname.replace(".github.io", "");
+        const pathParts = window.location.pathname.split("/").filter(Boolean);
+        const repoName = pathParts[0] || "";
+        if (owner && repoName) {
+          repo = owner + "/" + repoName;
+        }
+      }
+
+      if (repo) {
+        const fullUrl = "https://github.com/" + repo;
+        if (repoLinkEl) repoLinkEl.href = fullUrl;
+        if (repoNameEl) repoNameEl.innerText = repo;
+        if (footerLinkEl) {
+          footerLinkEl.href = fullUrl;
+          footerLinkEl.innerText = "GitHub: " + repo;
+        }
+      }
+    })();
 
     function formatDuration(minutes) {
       if (minutes === null || minutes === undefined) return "N/A";

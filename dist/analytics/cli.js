@@ -6,12 +6,32 @@
  */
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { execSync } from "node:child_process";
 import { analyzeHistory } from "./analyzer.js";
 import { generateReportFiles, printReportSummary } from "./reporter.js";
+function detectGitRepository() {
+    // 1. GitHub Actions 環境変数
+    if (process.env.GITHUB_REPOSITORY) {
+        return process.env.GITHUB_REPOSITORY;
+    }
+    // 2. ローカル git remote origin url からの抽出
+    try {
+        const remoteUrl = execSync("git config --get remote.origin.url", { encoding: "utf-8" }).trim();
+        const match = /github\.com[:/]([^/]+)\/([^/.]+)(?:\.git)?$/.exec(remoteUrl);
+        if (match && match[1] && match[2]) {
+            return `${match[1]}/${match[2]}`;
+        }
+    }
+    catch {
+        // ignore
+    }
+    return undefined;
+}
 function parseArgs(args) {
     let historyDir = "history";
     let outputDir = "site";
     let configPath = "config.json";
+    let repository = detectGitRepository();
     for (let i = 0; i < args.length; i++) {
         const arg = args[i];
         if (arg === "--history" && i + 1 < args.length) {
@@ -23,8 +43,11 @@ function parseArgs(args) {
         else if (arg === "--config" && i + 1 < args.length) {
             configPath = args[++i];
         }
+        else if (arg === "--repository" && i + 1 < args.length) {
+            repository = args[++i];
+        }
     }
-    return { historyDir, outputDir, configPath };
+    return { historyDir, outputDir, configPath, repository };
 }
 function getTargetNames(configPath, historyDir) {
     const targetNames = [];
@@ -79,10 +102,13 @@ export async function run() {
     console.log(`  Config File       : ${args.configPath}`);
     const targets = getTargetNames(args.configPath, args.historyDir);
     console.log(`  Target Monitored  : [${targets.join(", ")}]`);
+    if (args.repository) {
+        console.log(`  GitHub Repository : ${args.repository}`);
+    }
     if (!fs.existsSync(args.historyDir)) {
         console.warn(`Warning: History directory '${args.historyDir}' does not exist.`);
     }
-    const report = analyzeHistory(args.historyDir, targets);
+    const report = analyzeHistory(args.historyDir, targets, { repository: args.repository });
     const { htmlPath, jsonPath } = generateReportFiles(report, { outputDir: args.outputDir });
     printReportSummary(report);
     console.log(`✅ Analysis report generated successfully!`);

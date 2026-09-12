@@ -56,5 +56,7 @@ export declare function generatePrediction(stockIn: StockInTrend, stockOut: Stoc
 /**
  * history ディレクトリから全ターゲットを読み込み、完全な分析レポートを構築する
  */
-export declare function analyzeHistory(historyDir: string, targets: string[]): FullAnalysisReport;
+export declare function analyzeHistory(historyDir: string, targets: string[], options?: {
+    repository?: string | undefined;
+}): FullAnalysisReport;
 //# sourceMappingURL=analyzer.d.ts.map

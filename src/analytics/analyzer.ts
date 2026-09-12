@@ -587,12 +587,17 @@ export function generatePrediction(stockIn: StockInTrend, stockOut: StockOutStat
 /**
  * history ディレクトリから全ターゲットを読み込み、完全な分析レポートを構築する
  */
-export function analyzeHistory(historyDir: string, targets: string[]): FullAnalysisReport {
+export function analyzeHistory(
+  historyDir: string,
+  targets: string[],
+  options?: { repository?: string | undefined }
+): FullAnalysisReport {
   const targetAnalyses: TargetAnalysis[] = [];
   const allEvents: StockEvent[] = [];
   let totalSnapshotsCount = 0;
   let allMinDate: Date | null = null;
   let allMaxDate: Date | null = null;
+  let detectedRepo: string | undefined = options?.repository;
 
   for (const target of targets) {
     // ターゲットディレクトリの解決:
@@ -608,6 +613,15 @@ export function analyzeHistory(historyDir: string, targets: string[]): FullAnaly
 
     const snapshots = loadTargetSnapshots(targetPath, target);
     totalSnapshotsCount += snapshots.length;
+
+    if (!detectedRepo) {
+      for (const s of snapshots) {
+        if (s.meta?.repository) {
+          detectedRepo = s.meta.repository;
+          break;
+        }
+      }
+    }
 
     if (snapshots.length > 0) {
       const firstSnap = snapshots[0]!;
@@ -662,6 +676,7 @@ export function analyzeHistory(historyDir: string, targets: string[]): FullAnaly
 
   return {
     generatedAtJst,
+    repository: detectedRepo,
     overall,
     targets: targetAnalyses,
   };
