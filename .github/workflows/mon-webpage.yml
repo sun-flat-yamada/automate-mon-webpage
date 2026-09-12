@@ -317,7 +317,7 @@ jobs:
         run: |
           set -e
           echo "Change detected or manual trigger. Generating latest analytics report..."
-          node dist/analytics/cli.js --history history --output site --config config.json
+          node dist/analytics/cli.js --history history --output site --config config.json --repository "$GITHUB_REPOSITORY"
           # Create .nojekyll to prevent Jekyll from ignoring files
           touch site/.nojekyll
 

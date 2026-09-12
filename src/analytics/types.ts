@@ -124,7 +124,7 @@ export interface OverallAnalysis {
 
 export interface FullAnalysisReport {
   generatedAtJst: string;
-  repository?: string;
+  repository?: string | undefined;
   overall: OverallAnalysis;
   targets: TargetAnalysis[];
 }
