@@ -15,6 +15,8 @@ A robust webpage monitoring system powered by **GitHub Actions** and **TypeScrip
 - **Modular Data Extraction**: Intelligent extraction of product data (prices, specs) using a TypeScript-based modular engine.
 - **Visual Evidence**: Captures element-specific or full-page screenshots using Puppeteer.
 - **Multi-Channel Notifications**: Real-time alerts with JST timestamps and product lists sent to Slack, LINE, and Discord.
+- **GitHub Pages Analytics & Prediction Dashboard**: Visualizes **stock addition trends (weekday/hour patterns & next stock-in prediction)** and **stock removal transitions (duration to sell-out, shortest and median duration)** in a responsive dashboard, automatically updated upon change detection.
+- **Fork-Safe Data Isolation**: Monitoring history data (`history` branch) and analytical report builds (`gh-pages` branch) are kept completely isolated from the `main` branch, ensuring zero merge conflicts when syncing with upstream.
 - **Robust Encoding Support**: Automatically handles mixed environments (Shift_JIS historical data vs UTF-8 modern data) with browser-side charset detection and atomic byte transfer.
 - **Resilient Data Extraction**: Implements fallback logic to infer column indices (Price, Specs) even when table headers are missing or garbled.
 
@@ -26,6 +28,7 @@ A robust webpage monitoring system powered by **GitHub Actions** and **TypeScrip
 - **Logic**:
   - `src/main.ts`: Entry point for monitoring and screenshots. Handles raw file bytes to prevent encoding corruption.
   - `src/extractor.ts`: Modular data extraction engine with fallback strategies for unstructured tables.
+  - `src/analytics/`: Stock event tracking, duration statistics (min/median), trend prediction, and GitHub Pages dashboard generator.
 - **Infrastructure**: GitHub Actions for periodic execution and deployment.
 
 ## 🔄 Workflows
@@ -34,7 +37,8 @@ A robust webpage monitoring system powered by **GitHub Actions** and **TypeScrip
 
 - **Schedule**: Runs every 30 minutes.
 - **Function**: Checks for updates, captures screenshots, extracts data, and sends notifications.
-- **Data-Isolated Commit**: Automatically saves results to a dedicated, isolated data branch (`history` branch). The `main` branch contains only code and configuration, allowing effortless upstream synchronization (Sync Fork) without merge conflicts.
+- **Data-Isolated Commit**: Automatically saves results to a dedicated, isolated data branch (`history` branch).
+- **GitHub Pages Auto-Update**: Automatically runs the analytics engine on new data detection (or manual dispatch) to generate updated forecasts and deploy to the `gh-pages` branch and GitHub Pages. The `main` branch contains only code and configuration, allowing effortless upstream synchronization (Sync Fork) without merge conflicts.
 
 ### 2. CI / Build & Test (`ci.yml`)
 
