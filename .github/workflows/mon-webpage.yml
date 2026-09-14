@@ -381,5 +381,5 @@ jobs:
       - name: Deploy to GitHub Pages
         if: env.ANY_CHANGED == 'true' || github.event_name == 'workflow_dispatch'
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         continue-on-error: true
