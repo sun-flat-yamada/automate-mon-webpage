@@ -1,0 +1,20 @@
+[
+  {
+    "price": "\\99,000",
+    "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
+    "os_office": "Windows 11 Home",
+    "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "AMD Radeon 660M Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  },
+  {
+    "price": "\\104,500",
+    "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
+    "os_office": "Windows 11 Pro",
+    "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "AMD Radeon 660M Graphics",
+    "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+  }
+]
