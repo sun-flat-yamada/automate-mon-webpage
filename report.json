@@ -1,13 +1,13 @@
 {
-  "generatedAtJst": "2026-09-17T18:36:08.789+09:00",
+  "generatedAtJst": "2026-09-19T02:48:12.704+09:00",
   "repository": "sun-flat-yamada/automate-mon-webpage",
   "overall": {
-    "totalSnapshots": 9,
-    "currentStockCount": 8,
+    "totalSnapshots": 10,
+    "currentStockCount": 9,
     "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-    "lastSnapshotDate": "2026-09-17T18:36:04.000+09:00",
+    "lastSnapshotDate": "2026-09-19T02:48:08.000+09:00",
     "stockIn": {
-      "totalAdded": 10,
+      "totalAdded": 11,
       "byDayOfWeek": [
         {
           "day": 0,
@@ -28,7 +28,7 @@
           "dayName": "Tue",
           "dayNameJa": "火",
           "count": 1,
-          "percentage": 10
+          "percentage": 9.1
         },
         {
           "day": 3,
@@ -42,7 +42,7 @@
           "dayName": "Thu",
           "dayNameJa": "木",
           "count": 9,
-          "percentage": 90
+          "percentage": 81.8
         },
         {
           "day": 5,
@@ -55,15 +55,15 @@
           "day": 6,
           "dayName": "Sat",
           "dayNameJa": "土",
-          "count": 0,
-          "percentage": 0
+          "count": 1,
+          "percentage": 9.1
         }
       ],
       "peakDay": {
         "dayName": "Thu",
         "dayNameJa": "木",
         "count": 9,
-        "percentage": 90
+        "percentage": 81.8
       },
       "byHour": [
         {
@@ -78,8 +78,8 @@
         },
         {
           "hour": 2,
-          "count": 0,
-          "percentage": 0
+          "count": 1,
+          "percentage": 9.1
         },
         {
           "hour": 3,
@@ -134,12 +134,12 @@
         {
           "hour": 13,
           "count": 9,
-          "percentage": 90
+          "percentage": 81.8
         },
         {
           "hour": 14,
           "count": 1,
-          "percentage": 10
+          "percentage": 9.1
         },
         {
           "hour": 15,
@@ -190,11 +190,28 @@
       "peakHour": {
         "hour": 13,
         "count": 9,
-        "percentage": 90
+        "percentage": 81.8
       },
-      "averageIntervalHours": null,
-      "medianIntervalHours": null,
+      "averageIntervalHours": 83.8,
+      "medianIntervalHours": 83.8,
       "recentEvents": [
+        {
+          "id": "evt-in-3",
+          "type": "in",
+          "timestamp": "2026-09-18T17:48:08.000Z",
+          "timestampJstStr": "2026-09-19T02:48:08.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\121,000",
+            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "Integrated Graphics",
+            "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+          },
+          "productSignature": "\\121,000 | Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W) | 16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
+        },
         {
           "id": "evt-in-1",
           "type": "in",
@@ -647,15 +664,16 @@
     "prediction": {
       "nextStockIn": {
         "recommendedDays": [
-          "木曜日 (90%)",
-          "火曜日 (10%)"
+          "木曜日 (81.8%)",
+          "火曜日 (9.1%)"
         ],
         "recommendedHours": [
           13,
+          2,
           14
         ],
         "confidence": "Medium",
-        "summary": "過去の傾向から、特に【木曜日 (90%)・火曜日 (10%)】の【13:00〜14:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
+        "summary": "過去の傾向から、特に【木曜日 (81.8%)・火曜日 (9.1%)】の【13:00〜14:00、2:00〜3:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
       },
       "purchaseUrgency": {
         "fastSelloutMinutes": 328,
@@ -1802,12 +1820,22 @@
     },
     {
       "targetName": "dell_outlets_desktops_biz",
-      "currentStock": [],
-      "totalSnapshots": 3,
+      "currentStock": [
+        {
+          "price": "\\121,000",
+          "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+          "video_controller": "Integrated Graphics",
+          "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+        }
+      ],
+      "totalSnapshots": 4,
       "firstSnapshotDate": "2026-09-12T08:04:38.000+09:00",
-      "lastSnapshotDate": "2026-09-15T20:35:41.000+09:00",
+      "lastSnapshotDate": "2026-09-19T02:48:08.000+09:00",
       "stockIn": {
-        "totalAdded": 1,
+        "totalAdded": 2,
         "byDayOfWeek": [
           {
             "day": 0,
@@ -1828,7 +1856,7 @@
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 1,
-            "percentage": 100
+            "percentage": 50
           },
           {
             "day": 3,
@@ -1855,15 +1883,15 @@
             "day": 6,
             "dayName": "Sat",
             "dayNameJa": "土",
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 50
           }
         ],
         "peakDay": {
           "dayName": "Tue",
           "dayNameJa": "火",
           "count": 1,
-          "percentage": 100
+          "percentage": 50
         },
         "byHour": [
           {
@@ -1878,8 +1906,8 @@
           },
           {
             "hour": 2,
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 50
           },
           {
             "hour": 3,
@@ -1939,7 +1967,7 @@
           {
             "hour": 14,
             "count": 1,
-            "percentage": 100
+            "percentage": 50
           },
           {
             "hour": 15,
@@ -1988,13 +2016,30 @@
           }
         ],
         "peakHour": {
-          "hour": 14,
+          "hour": 2,
           "count": 1,
-          "percentage": 100
+          "percentage": 50
         },
-        "averageIntervalHours": null,
-        "medianIntervalHours": null,
+        "averageIntervalHours": 83.8,
+        "medianIntervalHours": 83.8,
         "recentEvents": [
+          {
+            "id": "evt-in-3",
+            "type": "in",
+            "timestamp": "2026-09-18T17:48:08.000Z",
+            "timestampJstStr": "2026-09-19T02:48:08.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\121,000",
+              "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "Integrated Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+            },
+            "productSignature": "\\121,000 | Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W) | 16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
+          },
           {
             "id": "evt-in-1",
             "type": "in",
@@ -2256,13 +2301,15 @@
       "prediction": {
         "nextStockIn": {
           "recommendedDays": [
-            "火曜日 (100%)"
+            "火曜日 (50%)",
+            "土曜日 (50%)"
           ],
           "recommendedHours": [
+            2,
             14
           ],
           "confidence": "Low",
-          "summary": "過去の傾向から、特に【火曜日 (100%)】の【14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
+          "summary": "過去の傾向から、特に【火曜日 (50%)・土曜日 (50%)】の【2:00〜3:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
         },
         "purchaseUrgency": {
           "fastSelloutMinutes": 338,
