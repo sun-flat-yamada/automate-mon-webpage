@@ -1,13 +1,13 @@
 {
-  "generatedAtJst": "2026-09-25T09:42:36.220+09:00",
+  "generatedAtJst": "2026-09-25T14:58:11.746+09:00",
   "repository": "sun-flat-yamada/automate-mon-webpage",
   "overall": {
-    "totalSnapshots": 12,
-    "currentStockCount": 6,
+    "totalSnapshots": 13,
+    "currentStockCount": 7,
     "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-    "lastSnapshotDate": "2026-09-25T09:42:32.000+09:00",
+    "lastSnapshotDate": "2026-09-25T14:58:07.000+09:00",
     "stockIn": {
-      "totalAdded": 11,
+      "totalAdded": 12,
       "byDayOfWeek": [
         {
           "day": 0,
@@ -28,7 +28,7 @@
           "dayName": "Tue",
           "dayNameJa": "火",
           "count": 1,
-          "percentage": 9.1
+          "percentage": 8.3
         },
         {
           "day": 3,
@@ -42,28 +42,28 @@
           "dayName": "Thu",
           "dayNameJa": "木",
           "count": 9,
-          "percentage": 81.8
+          "percentage": 75
         },
         {
           "day": 5,
           "dayName": "Fri",
           "dayNameJa": "金",
-          "count": 0,
-          "percentage": 0
+          "count": 1,
+          "percentage": 8.3
         },
         {
           "day": 6,
           "dayName": "Sat",
           "dayNameJa": "土",
           "count": 1,
-          "percentage": 9.1
+          "percentage": 8.3
         }
       ],
       "peakDay": {
         "dayName": "Thu",
         "dayNameJa": "木",
         "count": 9,
-        "percentage": 81.8
+        "percentage": 75
       },
       "byHour": [
         {
@@ -79,7 +79,7 @@
         {
           "hour": 2,
           "count": 1,
-          "percentage": 9.1
+          "percentage": 8.3
         },
         {
           "hour": 3,
@@ -134,12 +134,12 @@
         {
           "hour": 13,
           "count": 9,
-          "percentage": 81.8
+          "percentage": 75
         },
         {
           "hour": 14,
-          "count": 1,
-          "percentage": 9.1
+          "count": 2,
+          "percentage": 16.7
         },
         {
           "hour": 15,
@@ -190,11 +190,28 @@
       "peakHour": {
         "hour": 13,
         "count": 9,
-        "percentage": 81.8
+        "percentage": 75
       },
-      "averageIntervalHours": 83.8,
-      "medianIntervalHours": 83.8,
+      "averageIntervalHours": 138.8,
+      "medianIntervalHours": 138.8,
       "recentEvents": [
+        {
+          "id": "evt-in-5",
+          "type": "in",
+          "timestamp": "2026-09-25T05:58:07.000Z",
+          "timestampJstStr": "2026-09-25T14:58:07.000+09:00",
+          "target": "dell_outlets_desktops",
+          "product": {
+            "price": "\\104,500",
+            "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "AMD Radeon 660M Graphics",
+            "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+          },
+          "productSignature": "\\104,500 | AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Pro"
+        },
         {
           "id": "evt-in-3",
           "type": "in",
@@ -724,16 +741,16 @@
     "prediction": {
       "nextStockIn": {
         "recommendedDays": [
-          "木曜日 (81.8%)",
-          "火曜日 (9.1%)"
+          "木曜日 (75%)",
+          "火曜日 (8.3%)"
         ],
         "recommendedHours": [
           13,
-          2,
-          14
+          14,
+          2
         ],
         "confidence": "Medium",
-        "summary": "過去の傾向から、特に【木曜日 (81.8%)・火曜日 (9.1%)】の【13:00〜14:00、2:00〜3:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
+        "summary": "過去の傾向から、特に【木曜日 (75%)・火曜日 (8.3%)】の【13:00〜14:00、14:00〜15:00、2:00〜3:00 (JST)】に入荷が集中する傾向があります。"
       },
       "purchaseUrgency": {
         "fastSelloutMinutes": 328,
@@ -1393,12 +1410,22 @@
     },
     {
       "targetName": "dell_outlets_desktops",
-      "currentStock": [],
-      "totalSnapshots": 3,
+      "currentStock": [
+        {
+          "price": "\\104,500",
+          "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+          "video_controller": "AMD Radeon 660M Graphics",
+          "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+        }
+      ],
+      "totalSnapshots": 4,
       "firstSnapshotDate": "2026-09-12T08:04:33.000+09:00",
-      "lastSnapshotDate": "2026-09-25T09:42:32.000+09:00",
+      "lastSnapshotDate": "2026-09-25T14:58:07.000+09:00",
       "stockIn": {
-        "totalAdded": 2,
+        "totalAdded": 3,
         "byDayOfWeek": [
           {
             "day": 0,
@@ -1433,14 +1460,14 @@
             "dayName": "Thu",
             "dayNameJa": "木",
             "count": 2,
-            "percentage": 100
+            "percentage": 66.7
           },
           {
             "day": 5,
             "dayName": "Fri",
             "dayNameJa": "金",
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 33.3
           },
           {
             "day": 6,
@@ -1454,7 +1481,7 @@
           "dayName": "Thu",
           "dayNameJa": "木",
           "count": 2,
-          "percentage": 100
+          "percentage": 66.7
         },
         "byHour": [
           {
@@ -1525,12 +1552,12 @@
           {
             "hour": 13,
             "count": 2,
-            "percentage": 100
+            "percentage": 66.7
           },
           {
             "hour": 14,
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 33.3
           },
           {
             "hour": 15,
@@ -1581,11 +1608,28 @@
         "peakHour": {
           "hour": 13,
           "count": 2,
-          "percentage": 100
+          "percentage": 66.7
         },
-        "averageIntervalHours": null,
-        "medianIntervalHours": null,
+        "averageIntervalHours": 193.8,
+        "medianIntervalHours": 193.8,
         "recentEvents": [
+          {
+            "id": "evt-in-5",
+            "type": "in",
+            "timestamp": "2026-09-25T05:58:07.000Z",
+            "timestampJstStr": "2026-09-25T14:58:07.000+09:00",
+            "target": "dell_outlets_desktops",
+            "product": {
+              "price": "\\104,500",
+              "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "AMD Radeon 660M Graphics",
+              "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+            },
+            "productSignature": "\\104,500 | AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Pro"
+          },
           {
             "id": "evt-in-1",
             "type": "in",
@@ -1884,13 +1928,15 @@
       "prediction": {
         "nextStockIn": {
           "recommendedDays": [
-            "木曜日 (100%)"
+            "木曜日 (66.7%)",
+            "金曜日 (33.3%)"
           ],
           "recommendedHours": [
-            13
+            13,
+            14
           ],
           "confidence": "Low",
-          "summary": "過去の傾向から、特に【木曜日 (100%)】の【13:00〜14:00 (JST)】に入荷が集中する傾向があります。"
+          "summary": "過去の傾向から、特に【木曜日 (66.7%)・金曜日 (33.3%)】の【13:00〜14:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
         },
         "purchaseUrgency": {
           "fastSelloutMinutes": 11314,
