@@ -1,13 +1,13 @@
 {
-  "generatedAtJst": "2026-09-25T14:58:11.746+09:00",
+  "generatedAtJst": "2026-09-26T01:51:51.012+09:00",
   "repository": "sun-flat-yamada/automate-mon-webpage",
   "overall": {
-    "totalSnapshots": 13,
-    "currentStockCount": 7,
+    "totalSnapshots": 14,
+    "currentStockCount": 8,
     "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-    "lastSnapshotDate": "2026-09-25T14:58:07.000+09:00",
+    "lastSnapshotDate": "2026-09-26T01:51:46.000+09:00",
     "stockIn": {
-      "totalAdded": 12,
+      "totalAdded": 13,
       "byDayOfWeek": [
         {
           "day": 0,
@@ -28,7 +28,7 @@
           "dayName": "Tue",
           "dayNameJa": "火",
           "count": 1,
-          "percentage": 8.3
+          "percentage": 7.7
         },
         {
           "day": 3,
@@ -42,28 +42,28 @@
           "dayName": "Thu",
           "dayNameJa": "木",
           "count": 9,
-          "percentage": 75
+          "percentage": 69.2
         },
         {
           "day": 5,
           "dayName": "Fri",
           "dayNameJa": "金",
           "count": 1,
-          "percentage": 8.3
+          "percentage": 7.7
         },
         {
           "day": 6,
           "dayName": "Sat",
           "dayNameJa": "土",
-          "count": 1,
-          "percentage": 8.3
+          "count": 2,
+          "percentage": 15.4
         }
       ],
       "peakDay": {
         "dayName": "Thu",
         "dayNameJa": "木",
         "count": 9,
-        "percentage": 75
+        "percentage": 69.2
       },
       "byHour": [
         {
@@ -73,13 +73,13 @@
         },
         {
           "hour": 1,
-          "count": 0,
-          "percentage": 0
+          "count": 1,
+          "percentage": 7.7
         },
         {
           "hour": 2,
           "count": 1,
-          "percentage": 8.3
+          "percentage": 7.7
         },
         {
           "hour": 3,
@@ -134,12 +134,12 @@
         {
           "hour": 13,
           "count": 9,
-          "percentage": 75
+          "percentage": 69.2
         },
         {
           "hour": 14,
           "count": 2,
-          "percentage": 16.7
+          "percentage": 15.4
         },
         {
           "hour": 15,
@@ -190,11 +190,28 @@
       "peakHour": {
         "hour": 13,
         "count": 9,
-        "percentage": 75
+        "percentage": 69.2
       },
-      "averageIntervalHours": 138.8,
-      "medianIntervalHours": 138.8,
+      "averageIntervalHours": 148.2,
+      "medianIntervalHours": 167.1,
       "recentEvents": [
+        {
+          "id": "evt-in-5",
+          "type": "in",
+          "timestamp": "2026-09-25T16:51:46.000Z",
+          "timestampJstStr": "2026-09-26T01:51:46.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\159,500",
+            "specifications": "Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\159,500 | Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W) | 16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height | Windows 11 Pro"
+        },
         {
           "id": "evt-in-5",
           "type": "in",
@@ -741,16 +758,16 @@
     "prediction": {
       "nextStockIn": {
         "recommendedDays": [
-          "木曜日 (75%)",
-          "火曜日 (8.3%)"
+          "木曜日 (69.2%)",
+          "土曜日 (15.4%)"
         ],
         "recommendedHours": [
           13,
           14,
-          2
+          1
         ],
         "confidence": "Medium",
-        "summary": "過去の傾向から、特に【木曜日 (75%)・火曜日 (8.3%)】の【13:00〜14:00、14:00〜15:00、2:00〜3:00 (JST)】に入荷が集中する傾向があります。"
+        "summary": "過去の傾向から、特に【木曜日 (69.2%)・土曜日 (15.4%)】の【13:00〜14:00、14:00〜15:00、1:00〜2:00 (JST)】に入荷が集中する傾向があります。"
       },
       "purchaseUrgency": {
         "fastSelloutMinutes": 328,
@@ -1948,12 +1965,22 @@
     },
     {
       "targetName": "dell_outlets_desktops_biz",
-      "currentStock": [],
-      "totalSnapshots": 5,
+      "currentStock": [
+        {
+          "price": "\\159,500",
+          "specifications": "Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        }
+      ],
+      "totalSnapshots": 6,
       "firstSnapshotDate": "2026-09-12T08:04:38.000+09:00",
-      "lastSnapshotDate": "2026-09-19T15:29:44.000+09:00",
+      "lastSnapshotDate": "2026-09-26T01:51:46.000+09:00",
       "stockIn": {
-        "totalAdded": 2,
+        "totalAdded": 3,
         "byDayOfWeek": [
           {
             "day": 0,
@@ -1974,7 +2001,7 @@
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 1,
-            "percentage": 50
+            "percentage": 33.3
           },
           {
             "day": 3,
@@ -2001,15 +2028,15 @@
             "day": 6,
             "dayName": "Sat",
             "dayNameJa": "土",
-            "count": 1,
-            "percentage": 50
+            "count": 2,
+            "percentage": 66.7
           }
         ],
         "peakDay": {
-          "dayName": "Tue",
-          "dayNameJa": "火",
-          "count": 1,
-          "percentage": 50
+          "dayName": "Sat",
+          "dayNameJa": "土",
+          "count": 2,
+          "percentage": 66.7
         },
         "byHour": [
           {
@@ -2019,13 +2046,13 @@
           },
           {
             "hour": 1,
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 33.3
           },
           {
             "hour": 2,
             "count": 1,
-            "percentage": 50
+            "percentage": 33.3
           },
           {
             "hour": 3,
@@ -2085,7 +2112,7 @@
           {
             "hour": 14,
             "count": 1,
-            "percentage": 50
+            "percentage": 33.3
           },
           {
             "hour": 15,
@@ -2134,13 +2161,30 @@
           }
         ],
         "peakHour": {
-          "hour": 2,
+          "hour": 1,
           "count": 1,
-          "percentage": 50
+          "percentage": 33.3
         },
-        "averageIntervalHours": 83.8,
-        "medianIntervalHours": 83.8,
+        "averageIntervalHours": 125.5,
+        "medianIntervalHours": 125.5,
         "recentEvents": [
+          {
+            "id": "evt-in-5",
+            "type": "in",
+            "timestamp": "2026-09-25T16:51:46.000Z",
+            "timestampJstStr": "2026-09-26T01:51:46.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\159,500",
+              "specifications": "Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\159,500 | Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W) | 16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height | Windows 11 Pro"
+          },
           {
             "id": "evt-in-3",
             "type": "in",
@@ -2439,15 +2483,16 @@
       "prediction": {
         "nextStockIn": {
           "recommendedDays": [
-            "火曜日 (50%)",
-            "土曜日 (50%)"
+            "土曜日 (66.7%)",
+            "火曜日 (33.3%)"
           ],
           "recommendedHours": [
+            1,
             2,
             14
           ],
           "confidence": "Low",
-          "summary": "過去の傾向から、特に【火曜日 (50%)・土曜日 (50%)】の【2:00〜3:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
+          "summary": "過去の傾向から、特に【土曜日 (66.7%)・火曜日 (33.3%)】の【1:00〜2:00、2:00〜3:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
         },
         "purchaseUrgency": {
           "fastSelloutMinutes": 338,
