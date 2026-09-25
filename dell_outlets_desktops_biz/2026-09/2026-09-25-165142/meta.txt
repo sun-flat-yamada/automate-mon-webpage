@@ -1,0 +1,6 @@
+Detected at: 2026-09-25T16:51:46Z
+Detected at (JST): 2026-09-26T01:51:46+09:00
+Repository: sun-flat-yamada/automate-mon-webpage
+URL: https://jpstore.dell.com/dfo/config.asp?prod=optiplex&nav=all
+Selector: 
+Hash: 8ad8105e36198053fce97cbf6328477b1f24caac1af4e69f379f68dd73ce2611
