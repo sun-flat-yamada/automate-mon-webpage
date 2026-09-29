@@ -1,0 +1,6 @@
+Detected at: 2026-09-29T04:58:37Z
+Detected at (JST): 2026-09-29T13:58:37+09:00
+Repository: sun-flat-yamada/automate-mon-webpage
+URL: https://jpstore.dell.com/dfo/config.asp?prod=workstation&nav=all
+Selector: 
+Hash: 03c5ea8ee18f34425c011eee9a0e7ee64e0f8a4ca8785896b5a38df0d7633ff4
