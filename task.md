@@ -1,0 +1,43 @@
+# タスク進捗管理: プロジェクトレビューと改善点報告
+
+## 状況・フェーズ
+- [x] 現状調査・インベントリ確認
+  - [x] プロジェクト構成・設定ファイル（package.json, tsconfig.json 等）確認
+  - [x] ソースコード構成（src/）確認
+  - [x] テスト・スクリプト（tests/, scripts/）確認
+  - [x] CI/CD ワークフロー（.github/workflows/）確認
+- [x] ビルド・テスト実行検証（ベースライン確認）
+  - [x] `npm run build` (成功)
+  - [x] `npm test` (成功: 39 tests passed)
+  - [x] `npm run test:encoding` (成功: SJIS & UTF-8 mock passed)
+  - [x] `node scripts/test-logic-regression.js` (成功: 3 regression fixtures passed)
+  - [x] `node scripts/test-cli.js` (仕様確認: 成果物検証スクリプト)
+  - [x] `npm audit` (22 件の脆弱性検出: Critical 1, High 1)
+- [x] 詳細コードレビュー・課題抽出
+  - [x] アーキテクチャ・設計（Extractorの3重実装・二重同期漏れ、デッドコード）
+  - [x] TypeScript・型安全性・コーディング規約（`any` の混入、ESLint/Prettier不在）
+  - [x] エラーハンドリング・フォールバック設計（文字コード、セレクタフォールバック）
+  - [x] テスト容易性・テストカバレッジ・回帰防止（テスト対象と本番実行ロジックの乖離）
+  - [x] CI/CD・運用安全性・セキュリティ（LINE API Base64不可バグ、pup外部依存、Pages重複デプロイ、audit脆弱性）
+  - [x] ドキュメント・保守性（AGENTS.mdと実コードの乖離、Pythonスクリプト残存）
+- [x] 改善提案の整理とレポート作成
+  - [x] 重要度・優先度別の改善点まとめ
+  - [x] 具体的な推奨アクション・実装例の提示
+  - [x] 最終報告の作成
+- [x] GitHub Issue 作成
+  - [x] #85: fix: LINE Messaging API image notification fails due to unsupported Base64 Data URI
+  - [x] #86: sec: resolve dependency vulnerabilities reported by npm audit
+  - [x] #87: refactor: unify extraction logic into BaseExtractor and eliminate 3-way code duplication
+  - [x] #88: perf: replace unmaintained pup binary with Node.js/Cheerio in workflow
+  - [x] #89: ci: expand CI test coverage and streamline GitHub Pages deployment
+  - [x] #90: dx: introduce linter/formatter (ESLint, Prettier) and config.json schema validation
+  - [x] #91: chore: clean up legacy Python script and test-encoding runner options
+
+## Issue #85 対応 (fix: LINE Messaging API image notification fails due to unsupported Base64 Data URI)
+- [x] サブエージェントによる対応
+  - [x] 原因調査・仕様確認 (LINE Messaging API では Data URI / Base64 は非対応、HTTPS URL のみ)
+  - [x] `.github/workflows/mon-webpage.yml` の修正 (Base64 画像ペイロード削除、jq による安全な JSON 生成、URL 追加)
+  - [x] ワークフローの構文チェックおよびテスト検証 (`npm test`, `npm run build`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
+  - [x] Git コミットおよび PR / Issue 連携準備
+
+
