@@ -193,7 +193,14 @@ jobs:
               # === Slack 通知 ===
               if [ -n "$SLACK_WEBHOOK_URL" ]; then
                 echo "Sending Slack notification..."
-                SLACK_DATA="{\"text\":\"🔔 Update detected: *$TARGET_NAME*\\nTime: $DETECTED_TIME_JST (JST)\\n\\n*Products:*\\n$PRODUCT_LIST\"}"
+                SLACK_DATA=$(jq -n \
+                  --arg title "🔔 Update detected: *$TARGET_NAME*" \
+                  --arg url "$TARGET_URL" \
+                  --arg time "$DETECTED_TIME_JST (JST)" \
+                  --arg products "$PRODUCT_LIST" \
+                  '{
+                    text: "\($title)\nURL: \($url)\nTime: \($time)\n\n*Products:*\n\($products)"
+                  }')
                 curl -X POST -H 'Content-type: application/json' \
                   --data "$SLACK_DATA" \
                   "$SLACK_WEBHOOK_URL" || echo "Failed to send Slack notification"
@@ -202,34 +209,21 @@ jobs:
               # === LINE 通知 ===
               if [ -n "$LINE_MESSAGING_API_TOKEN" ] && [ -n "$LINE_BOT_USER_ID" ]; then
                 echo "Sending LINE notification via Messaging API..."
-
-                if [ "$HAS_SCREENSHOT" = true ]; then
-                  IMAGE_BASE64=$(base64 -w 0 section.png)
-                  LINE_PAYLOAD="{
-                    \"to\": \"$LINE_BOT_USER_ID\",
-                    \"messages\": [
+                LINE_PAYLOAD=$(jq -n \
+                  --arg to "$LINE_BOT_USER_ID" \
+                  --arg title "🔔 Update detected: $TARGET_NAME" \
+                  --arg url "$TARGET_URL" \
+                  --arg time "$DETECTED_TIME_JST (JST)" \
+                  --arg products "$PRODUCT_LIST" \
+                  '{
+                    to: $to,
+                    messages: [
                       {
-                        \"type\": \"text\",
-                        \"text\": \"🔔 Update detected: $TARGET_NAME\\nTime: $DETECTED_TIME_JST (JST)\\n\\nProducts:\\n$PRODUCT_LIST\"
-                      },
-                      {
-                        \"type\": \"image\",
-                        \"originalContentUrl\": \"data:image/png;base64,$IMAGE_BASE64\",
-                        \"previewImageUrl\": \"data:image/png;base64,$IMAGE_BASE64\"
+                        type: "text",
+                        text: "\($title)\nURL: \($url)\nTime: \($time)\n\nProducts:\n\($products)"
                       }
                     ]
-                  }"
-                else
-                  LINE_PAYLOAD="{
-                    \"to\": \"$LINE_BOT_USER_ID\",
-                    \"messages\": [
-                      {
-                        \"type\": \"text\",
-                        \"text\": \"🔔 Update detected: $TARGET_NAME\\nTime: $DETECTED_TIME_JST (JST)\\n\\nProducts:\\n$PRODUCT_LIST\"
-                      }
-                    ]
-                  }"
-                fi
+                  }')
 
                 curl -X POST \
                   -H "Authorization: Bearer $LINE_MESSAGING_API_TOKEN" \
