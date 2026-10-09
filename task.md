@@ -38,6 +38,13 @@
   - [x] 原因調査・仕様確認 (LINE Messaging API では Data URI / Base64 は非対応、HTTPS URL のみ)
   - [x] `.github/workflows/mon-webpage.yml` の修正 (Base64 画像ペイロード削除、jq による安全な JSON 生成、URL 追加)
   - [x] ワークフローの構文チェックおよびテスト検証 (`npm test`, `npm run build`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
+  - [x] Git コミットおよび PR / Issue 連携準備 (PR #92 マージ完了、Issue #85 クローズ)
+
+## Issue #86 対応 (sec: resolve dependency vulnerabilities reported by npm audit)
+- [x] サブエージェントによる対応
+  - [x] 脆弱性状況の調査 (handlebars Critical, brace-expansion High, sprintf-js Moderate)
+  - [x] 依存関係の安全なアップデート (`npm audit fix` および `package.json` の overrides 適用)
+  - [x] 全テスト実行による互換性・回帰検証 (`npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
   - [x] Git コミットおよび PR / Issue 連携準備
 
 
