@@ -1,0 +1,24 @@
+# Build & Dependencies
+dist/
+node_modules/
+package-lock.json
+
+# Test outputs, coverage, & fixtures/mocks
+coverage/
+tests/logs/
+tests/logs_*/
+tests/fixtures/
+**/*.html
+
+# Monitoring history & deployed sites
+history/
+site/
+gh_pages_deploy/
+
+# Tools & Scratch
+tools/
+
+# Temporary files
+*.tmp
+tmp/
+temp/

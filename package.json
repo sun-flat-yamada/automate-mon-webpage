@@ -8,7 +8,11 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "test:encoding": "node --loader ts-node/esm scripts/test-encoding-robustness.js",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "webpage",
@@ -24,14 +28,21 @@
     "puppeteer": "^25.11.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/iconv-lite": "^0.0.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^26.6.1",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
     "jest": "^30.5.1",
     "jest-environment-jsdom": "^30.5.1",
+    "prettier": "^3.9.10",
     "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.1"
   },
   "overrides": {
     "sprintf-js": "^1.1.3",

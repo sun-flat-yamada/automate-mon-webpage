@@ -130,12 +130,12 @@
 
 通知を使用するには、以下の Secrets を設定してください。設定されていないチャネルはスキップされます。
 
-| Secret 名 | 説明 | 取得方法 |
-| --- | --- | --- |
-| `SLACK_WEBHOOK_URL` | Slack Incoming Webhook URL | [Slack API](https://api.slack.com/messaging/webhooks) で作成 |
-| `DISCORD_WEBHOOK_URL` | Discord Webhook URL (カンマ区切りで複数指定可) | サーバー設定 → 連携サービス → ウェブフック |
-| `LINE_MESSAGING_API_TOKEN` | LINE Messaging API チャネルアクセストークン | [LINE Developers](https://developers.line.biz/) で Bot を作成 |
-| `LINE_BOT_USER_ID` | 通知先の LINE ユーザー ID | LINE Developers コンソールで確認 |
+| Secret 名                  | 説明                                           | 取得方法                                                      |
+| -------------------------- | ---------------------------------------------- | ------------------------------------------------------------- |
+| `SLACK_WEBHOOK_URL`        | Slack Incoming Webhook URL                     | [Slack API](https://api.slack.com/messaging/webhooks) で作成  |
+| `DISCORD_WEBHOOK_URL`      | Discord Webhook URL (カンマ区切りで複数指定可) | サーバー設定 → 連携サービス → ウェブフック                    |
+| `LINE_MESSAGING_API_TOKEN` | LINE Messaging API チャネルアクセストークン    | [LINE Developers](https://developers.line.biz/) で Bot を作成 |
+| `LINE_BOT_USER_ID`         | 通知先の LINE ユーザー ID                      | LINE Developers コンソールで確認                              |
 
 **手順**:
 
@@ -222,12 +222,15 @@ GitHub Secrets の設定が必要です（上記の「Secrets の設定」を参
 本リポジトリを Fork して独自のウェブページ監視を行う場合、以下の利点と手順があります：
 
 ### 特徴
+
 - **競合ゼロの Sync Fork**: 監視履歴データは独立した `history` ブランチに保存されるため、本家（`upstream`）の機能更新を取り込む際に Git コンフリクトが一切発生しません。
 - **Zero-Config on Fork**: Fork 直後、`history` ブランチが存在しない場合でも、初回実行時にワークフローが自動的に orphan ブランチとして初期化してプッシュします。
 - **クリーンな PR**: 本家に機能改善やバグ修正の Pull Request を送る際、監視データが混入しません。
 
 ### Fork 運用ナレッジ（Skills & Rules）
+
 リポジトリ内にエージェント向けの Fork 運用ナレッジが組み込まれています：
+
 - **Rules**: `.agent/rules/fork_management.md`（upstream と origin の区別、データ分離の原則）
 - **Skills**: `.agent/skills/fork_management/SKILL.md`
 - **ヘルパースクリプト**:
