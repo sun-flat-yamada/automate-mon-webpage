@@ -29,13 +29,40 @@ export abstract class BaseExtractor {
   /**
    * 要素からクリーンなテキストを抽出するユーティリティ
    */
-  protected getCleanText(el: Element | null | undefined): string {
+  getCleanText(el: Element | null | undefined): string {
     if (!el) return "";
     const clone = el.cloneNode(true) as Element;
     const toRemove = clone.querySelectorAll("script, style, select, link, button, input");
     toRemove.forEach((node) => node.remove());
     clone.querySelectorAll("br").forEach((br) => br.replaceWith(" "));
     return clone.textContent?.trim().replace(/\s+/g, " ") || "";
+  }
+
+  /**
+   * Puppeteer の page 上で自身の extract ロジックを実行する
+   */
+  async extractFromPage(page: { evaluate: Function }, selector?: string): Promise<Product[]> {
+    const cleanTextStr = this.getCleanText.toString();
+    const extractStr = this.extract.toString();
+
+    return await page.evaluate(
+      (cleanTextCode: string, extractCode: string, sel?: string) => {
+        const fnObj = (new Function("return ({ " + cleanTextCode + ", " + extractCode + " });"))();
+        const root = (sel && sel.trim())
+          ? (() => {
+              try {
+                return document.querySelector(sel) || document;
+              } catch {
+                return document;
+              }
+            })()
+          : document;
+        return fnObj.extract(root);
+      },
+      cleanTextStr,
+      extractStr,
+      selector
+    );
   }
 }
 
@@ -46,7 +73,10 @@ export class DellOutletExtractor extends BaseExtractor {
   name = "dell-outlet";
 
   extract(container: Element | Document): Product[] {
-    const tables = Array.from(container.querySelectorAll("table"));
+    const tables =
+      container instanceof Element && container.tagName.toLowerCase() === "table"
+        ? [container as HTMLTableElement]
+        : Array.from(container.querySelectorAll("table"));
     let productList: Product[] = [];
 
     tables.forEach((table) => {
@@ -58,7 +88,9 @@ export class DellOutletExtractor extends BaseExtractor {
 
       // ヘッダー行の特定
       for (let r = 0; r < Math.min(rows.length, 10); r++) {
-        const cells = Array.from(rows[r]!.querySelectorAll("td, th"));
+        const row = rows[r];
+        if (!row) continue;
+        const cells = Array.from(row.querySelectorAll("td, th"));
         const rowTexts = cells.map((c) => this.getCleanText(c));
 
         const hasPrice = rowTexts.some((t) => {
@@ -100,7 +132,11 @@ export class DellOutletExtractor extends BaseExtractor {
         });
 
       let priceIdx = findIdx(["\u4fa1\u683c", "\u00ec\uff98", "price", "priceall", "\\", "\u00a5"]); // 価格, \, ¥
-      let specIdx = findIdx(["\u4ed5\u69d8", "specifications", "spec", "\u54c1\u540d", "\uff71\uff73\uff84\uff9a\uff6f\uff84\u54c1\u540d", "no."]); // 仕様, 品名, ｱｳﾄﾚｯﾄ品名, No
+      // 仕様・品名・ｱｳﾄﾚｯﾄ品名を優先して探索 ("no." は除外)
+      let specIdx = findIdx(["\u4ed5\u69d8", "specifications", "spec", "\u54c1\u540d", "\uff71\uff73\uff84\uff9a\uff6f\uff84\u54c1\u540d"]);
+      if (specIdx === -1) {
+        specIdx = findIdx(["\uff71\uff73\uff84\uff9a\uff6f\uff84", "\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8", "model"]); // ｱｳﾄﾚｯﾄ, アウトレット, model
+      }
       let osIdx = findIdx(["os", "office", "\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2", "\uff7b\uff8b\uff84\uff73\uffa4\uff67"]); // ソフトウェア, ｿﾌﾄｳｪｱ
       let memoryIdx = findIdx(["\u30e1\u30e2\u30ea", "\uff92\uff93\uff98", "memory", "ram"]); // メモリ, ﾒﾓﾘ, memory, ram
       let hddIdx = findIdx(["hdd", "\u30b9\u30c8\u30ec\u30fc\u30b8"]); // ストレージ
@@ -111,40 +147,57 @@ export class DellOutletExtractor extends BaseExtractor {
 
       // Fallback: Use data patterns if headers failed
       if (rows.length > headerRowIdx + 1 && rows[headerRowIdx + 1]) {
-        const firstDataRow = Array.from(rows[headerRowIdx + 1]!.querySelectorAll("td")).map(c => this.getCleanText(c));
+        const firstDataRow = Array.from(rows[headerRowIdx + 1]!.querySelectorAll("td")).map((c) => this.getCleanText(c));
 
         if (priceIdx === -1) {
-            priceIdx = firstDataRow.findIndex(t => t.includes("\\") || t.includes("\u00a5"));
+          priceIdx = firstDataRow.findIndex((t) => t.includes("\\") || t.includes("\u00a5"));
         }
 
         if (specIdx === -1 || specIdx === 0) {
-           // Find column with longest text
-            let maxLen = 0;
-            let maxIdx = -1;
-            firstDataRow.forEach((t, i) => {
-                if (t.length > maxLen && i !== priceIdx) {
-                    maxLen = t.length;
-                    maxIdx = i;
-                }
-            });
-            if (maxIdx !== -1 && maxLen > 20) {
-                 specIdx = maxIdx;
+          // Find column with longest text
+          let maxLen = 0;
+          let maxIdx = -1;
+          firstDataRow.forEach((t, i) => {
+            if (t.length > maxLen && i !== priceIdx) {
+              maxLen = t.length;
+              maxIdx = i;
             }
+          });
+          if (maxIdx !== -1 && maxLen > 20) {
+            specIdx = maxIdx;
+          }
         }
       }
 
       for (let i = headerRowIdx + 1; i < rows.length; i++) {
-        const cells = Array.from(rows[i]!.querySelectorAll("td"));
+        const row = rows[i];
+        if (!row) continue;
+        const cells = Array.from(row.querySelectorAll("td"));
         if (cells.length < 2) continue; // Minimal cells required (Price + Spec)
 
+        const currentDataRowTexts = cells.map((c) => this.getCleanText(c));
+
+        // もし片方しか見つからない場合（列が結合されている場合など）、もう片方も同じインデックスにする
+        if (priceIdx === -1 && specIdx !== -1) {
+          const specText = currentDataRowTexts[specIdx];
+          if (specText && (specText.includes("\\") || specText.includes("¥") || specText.includes("\u00a5"))) {
+            priceIdx = specIdx;
+          }
+        } else if (specIdx === -1 && priceIdx !== -1) {
+          const priceText = currentDataRowTexts[priceIdx];
+          if (priceText && priceText.length > 50) {
+            specIdx = priceIdx;
+          }
+        }
+
         const product: Product = {
-          price: priceIdx !== -1 ? this.getCleanText(cells[priceIdx]) : "",
-          specifications: specIdx !== -1 ? this.getCleanText(cells[specIdx]) : "",
-          os_office: osIdx !== -1 ? this.getCleanText(cells[osIdx]) : "",
-          memory: memoryIdx !== -1 ? this.getCleanText(cells[memoryIdx]) : "",
-          hdd: hddIdx !== -1 ? this.getCleanText(cells[hddIdx]) : "",
-          video_controller: videoIdx !== -1 ? this.getCleanText(cells[videoIdx]) : "",
-          others: othersIdx !== -1 ? this.getCleanText(cells[othersIdx]) : "",
+          price: priceIdx !== -1 ? (currentDataRowTexts[priceIdx] || "") : "",
+          specifications: specIdx !== -1 ? (currentDataRowTexts[specIdx] || "") : "",
+          os_office: osIdx !== -1 ? (currentDataRowTexts[osIdx] || "") : "",
+          memory: memoryIdx !== -1 ? (currentDataRowTexts[memoryIdx] || "") : "",
+          hdd: hddIdx !== -1 ? (currentDataRowTexts[hddIdx] || "") : "",
+          video_controller: videoIdx !== -1 ? (currentDataRowTexts[videoIdx] || "") : "",
+          others: othersIdx !== -1 ? (currentDataRowTexts[othersIdx] || "") : "",
         };
 
         // 価格の妥当性チェック
