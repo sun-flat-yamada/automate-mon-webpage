@@ -54,6 +54,16 @@
   - [x] `src/main.ts` から重複ロジック (`performExtractionInBrowser`) とデッドコード (`readHtmlWithEncoding`) を削除し `Product` 型で統一
   - [x] `scripts/test-logic-regression.js` からインラインの重複ロジックを削除し `BaseExtractor` を参照するようリファクタリング
   - [x] 全テスト実行による回帰検証 (`npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
+  - [x] Git コミットおよび PR / Issue 連携準備 (PR #97 マージ完了、Issue #87 クローズ)
+
+## Issue #88 対応 (perf: replace unmaintained pup binary with Node.js/Cheerio in workflow)
+- [x] サブエージェントによる対応
+  - [x] ワークフローの pup 依存箇所調査 (`.github/workflows/mon-webpage.yml` L39-62, L119)
+  - [x] `cheerio` パッケージの導入 (`package.json`)
+  - [x] 高速・堅牢なセレクタ抽出スクリプトの作成 (`scripts/extract-section.js`)
+  - [x] 単体テストの追加 (`tests/extract-section.test.ts` または動作検証テスト)
+  - [x] ワークフロー (`mon-webpage.yml`) から `pup` インストール・Go ビルド処理を完全削除し Node.js スクリプトに置換
+  - [x] 全テスト実行による検証 (`npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
   - [x] Git コミットの完了
 
 

@@ -19,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^1.2.0",
     "iconv-lite": "^0.7.3",
     "puppeteer": "^25.11.0"
   },
