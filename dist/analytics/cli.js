@@ -75,7 +75,9 @@ function getTargetNames(configPath, historyDir) {
                 if (e.isDirectory() && !e.name.startsWith(".")) {
                     if (e.name === "history") {
                         // ネストされた history/history の場合
-                        const subEntries = fs.readdirSync(path.join(historyDir, e.name), { withFileTypes: true });
+                        const subEntries = fs.readdirSync(path.join(historyDir, e.name), {
+                            withFileTypes: true,
+                        });
                         for (const sub of subEntries) {
                             if (sub.isDirectory() && !sub.name.startsWith(".")) {
                                 targetNames.push(sub.name);
@@ -116,8 +118,7 @@ export async function run() {
     console.log(`   JSON : ${jsonPath}`);
 }
 // 直接実行された場合
-const isDirectRun = process.argv[1] &&
-    (process.argv[1].endsWith("cli.js") || process.argv[1].endsWith("cli.ts"));
+const isDirectRun = process.argv[1] && (process.argv[1].endsWith("cli.js") || process.argv[1].endsWith("cli.ts"));
 if (isDirectRun) {
     run().catch((err) => {
         console.error("❌ Analytics generation failed:", err);

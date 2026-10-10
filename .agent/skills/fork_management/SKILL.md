@@ -59,6 +59,7 @@ node .agent/skills/fork_management/scripts/fork-helper.js sync
 ```
 
 Alternatively via native git commands:
+
 ```bash
 git checkout main
 git fetch upstream main

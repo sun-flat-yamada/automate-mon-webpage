@@ -87,7 +87,9 @@ function getTargetNames(configPath: string, historyDir: string): string[] {
         if (e.isDirectory() && !e.name.startsWith(".")) {
           if (e.name === "history") {
             // ネストされた history/history の場合
-            const subEntries = fs.readdirSync(path.join(historyDir, e.name), { withFileTypes: true });
+            const subEntries = fs.readdirSync(path.join(historyDir, e.name), {
+              withFileTypes: true,
+            });
             for (const sub of subEntries) {
               if (sub.isDirectory() && !sub.name.startsWith(".")) {
                 targetNames.push(sub.name);
@@ -136,8 +138,7 @@ export async function run(): Promise<void> {
 
 // 直接実行された場合
 const isDirectRun =
-  process.argv[1] &&
-  (process.argv[1].endsWith("cli.js") || process.argv[1].endsWith("cli.ts"));
+  process.argv[1] && (process.argv[1].endsWith("cli.js") || process.argv[1].endsWith("cli.ts"));
 
 if (isDirectRun) {
   run().catch((err) => {

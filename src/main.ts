@@ -46,33 +46,33 @@ import { getExtractor, type Product } from "./extractor.js";
     console.log("Navigating to page...");
     if (targetUrl.startsWith("file://")) {
       const filePath = targetUrl.replace("file://", "").replace(/^\/([a-zA-Z]:)/, "$1"); // Handle Windows paths
-    console.log(`Loading local file with atomic byte-transfer: ${filePath}`);
-    const buffer = fs.readFileSync(filePath);
-    const bytes = Array.from(buffer);
+      console.log(`Loading local file with atomic byte-transfer: ${filePath}`);
+      const buffer = fs.readFileSync(filePath);
+      const bytes = Array.from(buffer);
 
-    await page.goto("about:blank", { waitUntil: "networkidle2" });
-    await page.evaluate((bytes) => {
-      // 1. バイト配列から charset を簡易的に検出
-      const snippet = String.fromCharCode(...bytes.slice(0, 5000));
-      const match = snippet.match(/charset=["']?([a-zA-Z0-9_-]+)/i);
-      let charset = match && match[1] ? match[1].toLowerCase() : "shift-jis";
+      await page.goto("about:blank", { waitUntil: "networkidle2" });
+      await page.evaluate((bytes) => {
+        // 1. バイト配列から charset を簡易的に検出
+        const snippet = String.fromCharCode(...bytes.slice(0, 5000));
+        const match = snippet.match(/charset=["']?([a-zA-Z0-9_-]+)/i);
+        let charset = match && match[1] ? match[1].toLowerCase() : "shift-jis";
 
-      // 互換性のため正規化
-      if (charset.includes("shift") || charset.includes("sjis") || charset === "cp932") {
-        charset = "shift-jis";
-      } else if (charset.includes("utf-8") || charset.includes("utf8")) {
-        charset = "utf-8";
-      }
+        // 互換性のため正規化
+        if (charset.includes("shift") || charset.includes("sjis") || charset === "cp932") {
+          charset = "shift-jis";
+        } else if (charset.includes("utf-8") || charset.includes("utf8")) {
+          charset = "utf-8";
+        }
 
-      console.log(`Browser-side decoding with charset: ${charset}`);
-      const decoder = new TextDecoder(charset);
-      const html = decoder.decode(new Uint8Array(bytes));
+        console.log(`Browser-side decoding with charset: ${charset}`);
+        const decoder = new TextDecoder(charset);
+        const html = decoder.decode(new Uint8Array(bytes));
 
-      document.open();
-      document.write(html);
-      document.close();
-    }, bytes);
-    await page.waitForNetworkIdle();
+        document.open();
+        document.write(html);
+        document.close();
+      }, bytes);
+      await page.waitForNetworkIdle();
     } else {
       await page.goto(targetUrl, { waitUntil: "networkidle2" });
     }

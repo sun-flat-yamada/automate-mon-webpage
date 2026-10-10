@@ -4,6 +4,7 @@
  * 抽出ロジックを抽象化・構造化するためのモジュール。
  * サイトごとの固有ロジックをクラスとして定義する。
  */
+import type { Page } from "puppeteer";
 export interface Product {
     price: string;
     specifications: string;
@@ -29,9 +30,7 @@ export declare abstract class BaseExtractor {
     /**
      * Puppeteer の page 上で自身の extract ロジックを実行する
      */
-    extractFromPage(page: {
-        evaluate: Function;
-    }, selector?: string): Promise<Product[]>;
+    extractFromPage(page: Pick<Page, "evaluate">, selector?: string): Promise<Product[]>;
 }
 /**
  * Dell Outlets 向けの汎用抽出器

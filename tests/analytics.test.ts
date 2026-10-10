@@ -24,7 +24,7 @@ import {
 } from "../src/analytics/analyzer.js";
 import { renderReportHtml } from "../src/analytics/template.js";
 import { generateReportFiles } from "../src/analytics/reporter.js";
-import type { HistorySnapshot } from "../src/analytics/types.js";
+import type { HistorySnapshot, StockEvent } from "../src/analytics/types.js";
 
 describe("Analytics Module Tests", () => {
   describe("日時・タイムスタンプ処理", () => {
@@ -236,7 +236,7 @@ Hash: abc12345`;
       const tThu = new Date("2026-09-10T02:00:00Z"); // Thu
 
       const item: Product = { price: "\\100,000", specifications: "Spec" };
-      const events: any[] = [
+      const events: StockEvent[] = [
         {
           id: "1",
           type: "in",
@@ -244,6 +244,7 @@ Hash: abc12345`;
           timestampJstStr: "2026-09-09T18:00:00+09:00",
           target: "t1",
           product: item,
+          productSignature: "item-1",
         },
         {
           id: "2",
@@ -252,6 +253,7 @@ Hash: abc12345`;
           timestampJstStr: "2026-09-09T18:30:00+09:00",
           target: "t1",
           product: item,
+          productSignature: "item-2",
         },
         {
           id: "3",
@@ -260,6 +262,7 @@ Hash: abc12345`;
           timestampJstStr: "2026-09-10T11:00:00+09:00",
           target: "t1",
           product: item,
+          productSignature: "item-3",
         },
       ];
 
@@ -274,30 +277,36 @@ Hash: abc12345`;
     test("computeStockOutStats: 最短時間と中央値を正しく算出する", () => {
       const item: Product = { price: "\\100,000", specifications: "Spec" };
       // 滞留時間: 30分, 120分, 300分 (中央値: 120分 = 2時間, 最短: 30分)
-      const events: any[] = [
+      const events: StockEvent[] = [
         {
           id: "out-1",
           type: "out",
           timestamp: new Date("2026-09-01T05:30:00Z"),
+          timestampJstStr: "2026-09-01T14:30:00+09:00",
           durationMinutes: 30,
           target: "t1",
           product: item,
+          productSignature: "item-1",
         },
         {
           id: "out-2",
           type: "out",
           timestamp: new Date("2026-09-01T07:00:00Z"),
+          timestampJstStr: "2026-09-01T16:00:00+09:00",
           durationMinutes: 120,
           target: "t1",
           product: item,
+          productSignature: "item-2",
         },
         {
           id: "out-3",
           type: "out",
           timestamp: new Date("2026-09-01T10:00:00Z"),
+          timestampJstStr: "2026-09-01T19:00:00+09:00",
           durationMinutes: 300,
           target: "t1",
           product: item,
+          productSignature: "item-3",
         },
       ];
 
@@ -348,7 +357,9 @@ Hash: abc12345`;
 
   describe("レポート生成およびファイル出力", () => {
     test("renderReportHtml: HTML が正しくレンダリングされ、重要キーワードが含まれる", () => {
-      const report = analyzeHistory("/non/existent/dir", [], { repository: "custom-user/custom-repo" });
+      const report = analyzeHistory("/non/existent/dir", [], {
+        repository: "custom-user/custom-repo",
+      });
       const html = renderReportHtml(report);
       expect(html).toContain("Dell Outlet 在庫監視・予測ダッシュボード");
       expect(html).toContain("在庫滞留時間 (最短)");
@@ -356,6 +367,8 @@ Hash: abc12345`;
       expect(html).toContain("在庫増の遷移");
       expect(html).toContain("在庫減の遷移");
       expect(html).toContain("予測情報");
+      expect(html).toContain("統計アルゴリズム算出 (AI API不使用)");
+      expect(html).toContain("外部生成AI APIは一切使用していません");
       expect(html).toContain("https://github.com/custom-user/custom-repo");
       expect(html).toContain("custom-user/custom-repo");
     });
@@ -392,11 +405,11 @@ Hash: abc12345`;
 
         fs.writeFileSync(
           path.join(snapDir, "data.json"),
-          JSON.stringify([{ price: "\\150,000", specifications: "Precision 3660" }])
+          JSON.stringify([{ price: "\\150,000", specifications: "Precision 3660" }]),
         );
         fs.writeFileSync(
           path.join(snapDir, "meta.txt"),
-          "Detected at (JST): 2026-09-01T12:00:00+09:00\nURL: https://example.com"
+          "Detected at (JST): 2026-09-01T12:00:00+09:00\nURL: https://example.com",
         );
 
         const snaps = loadTargetSnapshots(path.join(tempDir, "dell_test"), "dell_test");

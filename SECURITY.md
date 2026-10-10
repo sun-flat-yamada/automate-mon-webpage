@@ -71,10 +71,10 @@ It is recommended to enable branch protection rules on `main`:
 
 All GitHub Actions used in this project are pinned to specific major versions:
 
-| Action | Version |
-| --- | --- |
-| `actions/checkout` | `v4` |
-| `actions/setup-node` | `v3` |
+| Action               | Version |
+| -------------------- | ------- |
+| `actions/checkout`   | `v4`    |
+| `actions/setup-node` | `v3`    |
 
 Review and update these periodically to include security patches.
 

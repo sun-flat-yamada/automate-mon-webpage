@@ -1,6 +1,7 @@
 # タスク進捗管理: プロジェクトレビューと改善点報告
 
 ## 状況・フェーズ
+
 - [x] 現状調査・インベントリ確認
   - [x] プロジェクト構成・設定ファイル（package.json, tsconfig.json 等）確認
   - [x] ソースコード構成（src/）確認
@@ -34,6 +35,7 @@
   - [x] #91: chore: clean up legacy Python script and test-encoding runner options
 
 ## Issue #85 対応 (fix: LINE Messaging API image notification fails due to unsupported Base64 Data URI)
+
 - [x] サブエージェントによる対応
   - [x] 原因調査・仕様確認 (LINE Messaging API では Data URI / Base64 は非対応、HTTPS URL のみ)
   - [x] `.github/workflows/mon-webpage.yml` の修正 (Base64 画像ペイロード削除、jq による安全な JSON 生成、URL 追加)
@@ -41,6 +43,7 @@
   - [x] Git コミットおよび PR / Issue 連携準備 (PR #92 マージ完了、Issue #85 クローズ)
 
 ## Issue #86 対応 (sec: resolve dependency vulnerabilities reported by npm audit)
+
 - [x] サブエージェントによる対応
   - [x] 脆弱性状況の調査 (handlebars Critical, brace-expansion High, sprintf-js Moderate)
   - [x] 依存関係の安全なアップデート (`npm audit fix` および `package.json` の overrides 適用)
@@ -48,6 +51,7 @@
   - [x] Git コミットおよび PR / Issue 連携準備 (PR #95 マージ完了、Issue #86 クローズ)
 
 ## Issue #87 対応 (refactor: unify extraction logic into BaseExtractor and eliminate 3-way code duplication)
+
 - [x] サブエージェントによる対応
   - [x] 3重実装の調査 (`src/extractor.ts`, `src/main.ts`, `scripts/test-logic-regression.js`) および乖離箇所の特定
   - [x] `BaseExtractor` に `extractFromPage` メソッドを追加し、抽出ロジックを `DellOutletExtractor` に一本化
@@ -57,6 +61,7 @@
   - [x] Git コミットおよび PR / Issue 連携準備 (PR #97 マージ完了、Issue #87 クローズ)
 
 ## Issue #88 対応 (perf: replace unmaintained pup binary with Node.js/Cheerio in workflow)
+
 - [x] サブエージェントによる対応
   - [x] ワークフローの pup 依存箇所調査 (`.github/workflows/mon-webpage.yml` L39-62, L119)
   - [x] `cheerio` パッケージの導入 (`package.json`)
@@ -67,12 +72,21 @@
   - [x] Git コミットおよび PR / Issue 連携準備 (PR #98 マージ完了、Issue #88 クローズ)
 
 ## Issue #89 対応 (ci: expand CI test coverage and streamline GitHub Pages deployment)
+
 - [x] サブエージェントによる対応
   - [x] 現状の CI テスト構成および GitHub Pages 設定確認 (リポジトリ設定は gh-pages ブランチデプロイ)
   - [x] `.github/workflows/ci.yml` に `npm run test:encoding` および `node scripts/test-logic-regression.js` のテストステップを追加
   - [x] `.github/workflows/mon-webpage.yml` から重複している Actions Pages デプロイステップ (`configure-pages`, `upload-pages-artifact`, `deploy-pages`) を削除し `gh-pages` ブランチ push に一本化
   - [x] 全テスト実行による検証 (`npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
-  - [x] Git コミットの完了
+  - [x] Git コミットおよび PR / Issue 連携準備 (PR #99 マージ完了、Issue #89 クローズ)
 
+## Issue #90 対応 (dx: introduce linter/formatter (ESLint, Prettier) and config.json schema validation)
 
-
+- [x] サブエージェントによる対応
+  - [x] 設計・要件確認 (ESLint/Prettier 導入、config.json スキーマ定義・バリデーション)
+  - [x] ESLint, Prettier, TypeScript-ESLint, AJV のインストールと設定 (`eslint.config.js`, `.prettierrc.json`)
+  - [x] `config.schema.json` の作成と `config.json` への `$schema` 付与
+  - [x] `config.json` スキーマ検証テスト (`tests/config.test.ts`) の追加
+  - [x] `package.json` に `lint`, `lint:fix`, `format`, `format:check` スクリプトの追加、および `ci.yml` への lint ステップ追加
+  - [x] コード全体の lint & format 適用と検証 (`npm run lint`, `npm run format:check`, `npm run build`, `npm test`, 全テスト)
+  - [x] Git コミットおよび PR / Issue 連携準備

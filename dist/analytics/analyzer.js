@@ -104,7 +104,7 @@ export function loadTargetSnapshots(targetDir, targetName) {
     const snapshots = [];
     // targetDir 配下の再帰探索（YYYY-MM/YYYY-MM-DD-HHMMSS 構造を想定）
     function walkDir(dir) {
-        let entries = [];
+        let entries;
         try {
             entries = fs.readdirSync(dir, { withFileTypes: true });
         }
@@ -339,9 +339,7 @@ export function computeStockInTrend(events) {
     const avgInterval = intervalsHours.length > 0
         ? Number((intervalsHours.reduce((acc, v) => acc + v, 0) / intervalsHours.length).toFixed(1))
         : null;
-    const medInterval = intervalsHours.length > 0
-        ? Number((calculateMedian(intervalsHours) ?? 0).toFixed(1))
-        : null;
+    const medInterval = intervalsHours.length > 0 ? Number((calculateMedian(intervalsHours) ?? 0).toFixed(1)) : null;
     // 直近イベント (最新20件、降順)
     const recentEvents = [...inEvents]
         .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
@@ -443,7 +441,9 @@ export function generatePrediction(stockIn, stockOut) {
     const sortedDays = [...stockIn.byDayOfWeek]
         .filter((d) => d.count > 0)
         .sort((a, b) => b.count - a.count);
-    const recommendedDays = sortedDays.slice(0, 2).map((d) => `${d.dayNameJa}曜日 (${d.percentage}%)`);
+    const recommendedDays = sortedDays
+        .slice(0, 2)
+        .map((d) => `${d.dayNameJa}曜日 (${d.percentage}%)`);
     // 時間帯トップ3
     const sortedHours = [...stockIn.byHour]
         .filter((h) => h.count > 0)
@@ -463,8 +463,8 @@ export function generatePrediction(stockIn, stockOut) {
     // 滞留時間に基づく購入推奨ウィンドウ
     const minMin = stockOut.minDurationMinutes;
     const medMin = stockOut.medianDurationMinutes;
-    let fastSelloutMinutes = minMin;
-    let medianSelloutHours = medMin !== null ? Number((medMin / 60).toFixed(1)) : null;
+    const fastSelloutMinutes = minMin;
+    const medianSelloutHours = medMin !== null ? Number((medMin / 60).toFixed(1)) : null;
     let recommendedCheckHours = null;
     let purchaseSummary = "在庫減（完売）の履歴データがまだありません。";
     if (medMin !== null) {
@@ -475,9 +475,7 @@ export function generatePrediction(stockIn, stockOut) {
                 ? `${minMin}分`
                 : `${Number((minMin / 60).toFixed(1))}時間`
             : "不明";
-        const medText = medMin < 60
-            ? `${medMin}分`
-            : `${Number((medMin / 60).toFixed(1))}時間`;
+        const medText = medMin < 60 ? `${medMin}分` : `${Number((medMin / 60).toFixed(1))}時間`;
         purchaseSummary = `人気商品は入荷から最短【${minText}】で完売しており、通常の在庫も中央値として約【${medText}】で売り切れています。入荷通知を受信後【${recommendedCheckHours}時間以内】の確認・購入判断を推奨します。`;
     }
     return {

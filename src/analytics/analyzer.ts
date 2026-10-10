@@ -55,14 +55,7 @@ export function parseTimestamp(str: string): Date | null {
   if (match) {
     const [, y, m, d, hh, mm, ss] = match;
     return new Date(
-      Date.UTC(
-        Number(y),
-        Number(m) - 1,
-        Number(d),
-        Number(hh),
-        Number(mm),
-        Number(ss)
-      )
+      Date.UTC(Number(y), Number(m) - 1, Number(d), Number(hh), Number(mm), Number(ss)),
     );
   }
 
@@ -130,7 +123,7 @@ export function loadTargetSnapshots(targetDir: string, targetName: string): Hist
 
   // targetDir 配下の再帰探索（YYYY-MM/YYYY-MM-DD-HHMMSS 構造を想定）
   function walkDir(dir: string) {
-    let entries: fs.Dirent[] = [];
+    let entries: fs.Dirent[];
     try {
       entries = fs.readdirSync(dir, { withFileTypes: true });
     } catch {
@@ -283,7 +276,10 @@ export function computeStockEvents(snapshots: HistorySnapshot[]): {
           const removedLot = existingLots.shift();
           if (!removedLot) continue;
 
-          const durationMs = Math.max(0, snap.timestamp.getTime() - removedLot.stockInTimestamp.getTime());
+          const durationMs = Math.max(
+            0,
+            snap.timestamp.getTime() - removedLot.stockInTimestamp.getTime(),
+          );
           const durationMinutes = Math.round(durationMs / (60 * 1000));
           const durationHours = Number((durationMinutes / 60).toFixed(1));
 
@@ -347,7 +343,8 @@ export function computeStockInTrend(events: StockEvent[]): StockInTrend {
     };
   });
 
-  let peakDayObj: { dayName: string; dayNameJa: string; count: number; percentage: number } | null = null;
+  let peakDayObj: { dayName: string; dayNameJa: string; count: number; percentage: number } | null =
+    null;
   const maxDayCount = Math.max(...dayCounts, 0);
   if (total > 0 && maxDayCount > 0) {
     const maxDayIdx = dayCounts.indexOf(maxDayCount);
@@ -395,16 +392,10 @@ export function computeStockInTrend(events: StockEvent[]): StockInTrend {
 
   const avgInterval =
     intervalsHours.length > 0
-      ? Number(
-          (
-            intervalsHours.reduce((acc, v) => acc + v, 0) / intervalsHours.length
-          ).toFixed(1)
-        )
+      ? Number((intervalsHours.reduce((acc, v) => acc + v, 0) / intervalsHours.length).toFixed(1))
       : null;
   const medInterval =
-    intervalsHours.length > 0
-      ? Number((calculateMedian(intervalsHours) ?? 0).toFixed(1))
-      : null;
+    intervalsHours.length > 0 ? Number((calculateMedian(intervalsHours) ?? 0).toFixed(1)) : null;
 
   // 直近イベント (最新20件、降順)
   const recentEvents = [...inEvents]
@@ -439,9 +430,7 @@ export function computeStockOutStats(events: StockEvent[]): StockOutStats {
   const medianDuration = calculateMedian(validDurations);
   const averageDuration =
     validDurations.length > 0
-      ? Math.round(
-          validDurations.reduce((acc, v) => acc + v, 0) / validDurations.length
-        )
+      ? Math.round(validDurations.reduce((acc, v) => acc + v, 0) / validDurations.length)
       : null;
 
   // 滞留時間バケット
@@ -522,7 +511,9 @@ export function generatePrediction(stockIn: StockInTrend, stockOut: StockOutStat
   const sortedDays = [...stockIn.byDayOfWeek]
     .filter((d) => d.count > 0)
     .sort((a, b) => b.count - a.count);
-  const recommendedDays = sortedDays.slice(0, 2).map((d) => `${d.dayNameJa}曜日 (${d.percentage}%)`);
+  const recommendedDays = sortedDays
+    .slice(0, 2)
+    .map((d) => `${d.dayNameJa}曜日 (${d.percentage}%)`);
 
   // 時間帯トップ3
   const sortedHours = [...stockIn.byHour]
@@ -545,8 +536,8 @@ export function generatePrediction(stockIn: StockInTrend, stockOut: StockOutStat
   const minMin = stockOut.minDurationMinutes;
   const medMin = stockOut.medianDurationMinutes;
 
-  let fastSelloutMinutes = minMin;
-  let medianSelloutHours = medMin !== null ? Number((medMin / 60).toFixed(1)) : null;
+  const fastSelloutMinutes = minMin;
+  const medianSelloutHours = medMin !== null ? Number((medMin / 60).toFixed(1)) : null;
 
   let recommendedCheckHours: number | null = null;
   let purchaseSummary = "在庫減（完売）の履歴データがまだありません。";
@@ -560,10 +551,7 @@ export function generatePrediction(stockIn: StockInTrend, stockOut: StockOutStat
           ? `${minMin}分`
           : `${Number((minMin / 60).toFixed(1))}時間`
         : "不明";
-    const medText =
-      medMin < 60
-        ? `${medMin}分`
-        : `${Number((medMin / 60).toFixed(1))}時間`;
+    const medText = medMin < 60 ? `${medMin}分` : `${Number((medMin / 60).toFixed(1))}時間`;
 
     purchaseSummary = `人気商品は入荷から最短【${minText}】で完売しており、通常の在庫も中央値として約【${medText}】で売り切れています。入荷通知を受信後【${recommendedCheckHours}時間以内】の確認・購入判断を推奨します。`;
   }
@@ -590,7 +578,7 @@ export function generatePrediction(stockIn: StockInTrend, stockOut: StockOutStat
 export function analyzeHistory(
   historyDir: string,
   targets: string[],
-  options?: { repository?: string | undefined }
+  options?: { repository?: string | undefined },
 ): FullAnalysisReport {
   const targetAnalyses: TargetAnalysis[] = [];
   const allEvents: StockEvent[] = [];
@@ -657,10 +645,7 @@ export function analyzeHistory(
   const overallStockOut = computeStockOutStats(allEvents);
   const overallPrediction = generatePrediction(overallStockIn, overallStockOut);
 
-  const totalCurrentStock = targetAnalyses.reduce(
-    (acc, t) => acc + t.currentStock.length,
-    0
-  );
+  const totalCurrentStock = targetAnalyses.reduce((acc, t) => acc + t.currentStock.length, 0);
 
   const { isoJst: generatedAtJst } = getJstInfo(new Date());
 

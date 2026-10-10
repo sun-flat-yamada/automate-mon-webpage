@@ -89,7 +89,9 @@ function checkStatus() {
   if (trackedHistory && trackedHistory.length > 0) {
     console.log("❌ VIOLATION: 'history/' files are tracked in git index!");
     console.log("   Runtime data must NOT be committed to main.");
-    console.log("   Run: git rm -r --cached history/ && git commit -m 'chore: remove history from tracking'");
+    console.log(
+      "   Run: git rm -r --cached history/ && git commit -m 'chore: remove history from tracking'",
+    );
   } else {
     console.log("✅ PASS: 'history/' is properly untracked in main branch.");
   }
@@ -99,7 +101,9 @@ function checkStatus() {
   const remoteHistoryBranch = runGit("ls-remote --heads origin history", true);
 
   console.log(`Local 'history' branch:  ${localHistoryBranch ? "Present" : "Not yet created"}`);
-  console.log(`Remote 'history' branch: ${remoteHistoryBranch ? "Present on origin" : "Not yet on origin"}`);
+  console.log(
+    `Remote 'history' branch: ${remoteHistoryBranch ? "Present on origin" : "Not yet on origin"}`,
+  );
 }
 
 function syncUpstream() {
@@ -113,14 +117,18 @@ function syncUpstream() {
 
   const currentBranch = runGit("branch --show-current", true);
   if (currentBranch !== "main") {
-    console.error(`❌ Error: You are on branch '${currentBranch}'. Please checkout 'main' before syncing.`);
+    console.error(
+      `❌ Error: You are on branch '${currentBranch}'. Please checkout 'main' before syncing.`,
+    );
     process.exit(1);
   }
 
   // Check for dirty working tree
   const status = runGit("status --porcelain", true);
   if (status && status.length > 0) {
-    console.error("❌ Error: Working tree has uncommitted changes. Please commit or stash them before syncing.");
+    console.error(
+      "❌ Error: Working tree has uncommitted changes. Please commit or stash them before syncing.",
+    );
     process.exit(1);
   }
 

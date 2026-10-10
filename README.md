@@ -131,12 +131,12 @@ These settings are **mandatory** for the repository to function correctly.
 
 To use notifications, configure the following Secrets. Unconfigured channels will be skipped.
 
-| Secret Name | Description | How to Obtain |
-| --- | --- | --- |
-| `SLACK_WEBHOOK_URL` | Slack Incoming Webhook URL | Create at [Slack API](https://api.slack.com/messaging/webhooks) |
-| `DISCORD_WEBHOOK_URL` | Discord Webhook URL (Comma-separated for multiple) | Server Settings → Integrations → Webhooks |
-| `LINE_MESSAGING_API_TOKEN` | LINE Messaging API Channel Access Token | Create Bot at [LINE Developers](https://developers.line.biz/) |
-| `LINE_BOT_USER_ID` | Target LINE User ID | Check in LINE Developers Console |
+| Secret Name                | Description                                        | How to Obtain                                                   |
+| -------------------------- | -------------------------------------------------- | --------------------------------------------------------------- |
+| `SLACK_WEBHOOK_URL`        | Slack Incoming Webhook URL                         | Create at [Slack API](https://api.slack.com/messaging/webhooks) |
+| `DISCORD_WEBHOOK_URL`      | Discord Webhook URL (Comma-separated for multiple) | Server Settings → Integrations → Webhooks                       |
+| `LINE_MESSAGING_API_TOKEN` | LINE Messaging API Channel Access Token            | Create Bot at [LINE Developers](https://developers.line.biz/)   |
+| `LINE_BOT_USER_ID`         | Target LINE User ID                                | Check in LINE Developers Console                                |
 
 **Steps**:
 
@@ -223,12 +223,15 @@ Channel Behavior:
 If you fork this repository to monitor your own target pages, you benefit from built-in fork-friendly architecture:
 
 ### Key Features
+
 - **Zero-Conflict Sync Fork**: Runtime monitoring data is stored in the dedicated `history` branch. Synchronizing upstream code changes never triggers merge conflicts.
 - **Zero-Config on Fork**: When GitHub Actions runs for the first time in a fork, the workflow automatically initializes an isolated `history` branch.
 - **Clean Pull Requests**: When submitting enhancements or fixes to upstream, runtime data will not leak into your PR.
 
 ### Fork Management Agent Knowledge (Rules & Skills)
+
 The repository embeds specialized agent instructions and skills:
+
 - **Rules**: `.agent/rules/fork_management.md` (Role definitions of `upstream` vs `origin`, branch isolation)
 - **Skills**: `.agent/skills/fork_management/SKILL.md`
 - **Helper Script**:
