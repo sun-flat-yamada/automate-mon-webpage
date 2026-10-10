@@ -313,4 +313,43 @@ describe('DellOutletExtractor 製品抽出', () => {
             expect(products[0]?.specifications).toBe('Product with extra spaces');
         });
     });
+
+    describe('extractFromPage メソッド', () => {
+        test('page.evaluate 経由で要素から製品を抽出できる', async () => {
+            document.body.innerHTML = `
+                <div id="target-element">
+                    <table>
+                        <tr><th>価格</th><th>仕様</th></tr>
+                        <tr><td>¥120,000</td><td>Test Dell Model A</td></tr>
+                    </table>
+                </div>
+            `;
+
+            const mockPage = {
+                evaluate: async (fn: Function, ...args: any[]) => fn(...args),
+            };
+
+            const products = await extractor.extractFromPage(mockPage, '#target-element');
+            expect(products).toHaveLength(1);
+            expect(products[0]?.price).toBe('¥120,000');
+            expect(products[0]?.specifications).toBe('Test Dell Model A');
+        });
+
+        test('セレクタ未指定時は document 全体から抽出する', async () => {
+            document.body.innerHTML = `
+                <table>
+                    <tr><th>価格</th><th>仕様</th></tr>
+                    <tr><td>¥90,000</td><td>Test Dell Model B</td></tr>
+                </table>
+            `;
+
+            const mockPage = {
+                evaluate: async (fn: Function, ...args: any[]) => fn(...args),
+            };
+
+            const products = await extractor.extractFromPage(mockPage);
+            expect(products).toHaveLength(1);
+            expect(products[0]?.price).toBe('¥90,000');
+        });
+    });
 });

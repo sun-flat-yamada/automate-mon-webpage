@@ -45,6 +45,16 @@
   - [x] 脆弱性状況の調査 (handlebars Critical, brace-expansion High, sprintf-js Moderate)
   - [x] 依存関係の安全なアップデート (`npm audit fix` および `package.json` の overrides 適用)
   - [x] 全テスト実行による互換性・回帰検証 (`npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
-  - [x] Git コミットおよび PR / Issue 連携準備
+  - [x] Git コミットおよび PR / Issue 連携準備 (PR #95 マージ完了、Issue #86 クローズ)
+
+## Issue #87 対応 (refactor: unify extraction logic into BaseExtractor and eliminate 3-way code duplication)
+- [x] サブエージェントによる対応
+  - [x] 3重実装の調査 (`src/extractor.ts`, `src/main.ts`, `scripts/test-logic-regression.js`) および乖離箇所の特定
+  - [x] `BaseExtractor` に `extractFromPage` メソッドを追加し、抽出ロジックを `DellOutletExtractor` に一本化
+  - [x] `src/main.ts` から重複ロジック (`performExtractionInBrowser`) とデッドコード (`readHtmlWithEncoding`) を削除し `Product` 型で統一
+  - [x] `scripts/test-logic-regression.js` からインラインの重複ロジックを削除し `BaseExtractor` を参照するようリファクタリング
+  - [x] 全テスト実行による回帰検証 (`npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
+  - [x] Git コミットの完了
+
 
 
