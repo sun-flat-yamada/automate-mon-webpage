@@ -563,9 +563,14 @@ export function renderReportHtml(report) {
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">🔮 予測情報 &amp; 推奨購入ウィンドウ</div>
-        <span class="badge" id="prediction-confidence" style="background: var(--primary-light); color: var(--primary); border: 1px solid var(--primary);">
-          信頼度: ${overall.prediction.nextStockIn.confidence}
-        </span>
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="badge" style="background: var(--bg-main); color: var(--text-muted); border: 1px solid var(--border-color); font-size: 0.75rem;">
+            ⚙️ 統計アルゴリズム算出 (AI API不使用)
+          </span>
+          <span class="badge" id="prediction-confidence" style="background: var(--primary-light); color: var(--primary); border: 1px solid var(--primary);">
+            信頼度: ${overall.prediction.nextStockIn.confidence}
+          </span>
+        </div>
       </div>
 
       <div class="alert-box info">
@@ -582,6 +587,10 @@ export function renderReportHtml(report) {
           <div class="alert-title">完売スピードと購入判断の推奨ウィンドウ</div>
           <div id="prediction-out-summary">${escapeHtml(overall.prediction.purchaseUrgency.summary)}</div>
         </div>
+      </div>
+
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; text-align: right;">
+        ※ 外部生成AI APIは一切使用していません。過去の在庫増減ログから最短・中央値・最頻値を純粋な数値統計で算出し、決定論的ルールに基づいて自動更新しています。
       </div>
     </div>
 

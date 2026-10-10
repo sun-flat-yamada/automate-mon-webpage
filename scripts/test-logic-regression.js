@@ -15,7 +15,6 @@ import iconv from "iconv-lite";
 import { getExtractor } from "../dist/extractor.js";
 
 const HISTORY_DIR = path.join(process.cwd(), "history");
-const VERBOSE = process.env.VERBOSE === "true";
 
 /**
  * HTMLファイルを適切なエンコーディングで読み込む
@@ -23,7 +22,9 @@ const VERBOSE = process.env.VERBOSE === "true";
 function readHtmlWithEncoding(filePath) {
   const buffer = fs.readFileSync(filePath);
 
-  const isHistoryOrFixture = filePath.replace(/\\/g, "/").includes("/history/") || filePath.replace(/\\/g, "/").includes("/fixtures/");
+  const isHistoryOrFixture =
+    filePath.replace(/\\/g, "/").includes("/history/") ||
+    filePath.replace(/\\/g, "/").includes("/fixtures/");
   if (isHistoryOrFixture) {
     let html = buffer.toString("utf-8");
     // 整理: Metaタグを除去して UTF-8 を明示
@@ -32,7 +33,7 @@ function readHtmlWithEncoding(filePath) {
 
     const utf8Meta = '<meta charset="utf-8">';
     if (html.toLowerCase().includes("<head>")) {
-      html = html.replace(/<head>/i, '<head>' + utf8Meta);
+      html = html.replace(/<head>/i, "<head>" + utf8Meta);
     } else {
       html = utf8Meta + html;
     }
@@ -66,7 +67,7 @@ function readHtmlWithEncoding(filePath) {
 
   const utf8Meta = '<meta charset="utf-8">';
   if (html.toLowerCase().includes("<head>")) {
-    html = html.replace(/<head>/i, '<head>' + utf8Meta);
+    html = html.replace(/<head>/i, "<head>" + utf8Meta);
   } else {
     html = utf8Meta + html;
   }
@@ -148,13 +149,15 @@ function findTestTargets() {
   const FIXTURES_DIR = path.join(process.cwd(), "tests", "fixtures", "regression");
 
   if (fs.existsSync(HISTORY_DIR)) {
-    const targetDirs = fs.readdirSync(HISTORY_DIR, { withFileTypes: true })
+    const targetDirs = fs
+      .readdirSync(HISTORY_DIR, { withFileTypes: true })
       .filter((d) => d.isDirectory())
       .map((d) => d.name);
 
     for (const targetName of targetDirs) {
       const targetPath = path.join(HISTORY_DIR, targetName);
-      const monthDirs = fs.readdirSync(targetPath, { withFileTypes: true })
+      const monthDirs = fs
+        .readdirSync(targetPath, { withFileTypes: true })
         .filter((d) => d.isDirectory() && /^\d{4}-\d{2}$/.test(d.name))
         .map((d) => d.name)
         .sort()
@@ -162,7 +165,8 @@ function findTestTargets() {
 
       for (const month of monthDirs) {
         const monthPath = path.join(targetPath, month);
-        const snapshots = fs.readdirSync(monthPath, { withFileTypes: true })
+        const snapshots = fs
+          .readdirSync(monthPath, { withFileTypes: true })
           .filter((d) => d.isDirectory())
           .map((d) => d.name)
           .sort()
@@ -184,7 +188,8 @@ function findTestTargets() {
 
   // Fallback: If no history targets found, use static fixtures for CI/Fork reliability
   if (targets.length === 0 && fs.existsSync(FIXTURES_DIR)) {
-    const fixtureDirs = fs.readdirSync(FIXTURES_DIR, { withFileTypes: true })
+    const fixtureDirs = fs
+      .readdirSync(FIXTURES_DIR, { withFileTypes: true })
       .filter((d) => d.isDirectory())
       .map((d) => d.name);
 

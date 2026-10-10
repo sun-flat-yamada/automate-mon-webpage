@@ -2,9 +2,9 @@ name: CI (Build & Test)
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -27,6 +27,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Run Linter
+        run: npm run lint
 
       - name: Build TypeScript
         run: npm run build

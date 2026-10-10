@@ -15,7 +15,7 @@ export interface ReporterOptions {
 
 export function generateReportFiles(
   report: FullAnalysisReport,
-  options: ReporterOptions
+  options: ReporterOptions,
 ): { htmlPath: string; jsonPath: string } {
   const outputDir = path.resolve(options.outputDir);
   if (!fs.existsSync(outputDir)) {
@@ -38,8 +38,10 @@ export function printReportSummary(report: FullAnalysisReport): void {
   const minMin = overall.stockOut.minDurationMinutes;
   const medMin = overall.stockOut.medianDurationMinutes;
 
-  const minStr = minMin !== null ? (minMin < 60 ? `${minMin}m` : `${(minMin / 60).toFixed(1)}h`) : "N/A";
-  const medStr = medMin !== null ? (medMin < 60 ? `${medMin}m` : `${(medMin / 60).toFixed(1)}h`) : "N/A";
+  const minStr =
+    minMin !== null ? (minMin < 60 ? `${minMin}m` : `${(minMin / 60).toFixed(1)}h`) : "N/A";
+  const medStr =
+    medMin !== null ? (medMin < 60 ? `${medMin}m` : `${(medMin / 60).toFixed(1)}h`) : "N/A";
 
   console.log("════════════════════════════════════════════════════════════");
   console.log("             Analytics & Prediction Summary                 ");
@@ -52,8 +54,12 @@ export function printReportSummary(report: FullAnalysisReport): void {
   console.log("────────────────────────────────────────────────────────────");
   console.log(`Stock-Out Min Duration: ${minStr}`);
   console.log(`Stock-Out Med Duration: ${medStr}`);
-  console.log(`Peak Stock-In Day     : ${overall.stockIn.peakDay?.dayNameJa || "N/A"}曜日 (${overall.stockIn.peakDay?.count || 0} units)`);
-  console.log(`Peak Stock-In Hour    : ${overall.stockIn.peakHour ? overall.stockIn.peakHour.hour + ":00 (JST)" : "N/A"}`);
+  console.log(
+    `Peak Stock-In Day     : ${overall.stockIn.peakDay?.dayNameJa || "N/A"}曜日 (${overall.stockIn.peakDay?.count || 0} units)`,
+  );
+  console.log(
+    `Peak Stock-In Hour    : ${overall.stockIn.peakHour ? overall.stockIn.peakHour.hour + ":00 (JST)" : "N/A"}`,
+  );
   console.log("────────────────────────────────────────────────────────────");
   console.log(`Prediction Inflow     : ${overall.prediction.nextStockIn.summary}`);
   console.log(`Prediction Urgency    : ${overall.prediction.purchaseUrgency.summary}`);
