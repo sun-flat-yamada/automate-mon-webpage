@@ -64,6 +64,14 @@
   - [x] 単体テストの追加 (`tests/extract-section.test.ts` または動作検証テスト)
   - [x] ワークフロー (`mon-webpage.yml`) から `pup` インストール・Go ビルド処理を完全削除し Node.js スクリプトに置換
   - [x] 全テスト実行による検証 (`npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
+  - [x] Git コミットおよび PR / Issue 連携準備 (PR #98 マージ完了、Issue #88 クローズ)
+
+## Issue #89 対応 (ci: expand CI test coverage and streamline GitHub Pages deployment)
+- [x] サブエージェントによる対応
+  - [x] 現状の CI テスト構成および GitHub Pages 設定確認 (リポジトリ設定は gh-pages ブランチデプロイ)
+  - [x] `.github/workflows/ci.yml` に `npm run test:encoding` および `node scripts/test-logic-regression.js` のテストステップを追加
+  - [x] `.github/workflows/mon-webpage.yml` から重複している Actions Pages デプロイステップ (`configure-pages`, `upload-pages-artifact`, `deploy-pages`) を削除し `gh-pages` ブランチ push に一本化
+  - [x] 全テスト実行による検証 (`npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
   - [x] Git コミットの完了
 
 
