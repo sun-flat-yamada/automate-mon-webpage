@@ -7,7 +7,7 @@
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
-    "test:encoding": "node --loader ts-node/esm scripts/test-encoding-robustness.js",
+    "test:encoding": "node scripts/test-encoding-robustness.js",
     "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

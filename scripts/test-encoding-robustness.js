@@ -51,7 +51,7 @@ function runExtractor(targetUrl, outputPrefix) {
   const dataPath = path.join(LOG_DIR, `${outputPrefix}_data.json`);
   console.log(`\nRunning extractor for ${outputPrefix}...`);
   try {
-    execSync(`node --loader ts-node/esm ${DIST_MAIN}`, {
+    execSync(`node ${DIST_MAIN}`, {
       env: {
         ...process.env,
         TARGET_URL: `file://${path.resolve(targetUrl)}`,

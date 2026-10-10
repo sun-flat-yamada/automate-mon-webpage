@@ -88,5 +88,13 @@
   - [x] `config.schema.json` の作成と `config.json` への `$schema` 付与
   - [x] `config.json` スキーマ検証テスト (`tests/config.test.ts`) の追加
   - [x] `package.json` に `lint`, `lint:fix`, `format`, `format:check` スクリプトの追加、および `ci.yml` への lint ステップ追加
-  - [x] コード全体の lint & format 適用と検証 (`npm run lint`, `npm run format:check`, `npm run build`, `npm test`, 全テスト)
-  - [x] Git コミットおよび PR / Issue 連携準備
+  - [x] Git コミットおよび PR / Issue 連携準備 (PR #100 マージ完了、Issue #90 クローズ)
+
+## Issue #91 対応 (chore: clean up legacy Python script and test-encoding runner options)
+
+- [x] サブエージェントによる対応
+  - [x] レガシースクリプトおよび `--loader` オプション利用状況の調査
+  - [x] `scripts/analyze-history.py` の削除
+  - [x] `scripts/test-encoding-robustness.js` および `package.json` から不要な `--loader ts-node/esm` を削除
+  - [x] 全テスト実行による検証 (`npm run lint`, `npm run format:check`, `npm run build`, `npm test`, `npm run test:encoding`, `node scripts/test-logic-regression.js`, `node scripts/test-cli.js`)
+  - [x] Git コミットの完了
