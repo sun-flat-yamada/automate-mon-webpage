@@ -1,0 +1,6 @@
+Detected at: 2026-10-14T05:55:31Z
+Detected at (JST): 2026-10-14T14:55:31+09:00
+Repository: sun-flat-yamada/automate-mon-webpage
+URL: https://jpstore.dell.com/dfo/config.asp?prod=dimension&nav=all
+Selector: 
+Hash: 66a7822418c2efb6cc467eee4d0aee3b357396f630a7de52bb5220853ba737bf
