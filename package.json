@@ -31,7 +31,7 @@
     "@eslint/js": "^10.0.1",
     "@types/iconv-lite": "^0.0.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.5",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "eslint": "^10.12.0",
