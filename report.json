@@ -1,13 +1,13 @@
 {
-  "generatedAtJst": "2026-10-18T09:11:37.672+09:00",
+  "generatedAtJst": "2026-10-21T10:52:49.329+09:00",
   "repository": "sun-flat-yamada/automate-mon-webpage",
   "overall": {
-    "totalSnapshots": 24,
-    "currentStockCount": 1,
+    "totalSnapshots": 27,
+    "currentStockCount": 22,
     "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-    "lastSnapshotDate": "2026-10-18T09:11:33.000+09:00",
+    "lastSnapshotDate": "2026-10-21T10:52:45.000+09:00",
     "stockIn": {
-      "totalAdded": 21,
+      "totalAdded": 42,
       "byDayOfWeek": [
         {
           "day": 0,
@@ -28,42 +28,42 @@
           "dayName": "Tue",
           "dayNameJa": "火",
           "count": 7,
-          "percentage": 33.3
+          "percentage": 16.7
         },
         {
           "day": 3,
           "dayName": "Wed",
           "dayNameJa": "水",
-          "count": 2,
-          "percentage": 9.5
+          "count": 23,
+          "percentage": 54.8
         },
         {
           "day": 4,
           "dayName": "Thu",
           "dayNameJa": "木",
           "count": 9,
-          "percentage": 42.9
+          "percentage": 21.4
         },
         {
           "day": 5,
           "dayName": "Fri",
           "dayNameJa": "金",
           "count": 1,
-          "percentage": 4.8
+          "percentage": 2.4
         },
         {
           "day": 6,
           "dayName": "Sat",
           "dayNameJa": "土",
           "count": 2,
-          "percentage": 9.5
+          "percentage": 4.8
         }
       ],
       "peakDay": {
-        "dayName": "Thu",
-        "dayNameJa": "木",
-        "count": 9,
-        "percentage": 42.9
+        "dayName": "Wed",
+        "dayNameJa": "水",
+        "count": 23,
+        "percentage": 54.8
       },
       "byHour": [
         {
@@ -74,12 +74,12 @@
         {
           "hour": 1,
           "count": 1,
-          "percentage": 4.8
+          "percentage": 2.4
         },
         {
           "hour": 2,
           "count": 1,
-          "percentage": 4.8
+          "percentage": 2.4
         },
         {
           "hour": 3,
@@ -118,8 +118,8 @@
         },
         {
           "hour": 10,
-          "count": 0,
-          "percentage": 0
+          "count": 21,
+          "percentage": 50
         },
         {
           "hour": 11,
@@ -134,12 +134,12 @@
         {
           "hour": 13,
           "count": 15,
-          "percentage": 71.4
+          "percentage": 35.7
         },
         {
           "hour": 14,
           "count": 4,
-          "percentage": 19
+          "percentage": 9.5
         },
         {
           "hour": 15,
@@ -188,352 +188,352 @@
         }
       ],
       "peakHour": {
-        "hour": 13,
-        "count": 15,
-        "percentage": 71.4
+        "hour": 10,
+        "count": 21,
+        "percentage": 50
       },
-      "averageIntervalHours": 198.3,
-      "medianIntervalHours": 180.4,
+      "averageIntervalHours": 276.4,
+      "medianIntervalHours": 193.8,
       "recentEvents": [
         {
-          "id": "evt-in-9",
-          "type": "in",
-          "timestamp": "2026-10-14T05:55:31.000Z",
-          "timestampJstStr": "2026-10-14T14:55:31.000+09:00",
-          "target": "dell_outlets_desktops",
-          "product": {
-            "price": "\\107,800",
-            "specifications": "Dell Tower Desktop DT1265,AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "AMD Radeon? 660M",
-            "others": "Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-          },
-          "productSignature": "\\107,800 | Dell Tower Desktop DT1265,AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon? 660M | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-10",
-          "type": "in",
-          "timestamp": "2026-10-14T05:55:31.000Z",
-          "timestampJstStr": "2026-10-14T14:55:31.000+09:00",
-          "target": "dell_outlets_desktops",
-          "product": {
-            "price": "\\126,500",
-            "specifications": "Dell Tower Desktop DT1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W)",
-            "os_office": "Windows 11 Home",
-            "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "AMD Radeon? 680M",
-            "others": "Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-          },
-          "productSignature": "\\126,500 | Dell Tower Desktop DT1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W) | 16GB (1X16GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon? 680M | Windows 11 Home"
-        },
-        {
           "id": "evt-in-7",
           "type": "in",
-          "timestamp": "2026-09-29T04:58:42.000Z",
-          "timestampJstStr": "2026-09-29T13:58:42.000+09:00",
-          "target": "dell_outlets_desktops",
-          "product": {
-            "price": "\\99,000",
-            "specifications": "Dell Slim Desktop DS1265,AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "AMD Radeon 660M Graphics",
-            "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-          },
-          "productSignature": "\\99,000 | Dell Slim Desktop DS1265,AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-16",
-          "type": "in",
-          "timestamp": "2026-09-29T04:58:37.000Z",
-          "timestampJstStr": "2026-09-29T13:58:37.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\225,500",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\225,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-17",
-          "type": "in",
-          "timestamp": "2026-09-29T04:58:37.000Z",
-          "timestampJstStr": "2026-09-29T13:58:37.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\225,500",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\225,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-18",
-          "type": "in",
-          "timestamp": "2026-09-29T04:58:37.000Z",
-          "timestampJstStr": "2026-09-29T13:58:37.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\225,500",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\225,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-19",
-          "type": "in",
-          "timestamp": "2026-09-29T04:58:37.000Z",
-          "timestampJstStr": "2026-09-29T13:58:37.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\225,500",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\225,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-20",
-          "type": "in",
-          "timestamp": "2026-09-29T04:58:37.000Z",
-          "timestampJstStr": "2026-09-29T13:58:37.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\225,500",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\225,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-5",
-          "type": "in",
-          "timestamp": "2026-09-25T16:51:46.000Z",
-          "timestampJstStr": "2026-09-26T01:51:46.000+09:00",
+          "timestamp": "2026-10-21T01:52:45.000Z",
+          "timestampJstStr": "2026-10-21T10:52:45.000+09:00",
           "target": "dell_outlets_desktops_biz",
           "product": {
-            "price": "\\159,500",
-            "specifications": "Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W)",
+            "price": "\\154,000",
+            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W)",
             "os_office": "Windows 11 Pro",
-            "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
-            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
-          },
-          "productSignature": "\\159,500 | Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W) | 16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-5",
-          "type": "in",
-          "timestamp": "2026-09-25T05:58:07.000Z",
-          "timestampJstStr": "2026-09-25T14:58:07.000+09:00",
-          "target": "dell_outlets_desktops",
-          "product": {
-            "price": "\\104,500",
-            "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "AMD Radeon 660M Graphics",
-            "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-          },
-          "productSignature": "\\104,500 | AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-3",
-          "type": "in",
-          "timestamp": "2026-09-18T17:48:08.000Z",
-          "timestampJstStr": "2026-09-19T02:48:08.000+09:00",
-          "target": "dell_outlets_desktops_biz",
-          "product": {
-            "price": "\\121,000",
-            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
             "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
             "video_controller": "Integrated Graphics",
-            "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
           },
-          "productSignature": "\\121,000 | Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W) | 16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-1",
-          "type": "in",
-          "timestamp": "2026-09-17T04:08:15.000Z",
-          "timestampJstStr": "2026-09-17T13:08:15.000+09:00",
-          "target": "dell_outlets_desktops",
-          "product": {
-            "price": "\\99,000",
-            "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
-            "os_office": "Windows 11 Home",
-            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "AMD Radeon 660M Graphics",
-            "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-          },
-          "productSignature": "\\99,000 | AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Home"
-        },
-        {
-          "id": "evt-in-2",
-          "type": "in",
-          "timestamp": "2026-09-17T04:08:15.000Z",
-          "timestampJstStr": "2026-09-17T13:08:15.000+09:00",
-          "target": "dell_outlets_desktops",
-          "product": {
-            "price": "\\104,500",
-            "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "AMD Radeon 660M Graphics",
-            "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-          },
-          "productSignature": "\\104,500 | AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-2",
-          "type": "in",
-          "timestamp": "2026-09-17T04:08:08.000Z",
-          "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\242,000",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-3",
-          "type": "in",
-          "timestamp": "2026-09-17T04:08:08.000Z",
-          "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\242,000",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-4",
-          "type": "in",
-          "timestamp": "2026-09-17T04:08:08.000Z",
-          "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\242,000",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-5",
-          "type": "in",
-          "timestamp": "2026-09-17T04:08:08.000Z",
-          "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\242,000",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-6",
-          "type": "in",
-          "timestamp": "2026-09-17T04:08:08.000Z",
-          "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\242,000",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-        },
-        {
-          "id": "evt-in-7",
-          "type": "in",
-          "timestamp": "2026-09-17T04:08:08.000Z",
-          "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\242,000",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
+          "productSignature": "\\154,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W) | 32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
         },
         {
           "id": "evt-in-8",
           "type": "in",
-          "timestamp": "2026-09-17T04:08:08.000Z",
-          "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
+          "timestamp": "2026-10-21T01:52:45.000Z",
+          "timestampJstStr": "2026-10-21T10:52:45.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\99,000",
+            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "Integrated Graphics",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+          },
+          "productSignature": "\\99,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W) | 16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-9",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:45.000Z",
+          "timestampJstStr": "2026-10-21T10:52:45.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\110,000",
+            "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "Integrated Graphics",
+            "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+          },
+          "productSignature": "\\110,000 | Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W) | 16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-10",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:45.000Z",
+          "timestampJstStr": "2026-10-21T10:52:45.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\96,800",
+            "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+            "video_controller": "AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\96,800 | Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W) | 8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive | AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-12",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:40.000Z",
+          "timestampJstStr": "2026-10-21T10:52:40.000+09:00",
+          "target": "dell_outlets_desktops",
+          "product": {
+            "price": "\\99,000",
+            "specifications": "Dell Slim Desktop DS1265 AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "AMD Radeon 660M Graphics",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+          },
+          "productSignature": "\\99,000 | Dell Slim Desktop DS1265 AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-13",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:40.000Z",
+          "timestampJstStr": "2026-10-21T10:52:40.000+09:00",
+          "target": "dell_outlets_desktops",
+          "product": {
+            "price": "\\99,000",
+            "specifications": "Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W)",
+            "os_office": "Windows 11 Home",
+            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "AMD Radeon 680M Graphics",
+            "others": "Black,Dell KM5221W Pro Japanese Copilot key Black Keyboard and Mouse,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+          },
+          "productSignature": "\\99,000 | Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 680M Graphics | Windows 11 Home"
+        },
+        {
+          "id": "evt-in-26",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
           "target": "dell_outlets_workstations",
           "product": {
-            "price": "\\242,000",
+            "price": "\\203,500",
             "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
             "os_office": "Windows 11 Pro",
             "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
             "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
           },
-          "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-27",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-28",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-29",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-30",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-31",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-32",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-33",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-34",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-35",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-36",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-37",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-38",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+        },
+        {
+          "id": "evt-in-39",
+          "type": "in",
+          "timestamp": "2026-10-21T01:52:35.000Z",
+          "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\203,500",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
         }
       ]
     },
@@ -1159,16 +1159,16 @@
     "prediction": {
       "nextStockIn": {
         "recommendedDays": [
-          "木曜日 (42.9%)",
-          "火曜日 (33.3%)"
+          "水曜日 (54.8%)",
+          "木曜日 (21.4%)"
         ],
         "recommendedHours": [
+          10,
           13,
-          14,
-          1
+          14
         ],
         "confidence": "High",
-        "summary": "過去の傾向から、特に【木曜日 (42.9%)・火曜日 (33.3%)】の【13:00〜14:00、14:00〜15:00、1:00〜2:00 (JST)】に入荷が集中する傾向があります。"
+        "summary": "過去の傾向から、特に【水曜日 (54.8%)・木曜日 (21.4%)】の【10:00〜11:00、13:00〜14:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
       },
       "purchaseUrgency": {
         "fastSelloutMinutes": 328,
@@ -1181,12 +1181,148 @@
   "targets": [
     {
       "targetName": "dell_outlets_workstations",
-      "currentStock": [],
-      "totalSnapshots": 9,
+      "currentStock": [
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\203,500",
+          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        },
+        {
+          "price": "\\346,500",
+          "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+          "video_controller": "NVIDIA RTX 4000 Ada 20GB GDDR6 (4DP)",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+        }
+      ],
+      "totalSnapshots": 10,
       "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-      "lastSnapshotDate": "2026-10-14T14:55:26.000+09:00",
+      "lastSnapshotDate": "2026-10-21T10:52:35.000+09:00",
       "stockIn": {
-        "totalAdded": 12,
+        "totalAdded": 27,
         "byDayOfWeek": [
           {
             "day": 0,
@@ -1207,21 +1343,21 @@
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 5,
-            "percentage": 41.7
+            "percentage": 18.5
           },
           {
             "day": 3,
             "dayName": "Wed",
             "dayNameJa": "水",
-            "count": 0,
-            "percentage": 0
+            "count": 15,
+            "percentage": 55.6
           },
           {
             "day": 4,
             "dayName": "Thu",
             "dayNameJa": "木",
             "count": 7,
-            "percentage": 58.3
+            "percentage": 25.9
           },
           {
             "day": 5,
@@ -1239,10 +1375,10 @@
           }
         ],
         "peakDay": {
-          "dayName": "Thu",
-          "dayNameJa": "木",
-          "count": 7,
-          "percentage": 58.3
+          "dayName": "Wed",
+          "dayNameJa": "水",
+          "count": 15,
+          "percentage": 55.6
         },
         "byHour": [
           {
@@ -1297,8 +1433,8 @@
           },
           {
             "hour": 10,
-            "count": 0,
-            "percentage": 0
+            "count": 15,
+            "percentage": 55.6
           },
           {
             "hour": 11,
@@ -1313,7 +1449,7 @@
           {
             "hour": 13,
             "count": 12,
-            "percentage": 100
+            "percentage": 44.4
           },
           {
             "hour": 14,
@@ -1367,13 +1503,268 @@
           }
         ],
         "peakHour": {
-          "hour": 13,
-          "count": 12,
-          "percentage": 100
+          "hour": 10,
+          "count": 15,
+          "percentage": 55.6
         },
-        "averageIntervalHours": 288.8,
-        "medianIntervalHours": 288.8,
+        "averageIntervalHours": 406.9,
+        "medianIntervalHours": 406.9,
         "recentEvents": [
+          {
+            "id": "evt-in-26",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-27",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-28",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-29",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-30",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-31",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-32",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-33",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-34",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-35",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-36",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-37",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-38",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-39",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\203,500",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-40",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:35.000Z",
+            "timestampJstStr": "2026-10-21T10:52:35.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\346,500",
+              "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX 4000 Ada 20GB GDDR6 (4DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+            },
+            "productSignature": "\\346,500 | Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX 4000 Ada 20GB GDDR6 (4DP) | Windows 11 Pro"
+          },
           {
             "id": "evt-in-16",
             "type": "in",
@@ -1458,125 +1849,6 @@
               "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
             },
             "productSignature": "\\225,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-          },
-          {
-            "id": "evt-in-2",
-            "type": "in",
-            "timestamp": "2026-09-17T04:08:08.000Z",
-            "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\242,000",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-          },
-          {
-            "id": "evt-in-3",
-            "type": "in",
-            "timestamp": "2026-09-17T04:08:08.000Z",
-            "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\242,000",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-          },
-          {
-            "id": "evt-in-4",
-            "type": "in",
-            "timestamp": "2026-09-17T04:08:08.000Z",
-            "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\242,000",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-          },
-          {
-            "id": "evt-in-5",
-            "type": "in",
-            "timestamp": "2026-09-17T04:08:08.000Z",
-            "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\242,000",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-          },
-          {
-            "id": "evt-in-6",
-            "type": "in",
-            "timestamp": "2026-09-17T04:08:08.000Z",
-            "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\242,000",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-          },
-          {
-            "id": "evt-in-7",
-            "type": "in",
-            "timestamp": "2026-09-17T04:08:08.000Z",
-            "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\242,000",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
-          },
-          {
-            "id": "evt-in-8",
-            "type": "in",
-            "timestamp": "2026-09-17T04:08:08.000Z",
-            "timestampJstStr": "2026-09-17T13:08:08.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\242,000",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro"
           }
         ]
       },
@@ -2060,14 +2332,15 @@
       "prediction": {
         "nextStockIn": {
           "recommendedDays": [
-            "木曜日 (58.3%)",
-            "火曜日 (41.7%)"
+            "水曜日 (55.6%)",
+            "木曜日 (25.9%)"
           ],
           "recommendedHours": [
+            10,
             13
           ],
-          "confidence": "Medium",
-          "summary": "過去の傾向から、特に【木曜日 (58.3%)・火曜日 (41.7%)】の【13:00〜14:00 (JST)】に入荷が集中する傾向があります。"
+          "confidence": "High",
+          "summary": "過去の傾向から、特に【水曜日 (55.6%)・木曜日 (25.9%)】の【10:00〜11:00、13:00〜14:00 (JST)】に入荷が集中する傾向があります。"
         },
         "purchaseUrgency": {
           "fastSelloutMinutes": 328,
@@ -2088,13 +2361,31 @@
           "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
           "video_controller": "AMD Radeon? 660M",
           "others": "Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+        },
+        {
+          "price": "\\99,000",
+          "specifications": "Dell Slim Desktop DS1265 AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+          "video_controller": "AMD Radeon 660M Graphics",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+        },
+        {
+          "price": "\\99,000",
+          "specifications": "Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W)",
+          "os_office": "Windows 11 Home",
+          "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+          "video_controller": "AMD Radeon 680M Graphics",
+          "others": "Black,Dell KM5221W Pro Japanese Copilot key Black Keyboard and Mouse,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
         }
       ],
-      "totalSnapshots": 8,
+      "totalSnapshots": 9,
       "firstSnapshotDate": "2026-09-12T08:04:33.000+09:00",
-      "lastSnapshotDate": "2026-10-18T09:11:33.000+09:00",
+      "lastSnapshotDate": "2026-10-21T10:52:40.000+09:00",
       "stockIn": {
-        "totalAdded": 6,
+        "totalAdded": 8,
         "byDayOfWeek": [
           {
             "day": 0,
@@ -2115,28 +2406,28 @@
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 1,
-            "percentage": 16.7
+            "percentage": 12.5
           },
           {
             "day": 3,
             "dayName": "Wed",
             "dayNameJa": "水",
-            "count": 2,
-            "percentage": 33.3
+            "count": 4,
+            "percentage": 50
           },
           {
             "day": 4,
             "dayName": "Thu",
             "dayNameJa": "木",
             "count": 2,
-            "percentage": 33.3
+            "percentage": 25
           },
           {
             "day": 5,
             "dayName": "Fri",
             "dayNameJa": "金",
             "count": 1,
-            "percentage": 16.7
+            "percentage": 12.5
           },
           {
             "day": 6,
@@ -2149,8 +2440,8 @@
         "peakDay": {
           "dayName": "Wed",
           "dayNameJa": "水",
-          "count": 2,
-          "percentage": 33.3
+          "count": 4,
+          "percentage": 50
         },
         "byHour": [
           {
@@ -2205,8 +2496,8 @@
           },
           {
             "hour": 10,
-            "count": 0,
-            "percentage": 0
+            "count": 2,
+            "percentage": 25
           },
           {
             "hour": 11,
@@ -2221,12 +2512,12 @@
           {
             "hour": 13,
             "count": 3,
-            "percentage": 50
+            "percentage": 37.5
           },
           {
             "hour": 14,
             "count": 3,
-            "percentage": 50
+            "percentage": 37.5
           },
           {
             "hour": 15,
@@ -2277,11 +2568,45 @@
         "peakHour": {
           "hour": 13,
           "count": 3,
-          "percentage": 50
+          "percentage": 37.5
         },
-        "averageIntervalHours": 216.6,
-        "medianIntervalHours": 193.8,
+        "averageIntervalHours": 203.4,
+        "medianIntervalHours": 178.9,
         "recentEvents": [
+          {
+            "id": "evt-in-12",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:40.000Z",
+            "timestampJstStr": "2026-10-21T10:52:40.000+09:00",
+            "target": "dell_outlets_desktops",
+            "product": {
+              "price": "\\99,000",
+              "specifications": "Dell Slim Desktop DS1265 AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "AMD Radeon 660M Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+            },
+            "productSignature": "\\99,000 | Dell Slim Desktop DS1265 AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-13",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:40.000Z",
+            "timestampJstStr": "2026-10-21T10:52:40.000+09:00",
+            "target": "dell_outlets_desktops",
+            "product": {
+              "price": "\\99,000",
+              "specifications": "Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W)",
+              "os_office": "Windows 11 Home",
+              "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "AMD Radeon 680M Graphics",
+              "others": "Black,Dell KM5221W Pro Japanese Copilot key Black Keyboard and Mouse,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+            },
+            "productSignature": "\\99,000 | Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 680M Graphics | Windows 11 Home"
+          },
           {
             "id": "evt-in-9",
             "type": "in",
@@ -2708,15 +3033,16 @@
       "prediction": {
         "nextStockIn": {
           "recommendedDays": [
-            "水曜日 (33.3%)",
-            "木曜日 (33.3%)"
+            "水曜日 (50%)",
+            "木曜日 (25%)"
           ],
           "recommendedHours": [
             13,
-            14
+            14,
+            10
           ],
           "confidence": "Medium",
-          "summary": "過去の傾向から、特に【水曜日 (33.3%)・木曜日 (33.3%)】の【13:00〜14:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
+          "summary": "過去の傾向から、特に【水曜日 (50%)・木曜日 (25%)】の【13:00〜14:00、14:00〜15:00、10:00〜11:00 (JST)】に入荷が集中する傾向があります。"
         },
         "purchaseUrgency": {
           "fastSelloutMinutes": 5416,
@@ -2728,12 +3054,49 @@
     },
     {
       "targetName": "dell_outlets_desktops_biz",
-      "currentStock": [],
-      "totalSnapshots": 7,
+      "currentStock": [
+        {
+          "price": "\\154,000",
+          "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+          "video_controller": "Integrated Graphics",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+        },
+        {
+          "price": "\\99,000",
+          "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+          "video_controller": "Integrated Graphics",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+        },
+        {
+          "price": "\\110,000",
+          "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+          "video_controller": "Integrated Graphics",
+          "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+        },
+        {
+          "price": "\\96,800",
+          "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W)",
+          "os_office": "Windows 11 Pro",
+          "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+          "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+          "video_controller": "AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile",
+          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+        }
+      ],
+      "totalSnapshots": 8,
       "firstSnapshotDate": "2026-09-12T08:04:38.000+09:00",
-      "lastSnapshotDate": "2026-09-27T15:57:06.000+09:00",
+      "lastSnapshotDate": "2026-10-21T10:52:45.000+09:00",
       "stockIn": {
-        "totalAdded": 3,
+        "totalAdded": 7,
         "byDayOfWeek": [
           {
             "day": 0,
@@ -2754,14 +3117,14 @@
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "day": 3,
             "dayName": "Wed",
             "dayNameJa": "水",
-            "count": 0,
-            "percentage": 0
+            "count": 4,
+            "percentage": 57.1
           },
           {
             "day": 4,
@@ -2782,14 +3145,14 @@
             "dayName": "Sat",
             "dayNameJa": "土",
             "count": 2,
-            "percentage": 66.7
+            "percentage": 28.6
           }
         ],
         "peakDay": {
-          "dayName": "Sat",
-          "dayNameJa": "土",
-          "count": 2,
-          "percentage": 66.7
+          "dayName": "Wed",
+          "dayNameJa": "水",
+          "count": 4,
+          "percentage": 57.1
         },
         "byHour": [
           {
@@ -2800,12 +3163,12 @@
           {
             "hour": 1,
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "hour": 2,
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "hour": 3,
@@ -2844,8 +3207,8 @@
           },
           {
             "hour": 10,
-            "count": 0,
-            "percentage": 0
+            "count": 4,
+            "percentage": 57.1
           },
           {
             "hour": 11,
@@ -2865,7 +3228,7 @@
           {
             "hour": 14,
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "hour": 15,
@@ -2914,13 +3277,81 @@
           }
         ],
         "peakHour": {
-          "hour": 1,
-          "count": 1,
-          "percentage": 33.3
+          "hour": 10,
+          "count": 4,
+          "percentage": 57.1
         },
-        "averageIntervalHours": 125.5,
-        "medianIntervalHours": 125.5,
+        "averageIntervalHours": 286.6,
+        "medianIntervalHours": 167.1,
         "recentEvents": [
+          {
+            "id": "evt-in-7",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:45.000Z",
+            "timestampJstStr": "2026-10-21T10:52:45.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\154,000",
+              "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "Integrated Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+            },
+            "productSignature": "\\154,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W) | 32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-8",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:45.000Z",
+            "timestampJstStr": "2026-10-21T10:52:45.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\99,000",
+              "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "Integrated Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+            },
+            "productSignature": "\\99,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W) | 16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-9",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:45.000Z",
+            "timestampJstStr": "2026-10-21T10:52:45.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\110,000",
+              "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "Integrated Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+            },
+            "productSignature": "\\110,000 | Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W) | 16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro"
+          },
+          {
+            "id": "evt-in-10",
+            "type": "in",
+            "timestamp": "2026-10-21T01:52:45.000Z",
+            "timestampJstStr": "2026-10-21T10:52:45.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\96,800",
+              "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+              "video_controller": "AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\96,800 | Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W) | 8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive | AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile | Windows 11 Pro"
+          },
           {
             "id": "evt-in-5",
             "type": "in",
@@ -3256,16 +3687,16 @@
       "prediction": {
         "nextStockIn": {
           "recommendedDays": [
-            "土曜日 (66.7%)",
-            "火曜日 (33.3%)"
+            "水曜日 (57.1%)",
+            "土曜日 (28.6%)"
           ],
           "recommendedHours": [
+            10,
             1,
-            2,
-            14
+            2
           ],
-          "confidence": "Low",
-          "summary": "過去の傾向から、特に【土曜日 (66.7%)・火曜日 (33.3%)】の【1:00〜2:00、2:00〜3:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
+          "confidence": "Medium",
+          "summary": "過去の傾向から、特に【水曜日 (57.1%)・土曜日 (28.6%)】の【10:00〜11:00、1:00〜2:00、2:00〜3:00 (JST)】に入荷が集中する傾向があります。"
         },
         "purchaseUrgency": {
           "fastSelloutMinutes": 338,
