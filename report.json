@@ -1,11 +1,11 @@
 {
-  "generatedAtJst": "2026-10-21T10:52:49.329+09:00",
+  "generatedAtJst": "2026-10-21T16:16:56.171+09:00",
   "repository": "sun-flat-yamada/automate-mon-webpage",
   "overall": {
-    "totalSnapshots": 27,
-    "currentStockCount": 22,
+    "totalSnapshots": 29,
+    "currentStockCount": 17,
     "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-    "lastSnapshotDate": "2026-10-21T10:52:45.000+09:00",
+    "lastSnapshotDate": "2026-10-21T16:16:53.000+09:00",
     "stockIn": {
       "totalAdded": 42,
       "byDayOfWeek": [
@@ -538,10 +538,10 @@
       ]
     },
     "stockOut": {
-      "totalRemoved": 21,
-      "minDurationMinutes": 328,
-      "medianDurationMinutes": 12739.5,
-      "averageDurationMinutes": 11651,
+      "totalRemoved": 26,
+      "minDurationMinutes": 324,
+      "medianDurationMinutes": 8793,
+      "averageDurationMinutes": 9386,
       "maxDurationMinutes": 21657,
       "durationBuckets": [
         {
@@ -555,29 +555,29 @@
           "label": "1 〜 6 時間",
           "minMinutes": 60,
           "maxMinutes": 360,
-          "count": 2,
-          "percentage": 10
+          "count": 7,
+          "percentage": 28
         },
         {
           "label": "6 〜 24 時間",
           "minMinutes": 360,
           "maxMinutes": 1440,
           "count": 1,
-          "percentage": 5
+          "percentage": 4
         },
         {
           "label": "1 〜 3 日",
           "minMinutes": 1440,
           "maxMinutes": 4320,
           "count": 1,
-          "percentage": 5
+          "percentage": 4
         },
         {
           "label": "3 日以上",
           "minMinutes": 4320,
           "maxMinutes": null,
           "count": 16,
-          "percentage": 80
+          "percentage": 64
         }
       ],
       "byDayOfWeek": [
@@ -586,49 +586,49 @@
           "dayName": "Sun",
           "dayNameJa": "日",
           "count": 2,
-          "percentage": 9.5
+          "percentage": 7.7
         },
         {
           "day": 1,
           "dayName": "Mon",
           "dayNameJa": "月",
           "count": 2,
-          "percentage": 9.5
+          "percentage": 7.7
         },
         {
           "day": 2,
           "dayName": "Tue",
           "dayNameJa": "火",
           "count": 8,
-          "percentage": 38.1
+          "percentage": 30.8
         },
         {
           "day": 3,
           "dayName": "Wed",
           "dayNameJa": "水",
-          "count": 3,
-          "percentage": 14.3
+          "count": 8,
+          "percentage": 30.8
         },
         {
           "day": 4,
           "dayName": "Thu",
           "dayNameJa": "木",
           "count": 1,
-          "percentage": 4.8
+          "percentage": 3.8
         },
         {
           "day": 5,
           "dayName": "Fri",
           "dayNameJa": "金",
           "count": 3,
-          "percentage": 14.3
+          "percentage": 11.5
         },
         {
           "day": 6,
           "dayName": "Sat",
           "dayNameJa": "土",
           "count": 2,
-          "percentage": 9.5
+          "percentage": 7.7
         }
       ],
       "byHour": [
@@ -665,7 +665,7 @@
         {
           "hour": 6,
           "count": 1,
-          "percentage": 4.8
+          "percentage": 3.8
         },
         {
           "hour": 7,
@@ -680,12 +680,12 @@
         {
           "hour": 9,
           "count": 3,
-          "percentage": 14.3
+          "percentage": 11.5
         },
         {
           "hour": 10,
           "count": 2,
-          "percentage": 9.5
+          "percentage": 7.7
         },
         {
           "hour": 11,
@@ -700,22 +700,22 @@
         {
           "hour": 13,
           "count": 6,
-          "percentage": 28.6
+          "percentage": 23.1
         },
         {
           "hour": 14,
           "count": 3,
-          "percentage": 14.3
+          "percentage": 11.5
         },
         {
           "hour": 15,
           "count": 2,
-          "percentage": 9.5
+          "percentage": 7.7
         },
         {
           "hour": 16,
-          "count": 1,
-          "percentage": 4.8
+          "count": 6,
+          "percentage": 23.1
         },
         {
           "hour": 17,
@@ -725,7 +725,7 @@
         {
           "hour": 18,
           "count": 1,
-          "percentage": 4.8
+          "percentage": 3.8
         },
         {
           "hour": 19,
@@ -735,7 +735,7 @@
         {
           "hour": 20,
           "count": 2,
-          "percentage": 9.5
+          "percentage": 7.7
         },
         {
           "hour": 21,
@@ -754,6 +754,106 @@
         }
       ],
       "recentEvents": [
+        {
+          "id": "evt-out-11",
+          "type": "out",
+          "timestamp": "2026-10-21T07:16:53.000Z",
+          "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\154,000",
+            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "Integrated Graphics",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+          },
+          "productSignature": "\\154,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W) | 32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
+          "stockInTimestamp": "2026-10-21T01:52:45.000Z",
+          "durationMinutes": 324,
+          "durationHours": 5.4
+        },
+        {
+          "id": "evt-out-12",
+          "type": "out",
+          "timestamp": "2026-10-21T07:16:53.000Z",
+          "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\99,000",
+            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "Integrated Graphics",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+          },
+          "productSignature": "\\99,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W) | 16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
+          "stockInTimestamp": "2026-10-21T01:52:45.000Z",
+          "durationMinutes": 324,
+          "durationHours": 5.4
+        },
+        {
+          "id": "evt-out-13",
+          "type": "out",
+          "timestamp": "2026-10-21T07:16:53.000Z",
+          "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\110,000",
+            "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "Integrated Graphics",
+            "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+          },
+          "productSignature": "\\110,000 | Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W) | 16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
+          "stockInTimestamp": "2026-10-21T01:52:45.000Z",
+          "durationMinutes": 324,
+          "durationHours": 5.4
+        },
+        {
+          "id": "evt-out-14",
+          "type": "out",
+          "timestamp": "2026-10-21T07:16:53.000Z",
+          "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\96,800",
+            "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+            "video_controller": "AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\96,800 | Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W) | 8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive | AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile | Windows 11 Pro",
+          "stockInTimestamp": "2026-10-21T01:52:45.000Z",
+          "durationMinutes": 324,
+          "durationHours": 5.4
+        },
+        {
+          "id": "evt-out-41",
+          "type": "out",
+          "timestamp": "2026-10-21T07:16:47.000Z",
+          "timestampJstStr": "2026-10-21T16:16:47.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\346,500",
+            "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX 4000 Ada 20GB GDDR6 (4DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+          },
+          "productSignature": "\\346,500 | Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX 4000 Ada 20GB GDDR6 (4DP) | Windows 11 Pro",
+          "stockInTimestamp": "2026-10-21T01:52:35.000Z",
+          "durationMinutes": 324,
+          "durationHours": 5.4
+        },
         {
           "id": "evt-out-11",
           "type": "out",
@@ -1053,106 +1153,6 @@
           "stockInTimestamp": "2026-09-25T16:51:46.000Z",
           "durationMinutes": 2285,
           "durationHours": 38.1
-        },
-        {
-          "id": "evt-out-3",
-          "type": "out",
-          "timestamp": "2026-09-25T00:42:32.000Z",
-          "timestampJstStr": "2026-09-25T09:42:32.000+09:00",
-          "target": "dell_outlets_desktops",
-          "product": {
-            "price": "\\99,000",
-            "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
-            "os_office": "Windows 11 Home",
-            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "AMD Radeon 660M Graphics",
-            "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-          },
-          "productSignature": "\\99,000 | AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Home",
-          "stockInTimestamp": "2026-09-17T04:08:15.000Z",
-          "durationMinutes": 11314,
-          "durationHours": 188.6
-        },
-        {
-          "id": "evt-out-4",
-          "type": "out",
-          "timestamp": "2026-09-25T00:42:32.000Z",
-          "timestampJstStr": "2026-09-25T09:42:32.000+09:00",
-          "target": "dell_outlets_desktops",
-          "product": {
-            "price": "\\104,500",
-            "specifications": "AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "AMD Radeon 660M Graphics",
-            "others": "Dell KB216 Wired Rusty Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-          },
-          "productSignature": "\\104,500 | AMD Ryzen 5 150 (6 Core, Up to 4.55GHz, 19MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 660M Graphics | Windows 11 Pro",
-          "stockInTimestamp": "2026-09-17T04:08:15.000Z",
-          "durationMinutes": 11314,
-          "durationHours": 188.6
-        },
-        {
-          "id": "evt-out-4",
-          "type": "out",
-          "timestamp": "2026-09-19T06:29:44.000Z",
-          "timestampJstStr": "2026-09-19T15:29:44.000+09:00",
-          "target": "dell_outlets_desktops_biz",
-          "product": {
-            "price": "\\121,000",
-            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "Integrated Graphics",
-            "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\121,000 | Dell Pro Micro Desktop QCM1250,Intel Core Ultra 5 235T (14 Core, Up to 5.00GHz, 24MB Cache, 35W) | 16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
-          "stockInTimestamp": "2026-09-18T17:48:08.000Z",
-          "durationMinutes": 762,
-          "durationHours": 12.7
-        },
-        {
-          "id": "evt-out-9",
-          "type": "out",
-          "timestamp": "2026-09-17T09:36:04.000Z",
-          "timestampJstStr": "2026-09-17T18:36:04.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\242,000",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-          },
-          "productSignature": "\\242,000 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro",
-          "stockInTimestamp": "2026-09-17T04:08:08.000Z",
-          "durationMinutes": 328,
-          "durationHours": 5.5
-        },
-        {
-          "id": "evt-out-2",
-          "type": "out",
-          "timestamp": "2026-09-15T11:35:41.000Z",
-          "timestampJstStr": "2026-09-15T20:35:41.000+09:00",
-          "target": "dell_outlets_desktops_biz",
-          "product": {
-            "price": "\\159,500",
-            "specifications": "Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
-            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
-          },
-          "productSignature": "\\159,500 | Dell Pro Slim Plus Desktop QBS1250,Intel Core Ultra 5 225 (10 Core, Up to 4.90GHz, 20MB Cache, 65W) | 16GB (1X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 1TB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP), Half Height | Windows 11 Pro",
-          "stockInTimestamp": "2026-09-15T05:57:21.000Z",
-          "durationMinutes": 338,
-          "durationHours": 5.6
         }
       ]
     },
@@ -1171,10 +1171,10 @@
         "summary": "過去の傾向から、特に【水曜日 (54.8%)・木曜日 (21.4%)】の【10:00〜11:00、13:00〜14:00、14:00〜15:00 (JST)】に入荷が集中する傾向があります。"
       },
       "purchaseUrgency": {
-        "fastSelloutMinutes": 328,
-        "medianSelloutHours": 212.3,
-        "recommendedCheckHours": 106.2,
-        "summary": "人気商品は入荷から最短【5.5時間】で完売しており、通常の在庫も中央値として約【212.3時間】で売り切れています。入荷通知を受信後【106.2時間以内】の確認・購入判断を推奨します。"
+        "fastSelloutMinutes": 324,
+        "medianSelloutHours": 146.6,
+        "recommendedCheckHours": 73.3,
+        "summary": "人気商品は入荷から最短【5.4時間】で完売しており、通常の在庫も中央値として約【146.6時間】で売り切れています。入荷通知を受信後【73.3時間以内】の確認・購入判断を推奨します。"
       }
     }
   },
@@ -1307,20 +1307,11 @@
           "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
           "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
           "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
-        },
-        {
-          "price": "\\346,500",
-          "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W)",
-          "os_office": "Windows 11 Pro",
-          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-          "video_controller": "NVIDIA RTX 4000 Ada 20GB GDDR6 (4DP)",
-          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
         }
       ],
-      "totalSnapshots": 10,
+      "totalSnapshots": 11,
       "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-      "lastSnapshotDate": "2026-10-21T10:52:35.000+09:00",
+      "lastSnapshotDate": "2026-10-21T16:16:47.000+09:00",
       "stockIn": {
         "totalAdded": 27,
         "byDayOfWeek": [
@@ -1853,10 +1844,10 @@
         ]
       },
       "stockOut": {
-        "totalRemoved": 13,
-        "minDurationMinutes": 328,
+        "totalRemoved": 14,
+        "minDurationMinutes": 324,
         "medianDurationMinutes": 17330,
-        "averageDurationMinutes": 15592,
+        "averageDurationMinutes": 14417,
         "maxDurationMinutes": 21657,
         "durationBuckets": [
           {
@@ -1870,8 +1861,8 @@
             "label": "1 〜 6 時間",
             "minMinutes": 60,
             "maxMinutes": 360,
-            "count": 1,
-            "percentage": 8.3
+            "count": 2,
+            "percentage": 15.4
           },
           {
             "label": "6 〜 24 時間",
@@ -1892,7 +1883,7 @@
             "minMinutes": 4320,
             "maxMinutes": null,
             "count": 11,
-            "percentage": 91.7
+            "percentage": 84.6
           }
         ],
         "byDayOfWeek": [
@@ -1908,42 +1899,42 @@
             "dayName": "Mon",
             "dayNameJa": "月",
             "count": 1,
-            "percentage": 7.7
+            "percentage": 7.1
           },
           {
             "day": 2,
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 6,
-            "percentage": 46.2
+            "percentage": 42.9
           },
           {
             "day": 3,
             "dayName": "Wed",
             "dayNameJa": "水",
-            "count": 3,
-            "percentage": 23.1
+            "count": 4,
+            "percentage": 28.6
           },
           {
             "day": 4,
             "dayName": "Thu",
             "dayNameJa": "木",
             "count": 1,
-            "percentage": 7.7
+            "percentage": 7.1
           },
           {
             "day": 5,
             "dayName": "Fri",
             "dayNameJa": "金",
             "count": 1,
-            "percentage": 7.7
+            "percentage": 7.1
           },
           {
             "day": 6,
             "dayName": "Sat",
             "dayNameJa": "土",
             "count": 1,
-            "percentage": 7.7
+            "percentage": 7.1
           }
         ],
         "byHour": [
@@ -1980,7 +1971,7 @@
           {
             "hour": 6,
             "count": 1,
-            "percentage": 7.7
+            "percentage": 7.1
           },
           {
             "hour": 7,
@@ -2000,7 +1991,7 @@
           {
             "hour": 10,
             "count": 2,
-            "percentage": 15.4
+            "percentage": 14.3
           },
           {
             "hour": 11,
@@ -2015,12 +2006,12 @@
           {
             "hour": 13,
             "count": 5,
-            "percentage": 38.5
+            "percentage": 35.7
           },
           {
             "hour": 14,
             "count": 3,
-            "percentage": 23.1
+            "percentage": 21.4
           },
           {
             "hour": 15,
@@ -2029,8 +2020,8 @@
           },
           {
             "hour": 16,
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 7.1
           },
           {
             "hour": 17,
@@ -2040,7 +2031,7 @@
           {
             "hour": 18,
             "count": 1,
-            "percentage": 7.7
+            "percentage": 7.1
           },
           {
             "hour": 19,
@@ -2050,7 +2041,7 @@
           {
             "hour": 20,
             "count": 1,
-            "percentage": 7.7
+            "percentage": 7.1
           },
           {
             "hour": 21,
@@ -2069,6 +2060,26 @@
           }
         ],
         "recentEvents": [
+          {
+            "id": "evt-out-41",
+            "type": "out",
+            "timestamp": "2026-10-21T07:16:47.000Z",
+            "timestampJstStr": "2026-10-21T16:16:47.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\346,500",
+              "specifications": "Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX 4000 Ada 20GB GDDR6 (4DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+            },
+            "productSignature": "\\346,500 | Dell Pro Max Tower T2 Desktop FCT2250,Intel Core Ultra 7 265K (20 Core, Up to 5.50GHz, 30MB Cache, 125W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX 4000 Ada 20GB GDDR6 (4DP) | Windows 11 Pro",
+            "stockInTimestamp": "2026-10-21T01:52:35.000Z",
+            "durationMinutes": 324,
+            "durationHours": 5.4
+          },
           {
             "id": "evt-out-23",
             "type": "out",
@@ -2343,10 +2354,10 @@
           "summary": "過去の傾向から、特に【水曜日 (55.6%)・木曜日 (25.9%)】の【10:00〜11:00、13:00〜14:00 (JST)】に入荷が集中する傾向があります。"
         },
         "purchaseUrgency": {
-          "fastSelloutMinutes": 328,
+          "fastSelloutMinutes": 324,
           "medianSelloutHours": 288.8,
           "recommendedCheckHours": 144.4,
-          "summary": "人気商品は入荷から最短【5.5時間】で完売しており、通常の在庫も中央値として約【288.8時間】で売り切れています。入荷通知を受信後【144.4時間以内】の確認・購入判断を推奨します。"
+          "summary": "人気商品は入荷から最短【5.4時間】で完売しており、通常の在庫も中央値として約【288.8時間】で売り切れています。入荷通知を受信後【144.4時間以内】の確認・購入判断を推奨します。"
         }
       }
     },
@@ -3054,47 +3065,10 @@
     },
     {
       "targetName": "dell_outlets_desktops_biz",
-      "currentStock": [
-        {
-          "price": "\\154,000",
-          "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W)",
-          "os_office": "Windows 11 Pro",
-          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-          "video_controller": "Integrated Graphics",
-          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
-        },
-        {
-          "price": "\\99,000",
-          "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W)",
-          "os_office": "Windows 11 Pro",
-          "memory": "16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-          "video_controller": "Integrated Graphics",
-          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
-        },
-        {
-          "price": "\\110,000",
-          "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
-          "os_office": "Windows 11 Pro",
-          "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-          "video_controller": "Integrated Graphics",
-          "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-        },
-        {
-          "price": "\\96,800",
-          "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W)",
-          "os_office": "Windows 11 Pro",
-          "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
-          "video_controller": "AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile",
-          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
-        }
-      ],
-      "totalSnapshots": 8,
+      "currentStock": [],
+      "totalSnapshots": 9,
       "firstSnapshotDate": "2026-09-12T08:04:38.000+09:00",
-      "lastSnapshotDate": "2026-10-21T10:52:45.000+09:00",
+      "lastSnapshotDate": "2026-10-21T16:16:53.000+09:00",
       "stockIn": {
         "totalAdded": 7,
         "byDayOfWeek": [
@@ -3406,10 +3380,10 @@
         ]
       },
       "stockOut": {
-        "totalRemoved": 3,
-        "minDurationMinutes": 338,
-        "medianDurationMinutes": 762,
-        "averageDurationMinutes": 1128,
+        "totalRemoved": 7,
+        "minDurationMinutes": 324,
+        "medianDurationMinutes": 324,
+        "averageDurationMinutes": 669,
         "maxDurationMinutes": 2285,
         "durationBuckets": [
           {
@@ -3423,22 +3397,22 @@
             "label": "1 〜 6 時間",
             "minMinutes": 60,
             "maxMinutes": 360,
-            "count": 1,
-            "percentage": 33.3
+            "count": 5,
+            "percentage": 71.4
           },
           {
             "label": "6 〜 24 時間",
             "minMinutes": 360,
             "maxMinutes": 1440,
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "label": "1 〜 3 日",
             "minMinutes": 1440,
             "maxMinutes": 4320,
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "label": "3 日以上",
@@ -3454,7 +3428,7 @@
             "dayName": "Sun",
             "dayNameJa": "日",
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "day": 1,
@@ -3468,14 +3442,14 @@
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "day": 3,
             "dayName": "Wed",
             "dayNameJa": "水",
-            "count": 0,
-            "percentage": 0
+            "count": 4,
+            "percentage": 57.1
           },
           {
             "day": 4,
@@ -3496,7 +3470,7 @@
             "dayName": "Sat",
             "dayNameJa": "土",
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           }
         ],
         "byHour": [
@@ -3578,12 +3552,12 @@
           {
             "hour": 15,
             "count": 2,
-            "percentage": 66.7
+            "percentage": 28.6
           },
           {
             "hour": 16,
-            "count": 0,
-            "percentage": 0
+            "count": 4,
+            "percentage": 57.1
           },
           {
             "hour": 17,
@@ -3603,7 +3577,7 @@
           {
             "hour": 20,
             "count": 1,
-            "percentage": 33.3
+            "percentage": 14.3
           },
           {
             "hour": 21,
@@ -3622,6 +3596,86 @@
           }
         ],
         "recentEvents": [
+          {
+            "id": "evt-out-11",
+            "type": "out",
+            "timestamp": "2026-10-21T07:16:53.000Z",
+            "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\154,000",
+              "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "Integrated Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+            },
+            "productSignature": "\\154,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W) | 32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
+            "stockInTimestamp": "2026-10-21T01:52:45.000Z",
+            "durationMinutes": 324,
+            "durationHours": 5.4
+          },
+          {
+            "id": "evt-out-12",
+            "type": "out",
+            "timestamp": "2026-10-21T07:16:53.000Z",
+            "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\99,000",
+              "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "Integrated Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+            },
+            "productSignature": "\\99,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W) | 16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
+            "stockInTimestamp": "2026-10-21T01:52:45.000Z",
+            "durationMinutes": 324,
+            "durationHours": 5.4
+          },
+          {
+            "id": "evt-out-13",
+            "type": "out",
+            "timestamp": "2026-10-21T07:16:53.000Z",
+            "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\110,000",
+              "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "Integrated Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
+            },
+            "productSignature": "\\110,000 | Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i5-14500 (14 Core, Up to 5.00GHz, 24MB Cache, 65W) | 16GB (1X16GB) Up to 4800MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
+            "stockInTimestamp": "2026-10-21T01:52:45.000Z",
+            "durationMinutes": 324,
+            "durationHours": 5.4
+          },
+          {
+            "id": "evt-out-14",
+            "type": "out",
+            "timestamp": "2026-10-21T07:16:53.000Z",
+            "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\96,800",
+              "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive",
+              "video_controller": "AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\96,800 | Dell Pro Slim Desktop QCS1250,Intel Core 14th Generation i3-14100 (Quad Core, Up to 4.70GHz, 12MB Cache, 60W) | 8GB (1X8GB) Up to 4800MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Gen 4 Class 35 Solid State Drive | AMD Radeon RX 6300 2GB GDDR6 (2DP), Low Profile | Windows 11 Pro",
+            "stockInTimestamp": "2026-10-21T01:52:45.000Z",
+            "durationMinutes": 324,
+            "durationHours": 5.4
+          },
           {
             "id": "evt-out-6",
             "type": "out",
@@ -3699,10 +3753,10 @@
           "summary": "過去の傾向から、特に【水曜日 (57.1%)・土曜日 (28.6%)】の【10:00〜11:00、1:00〜2:00、2:00〜3:00 (JST)】に入荷が集中する傾向があります。"
         },
         "purchaseUrgency": {
-          "fastSelloutMinutes": 338,
-          "medianSelloutHours": 12.7,
-          "recommendedCheckHours": 6.3,
-          "summary": "人気商品は入荷から最短【5.6時間】で完売しており、通常の在庫も中央値として約【12.7時間】で売り切れています。入荷通知を受信後【6.3時間以内】の確認・購入判断を推奨します。"
+          "fastSelloutMinutes": 324,
+          "medianSelloutHours": 5.4,
+          "recommendedCheckHours": 2.7,
+          "summary": "人気商品は入荷から最短【5.4時間】で完売しており、通常の在庫も中央値として約【5.4時間】で売り切れています。入荷通知を受信後【2.7時間以内】の確認・購入判断を推奨します。"
         }
       }
     }
