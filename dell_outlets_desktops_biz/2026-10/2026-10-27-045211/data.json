@@ -1,0 +1,11 @@
+[
+  {
+    "price": "\\123,200",
+    "specifications": "Dell Pro 5 Micro Desktop P5M1260 Intel Core Ultra 5 335 (8 Core, Up to 4.60GHz, 12MB Cache, 25W, 47 PTOPS NPU)",
+    "os_office": "Windows 11 Pro",
+    "memory": "16GB (1X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
+    "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+    "video_controller": "Intel Integrated Graphics",
+    "others": "Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE213 Wireless Card"
+  }
+]
