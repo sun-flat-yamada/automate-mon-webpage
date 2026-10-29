@@ -1,11 +1,11 @@
 {
-  "generatedAtJst": "2026-10-29T11:41:49.801+09:00",
+  "generatedAtJst": "2026-10-29T18:37:00.871+09:00",
   "repository": "sun-flat-yamada/automate-mon-webpage",
   "overall": {
-    "totalSnapshots": 36,
-    "currentStockCount": 13,
+    "totalSnapshots": 37,
+    "currentStockCount": 11,
     "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-    "lastSnapshotDate": "2026-10-29T11:41:43.000+09:00",
+    "lastSnapshotDate": "2026-10-29T18:36:55.000+09:00",
     "stockIn": {
       "totalAdded": 56,
       "byDayOfWeek": [
@@ -538,10 +538,10 @@
       ]
     },
     "stockOut": {
-      "totalRemoved": 44,
+      "totalRemoved": 46,
       "minDurationMinutes": 324,
       "medianDurationMinutes": 8819,
-      "averageDurationMinutes": 8777,
+      "averageDurationMinutes": 8528,
       "maxDurationMinutes": 21657,
       "durationBuckets": [
         {
@@ -556,28 +556,28 @@
           "minMinutes": 60,
           "maxMinutes": 360,
           "count": 8,
-          "percentage": 18.6
+          "percentage": 17.8
         },
         {
           "label": "6 〜 24 時間",
           "minMinutes": 360,
           "maxMinutes": 1440,
           "count": 1,
-          "percentage": 2.3
+          "percentage": 2.2
         },
         {
           "label": "1 〜 3 日",
           "minMinutes": 1440,
           "maxMinutes": 4320,
-          "count": 4,
-          "percentage": 9.3
+          "count": 6,
+          "percentage": 13.3
         },
         {
           "label": "3 日以上",
           "minMinutes": 4320,
           "maxMinutes": null,
           "count": 30,
-          "percentage": 69.8
+          "percentage": 66.7
         }
       ],
       "byDayOfWeek": [
@@ -586,49 +586,49 @@
           "dayName": "Sun",
           "dayNameJa": "日",
           "count": 2,
-          "percentage": 4.5
+          "percentage": 4.3
         },
         {
           "day": 1,
           "dayName": "Mon",
           "dayNameJa": "月",
           "count": 2,
-          "percentage": 4.5
+          "percentage": 4.3
         },
         {
           "day": 2,
           "dayName": "Tue",
           "dayNameJa": "火",
           "count": 23,
-          "percentage": 52.3
+          "percentage": 50
         },
         {
           "day": 3,
           "dayName": "Wed",
           "dayNameJa": "水",
           "count": 8,
-          "percentage": 18.2
+          "percentage": 17.4
         },
         {
           "day": 4,
           "dayName": "Thu",
           "dayNameJa": "木",
-          "count": 2,
-          "percentage": 4.5
+          "count": 4,
+          "percentage": 8.7
         },
         {
           "day": 5,
           "dayName": "Fri",
           "dayNameJa": "金",
           "count": 5,
-          "percentage": 11.4
+          "percentage": 10.9
         },
         {
           "day": 6,
           "dayName": "Sat",
           "dayNameJa": "土",
           "count": 2,
-          "percentage": 4.5
+          "percentage": 4.3
         }
       ],
       "byHour": [
@@ -665,7 +665,7 @@
         {
           "hour": 6,
           "count": 1,
-          "percentage": 2.3
+          "percentage": 2.2
         },
         {
           "hour": 7,
@@ -680,17 +680,17 @@
         {
           "hour": 9,
           "count": 3,
-          "percentage": 6.8
+          "percentage": 6.5
         },
         {
           "hour": 10,
           "count": 2,
-          "percentage": 4.5
+          "percentage": 4.3
         },
         {
           "hour": 11,
           "count": 1,
-          "percentage": 2.3
+          "percentage": 2.2
         },
         {
           "hour": 12,
@@ -700,22 +700,22 @@
         {
           "hour": 13,
           "count": 20,
-          "percentage": 45.5
+          "percentage": 43.5
         },
         {
           "hour": 14,
           "count": 3,
-          "percentage": 6.8
+          "percentage": 6.5
         },
         {
           "hour": 15,
           "count": 2,
-          "percentage": 4.5
+          "percentage": 4.3
         },
         {
           "hour": 16,
           "count": 8,
-          "percentage": 18.2
+          "percentage": 17.4
         },
         {
           "hour": 17,
@@ -724,18 +724,18 @@
         },
         {
           "hour": 18,
-          "count": 1,
-          "percentage": 2.3
+          "count": 3,
+          "percentage": 6.5
         },
         {
           "hour": 19,
           "count": 1,
-          "percentage": 2.3
+          "percentage": 2.2
         },
         {
           "hour": 20,
           "count": 2,
-          "percentage": 4.5
+          "percentage": 4.3
         },
         {
           "hour": 21,
@@ -754,6 +754,46 @@
         }
       ],
       "recentEvents": [
+        {
+          "id": "evt-out-70",
+          "type": "out",
+          "timestamp": "2026-10-29T09:36:55.000Z",
+          "timestampJstStr": "2026-10-29T18:36:55.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\191,400",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\191,400 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro",
+          "stockInTimestamp": "2026-10-27T04:52:04.000Z",
+          "durationMinutes": 3165,
+          "durationHours": 52.8
+        },
+        {
+          "id": "evt-out-71",
+          "type": "out",
+          "timestamp": "2026-10-29T09:36:55.000Z",
+          "timestampJstStr": "2026-10-29T18:36:55.000+09:00",
+          "target": "dell_outlets_workstations",
+          "product": {
+            "price": "\\191,400",
+            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+          },
+          "productSignature": "\\191,400 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro",
+          "stockInTimestamp": "2026-10-27T04:52:04.000Z",
+          "durationMinutes": 3165,
+          "durationHours": 52.8
+        },
         {
           "id": "evt-out-69",
           "type": "out",
@@ -1113,46 +1153,6 @@
           "stockInTimestamp": "2026-10-21T01:52:35.000Z",
           "durationMinutes": 3198,
           "durationHours": 53.3
-        },
-        {
-          "id": "evt-out-11",
-          "type": "out",
-          "timestamp": "2026-10-21T07:16:53.000Z",
-          "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
-          "target": "dell_outlets_desktops_biz",
-          "product": {
-            "price": "\\154,000",
-            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "Integrated Graphics",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
-          },
-          "productSignature": "\\154,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i7-14700T Processor (20 Core, Up to 5.20GHz, 33MB Cache, 35W) | 32GB (2X16GB) Up to 5600MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
-          "stockInTimestamp": "2026-10-21T01:52:45.000Z",
-          "durationMinutes": 324,
-          "durationHours": 5.4
-        },
-        {
-          "id": "evt-out-12",
-          "type": "out",
-          "timestamp": "2026-10-21T07:16:53.000Z",
-          "timestampJstStr": "2026-10-21T16:16:53.000+09:00",
-          "target": "dell_outlets_desktops_biz",
-          "product": {
-            "price": "\\99,000",
-            "specifications": "Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-            "video_controller": "Integrated Graphics",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
-          },
-          "productSignature": "\\99,000 | Dell Pro Micro Desktop QCM1250,Intel Core 14th Generation i3-14100T Processor (Quad Core, Up to 4.40GHz, 12MB Cache, 35W) | 16GB (2X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
-          "stockInTimestamp": "2026-10-21T01:52:45.000Z",
-          "durationMinutes": 324,
-          "durationHours": 5.4
         }
       ]
     },
@@ -1271,29 +1271,11 @@
           "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
           "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
           "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
-        },
-        {
-          "price": "\\191,400",
-          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-          "os_office": "Windows 11 Pro",
-          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
-          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
-        },
-        {
-          "price": "\\191,400",
-          "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-          "os_office": "Windows 11 Pro",
-          "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-          "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
-          "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
         }
       ],
-      "totalSnapshots": 14,
+      "totalSnapshots": 15,
       "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-      "lastSnapshotDate": "2026-10-29T11:41:43.000+09:00",
+      "lastSnapshotDate": "2026-10-29T18:36:55.000+09:00",
       "stockIn": {
         "totalAdded": 40,
         "byDayOfWeek": [
@@ -1826,10 +1808,10 @@
         ]
       },
       "stockOut": {
-        "totalRemoved": 29,
+        "totalRemoved": 31,
         "minDurationMinutes": 324,
         "medianDurationMinutes": 8819,
-        "averageDurationMinutes": 11001,
+        "averageDurationMinutes": 10478,
         "maxDurationMinutes": 21657,
         "durationBuckets": [
           {
@@ -1844,7 +1826,7 @@
             "minMinutes": 60,
             "maxMinutes": 360,
             "count": 2,
-            "percentage": 7.1
+            "percentage": 6.7
           },
           {
             "label": "6 〜 24 時間",
@@ -1857,15 +1839,15 @@
             "label": "1 〜 3 日",
             "minMinutes": 1440,
             "maxMinutes": 4320,
-            "count": 2,
-            "percentage": 7.1
+            "count": 4,
+            "percentage": 13.3
           },
           {
             "label": "3 日以上",
             "minMinutes": 4320,
             "maxMinutes": null,
             "count": 24,
-            "percentage": 85.7
+            "percentage": 80
           }
         ],
         "byDayOfWeek": [
@@ -1881,42 +1863,42 @@
             "dayName": "Mon",
             "dayNameJa": "月",
             "count": 1,
-            "percentage": 3.4
+            "percentage": 3.2
           },
           {
             "day": 2,
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 19,
-            "percentage": 65.5
+            "percentage": 61.3
           },
           {
             "day": 3,
             "dayName": "Wed",
             "dayNameJa": "水",
             "count": 4,
-            "percentage": 13.8
+            "percentage": 12.9
           },
           {
             "day": 4,
             "dayName": "Thu",
             "dayNameJa": "木",
-            "count": 2,
-            "percentage": 6.9
+            "count": 4,
+            "percentage": 12.9
           },
           {
             "day": 5,
             "dayName": "Fri",
             "dayNameJa": "金",
             "count": 2,
-            "percentage": 6.9
+            "percentage": 6.5
           },
           {
             "day": 6,
             "dayName": "Sat",
             "dayNameJa": "土",
             "count": 1,
-            "percentage": 3.4
+            "percentage": 3.2
           }
         ],
         "byHour": [
@@ -1953,7 +1935,7 @@
           {
             "hour": 6,
             "count": 1,
-            "percentage": 3.4
+            "percentage": 3.2
           },
           {
             "hour": 7,
@@ -1973,12 +1955,12 @@
           {
             "hour": 10,
             "count": 2,
-            "percentage": 6.9
+            "percentage": 6.5
           },
           {
             "hour": 11,
             "count": 1,
-            "percentage": 3.4
+            "percentage": 3.2
           },
           {
             "hour": 12,
@@ -1988,12 +1970,12 @@
           {
             "hour": 13,
             "count": 18,
-            "percentage": 62.1
+            "percentage": 58.1
           },
           {
             "hour": 14,
             "count": 3,
-            "percentage": 10.3
+            "percentage": 9.7
           },
           {
             "hour": 15,
@@ -2003,7 +1985,7 @@
           {
             "hour": 16,
             "count": 2,
-            "percentage": 6.9
+            "percentage": 6.5
           },
           {
             "hour": 17,
@@ -2012,8 +1994,8 @@
           },
           {
             "hour": 18,
-            "count": 1,
-            "percentage": 3.4
+            "count": 3,
+            "percentage": 9.7
           },
           {
             "hour": 19,
@@ -2023,7 +2005,7 @@
           {
             "hour": 20,
             "count": 1,
-            "percentage": 3.4
+            "percentage": 3.2
           },
           {
             "hour": 21,
@@ -2042,6 +2024,46 @@
           }
         ],
         "recentEvents": [
+          {
+            "id": "evt-out-70",
+            "type": "out",
+            "timestamp": "2026-10-29T09:36:55.000Z",
+            "timestampJstStr": "2026-10-29T18:36:55.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\191,400",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\191,400 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro",
+            "stockInTimestamp": "2026-10-27T04:52:04.000Z",
+            "durationMinutes": 3165,
+            "durationHours": 52.8
+          },
+          {
+            "id": "evt-out-71",
+            "type": "out",
+            "timestamp": "2026-10-29T09:36:55.000Z",
+            "timestampJstStr": "2026-10-29T18:36:55.000+09:00",
+            "target": "dell_outlets_workstations",
+            "product": {
+              "price": "\\191,400",
+              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
+              "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
+              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
+            },
+            "productSignature": "\\191,400 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro",
+            "stockInTimestamp": "2026-10-27T04:52:04.000Z",
+            "durationMinutes": 3165,
+            "durationHours": 52.8
+          },
           {
             "id": "evt-out-69",
             "type": "out",
@@ -2401,46 +2423,6 @@
             "stockInTimestamp": "2026-09-29T04:58:37.000Z",
             "durationMinutes": 21657,
             "durationHours": 360.9
-          },
-          {
-            "id": "evt-out-25",
-            "type": "out",
-            "timestamp": "2026-10-14T05:55:26.000Z",
-            "timestampJstStr": "2026-10-14T14:55:26.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\225,500",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\225,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro",
-            "stockInTimestamp": "2026-09-29T04:58:37.000Z",
-            "durationMinutes": 21657,
-            "durationHours": 360.9
-          },
-          {
-            "id": "evt-out-22",
-            "type": "out",
-            "timestamp": "2026-10-09T01:03:07.000Z",
-            "timestampJstStr": "2026-10-09T10:03:07.000+09:00",
-            "target": "dell_outlets_workstations",
-            "product": {
-              "price": "\\225,500",
-              "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-              "os_office": "Windows 11 Pro",
-              "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-              "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-              "video_controller": "NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters)",
-              "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,Intel Wi-Fi 7 BE200 2x2 Wireless Card"
-            },
-            "productSignature": "\\225,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A1000 8GB GDDR6 (4 mDP to DP adapters) | Windows 11 Pro",
-            "stockInTimestamp": "2026-09-29T04:58:37.000Z",
-            "durationMinutes": 14165,
-            "durationHours": 236.1
           }
         ]
       },
