@@ -1,11 +1,11 @@
 {
-  "generatedAtJst": "2026-10-30T17:18:07.107+09:00",
+  "generatedAtJst": "2026-10-31T00:12:31.305+09:00",
   "repository": "sun-flat-yamada/automate-mon-webpage",
   "overall": {
-    "totalSnapshots": 38,
-    "currentStockCount": 9,
+    "totalSnapshots": 39,
+    "currentStockCount": 8,
     "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-    "lastSnapshotDate": "2026-10-30T17:18:03.000+09:00",
+    "lastSnapshotDate": "2026-10-31T00:12:27.000+09:00",
     "stockIn": {
       "totalAdded": 56,
       "byDayOfWeek": [
@@ -538,10 +538,10 @@
       ]
     },
     "stockOut": {
-      "totalRemoved": 48,
+      "totalRemoved": 49,
       "minDurationMinutes": 324,
       "medianDurationMinutes": 8819,
-      "averageDurationMinutes": 8357,
+      "averageDurationMinutes": 8470,
       "maxDurationMinutes": 21657,
       "durationBuckets": [
         {
@@ -556,7 +556,7 @@
           "minMinutes": 60,
           "maxMinutes": 360,
           "count": 8,
-          "percentage": 17
+          "percentage": 16.7
         },
         {
           "label": "6 〜 24 時間",
@@ -570,14 +570,14 @@
           "minMinutes": 1440,
           "maxMinutes": 4320,
           "count": 6,
-          "percentage": 12.8
+          "percentage": 12.5
         },
         {
           "label": "3 日以上",
           "minMinutes": 4320,
           "maxMinutes": null,
-          "count": 32,
-          "percentage": 68.1
+          "count": 33,
+          "percentage": 68.8
         }
       ],
       "byDayOfWeek": [
@@ -586,56 +586,56 @@
           "dayName": "Sun",
           "dayNameJa": "日",
           "count": 2,
-          "percentage": 4.2
+          "percentage": 4.1
         },
         {
           "day": 1,
           "dayName": "Mon",
           "dayNameJa": "月",
           "count": 2,
-          "percentage": 4.2
+          "percentage": 4.1
         },
         {
           "day": 2,
           "dayName": "Tue",
           "dayNameJa": "火",
           "count": 23,
-          "percentage": 47.9
+          "percentage": 46.9
         },
         {
           "day": 3,
           "dayName": "Wed",
           "dayNameJa": "水",
           "count": 8,
-          "percentage": 16.7
+          "percentage": 16.3
         },
         {
           "day": 4,
           "dayName": "Thu",
           "dayNameJa": "木",
           "count": 4,
-          "percentage": 8.3
+          "percentage": 8.2
         },
         {
           "day": 5,
           "dayName": "Fri",
           "dayNameJa": "金",
           "count": 7,
-          "percentage": 14.6
+          "percentage": 14.3
         },
         {
           "day": 6,
           "dayName": "Sat",
           "dayNameJa": "土",
-          "count": 2,
-          "percentage": 4.2
+          "count": 3,
+          "percentage": 6.1
         }
       ],
       "byHour": [
         {
           "hour": 0,
-          "count": 0,
-          "percentage": 0
+          "count": 1,
+          "percentage": 2
         },
         {
           "hour": 1,
@@ -665,7 +665,7 @@
         {
           "hour": 6,
           "count": 1,
-          "percentage": 2.1
+          "percentage": 2
         },
         {
           "hour": 7,
@@ -680,17 +680,17 @@
         {
           "hour": 9,
           "count": 3,
-          "percentage": 6.3
+          "percentage": 6.1
         },
         {
           "hour": 10,
           "count": 2,
-          "percentage": 4.2
+          "percentage": 4.1
         },
         {
           "hour": 11,
           "count": 1,
-          "percentage": 2.1
+          "percentage": 2
         },
         {
           "hour": 12,
@@ -700,42 +700,42 @@
         {
           "hour": 13,
           "count": 20,
-          "percentage": 41.7
+          "percentage": 40.8
         },
         {
           "hour": 14,
           "count": 3,
-          "percentage": 6.3
+          "percentage": 6.1
         },
         {
           "hour": 15,
           "count": 2,
-          "percentage": 4.2
+          "percentage": 4.1
         },
         {
           "hour": 16,
           "count": 8,
-          "percentage": 16.7
+          "percentage": 16.3
         },
         {
           "hour": 17,
           "count": 2,
-          "percentage": 4.2
+          "percentage": 4.1
         },
         {
           "hour": 18,
           "count": 3,
-          "percentage": 6.3
+          "percentage": 6.1
         },
         {
           "hour": 19,
           "count": 1,
-          "percentage": 2.1
+          "percentage": 2
         },
         {
           "hour": 20,
           "count": 2,
-          "percentage": 4.2
+          "percentage": 4.1
         },
         {
           "hour": 21,
@@ -754,6 +754,26 @@
         }
       ],
       "recentEvents": [
+        {
+          "id": "evt-out-16",
+          "type": "out",
+          "timestamp": "2026-10-30T15:12:27.000Z",
+          "timestampJstStr": "2026-10-31T00:12:27.000+09:00",
+          "target": "dell_outlets_desktops",
+          "product": {
+            "price": "\\99,000",
+            "specifications": "Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W)",
+            "os_office": "Windows 11 Home",
+            "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "AMD Radeon 680M Graphics",
+            "others": "Black,Dell KM5221W Pro Japanese Copilot key Black Keyboard and Mouse,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+          },
+          "productSignature": "\\99,000 | Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 680M Graphics | Windows 11 Home",
+          "stockInTimestamp": "2026-10-21T01:52:40.000Z",
+          "durationMinutes": 13760,
+          "durationHours": 229.3
+        },
         {
           "id": "evt-out-72",
           "type": "out",
@@ -1116,26 +1136,6 @@
         },
         {
           "id": "evt-out-54",
-          "type": "out",
-          "timestamp": "2026-10-27T04:52:04.000Z",
-          "timestampJstStr": "2026-10-27T13:52:04.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\203,500",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
-          },
-          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro",
-          "stockInTimestamp": "2026-10-21T01:52:35.000Z",
-          "durationMinutes": 8819,
-          "durationHours": 147
-        },
-        {
-          "id": "evt-out-55",
           "type": "out",
           "timestamp": "2026-10-27T04:52:04.000Z",
           "timestampJstStr": "2026-10-27T13:52:04.000+09:00",
@@ -2431,20 +2431,10 @@
     },
     {
       "targetName": "dell_outlets_desktops",
-      "currentStock": [
-        {
-          "price": "\\99,000",
-          "specifications": "Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W)",
-          "os_office": "Windows 11 Home",
-          "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-          "video_controller": "AMD Radeon 680M Graphics",
-          "others": "Black,Dell KM5221W Pro Japanese Copilot key Black Keyboard and Mouse,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-        }
-      ],
-      "totalSnapshots": 11,
+      "currentStock": [],
+      "totalSnapshots": 12,
       "firstSnapshotDate": "2026-09-12T08:04:33.000+09:00",
-      "lastSnapshotDate": "2026-10-27T13:52:10.000+09:00",
+      "lastSnapshotDate": "2026-10-31T00:12:27.000+09:00",
       "stockIn": {
         "totalAdded": 8,
         "byDayOfWeek": [
@@ -2773,10 +2763,10 @@
         ]
       },
       "stockOut": {
-        "totalRemoved": 7,
+        "totalRemoved": 8,
         "minDurationMinutes": 3198,
-        "medianDurationMinutes": 8793,
-        "averageDurationMinutes": 9199,
+        "medianDurationMinutes": 10053.5,
+        "averageDurationMinutes": 9769,
         "maxDurationMinutes": 18657,
         "durationBuckets": [
           {
@@ -2805,14 +2795,14 @@
             "minMinutes": 1440,
             "maxMinutes": 4320,
             "count": 1,
-            "percentage": 14.3
+            "percentage": 12.5
           },
           {
             "label": "3 日以上",
             "minMinutes": 4320,
             "maxMinutes": null,
-            "count": 6,
-            "percentage": 85.7
+            "count": 7,
+            "percentage": 87.5
           }
         ],
         "byDayOfWeek": [
@@ -2821,21 +2811,21 @@
             "dayName": "Sun",
             "dayNameJa": "日",
             "count": 1,
-            "percentage": 14.3
+            "percentage": 12.5
           },
           {
             "day": 1,
             "dayName": "Mon",
             "dayNameJa": "月",
             "count": 1,
-            "percentage": 14.3
+            "percentage": 12.5
           },
           {
             "day": 2,
             "dayName": "Tue",
             "dayNameJa": "火",
             "count": 2,
-            "percentage": 28.6
+            "percentage": 25
           },
           {
             "day": 3,
@@ -2856,21 +2846,21 @@
             "dayName": "Fri",
             "dayNameJa": "金",
             "count": 3,
-            "percentage": 42.9
+            "percentage": 37.5
           },
           {
             "day": 6,
             "dayName": "Sat",
             "dayNameJa": "土",
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 12.5
           }
         ],
         "byHour": [
           {
             "hour": 0,
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 12.5
           },
           {
             "hour": 1,
@@ -2915,7 +2905,7 @@
           {
             "hour": 9,
             "count": 3,
-            "percentage": 42.9
+            "percentage": 37.5
           },
           {
             "hour": 10,
@@ -2935,7 +2925,7 @@
           {
             "hour": 13,
             "count": 2,
-            "percentage": 28.6
+            "percentage": 25
           },
           {
             "hour": 14,
@@ -2950,7 +2940,7 @@
           {
             "hour": 16,
             "count": 2,
-            "percentage": 28.6
+            "percentage": 25
           },
           {
             "hour": 17,
@@ -2989,6 +2979,26 @@
           }
         ],
         "recentEvents": [
+          {
+            "id": "evt-out-16",
+            "type": "out",
+            "timestamp": "2026-10-30T15:12:27.000Z",
+            "timestampJstStr": "2026-10-31T00:12:27.000+09:00",
+            "target": "dell_outlets_desktops",
+            "product": {
+              "price": "\\99,000",
+              "specifications": "Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W)",
+              "os_office": "Windows 11 Home",
+              "memory": "8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "AMD Radeon 680M Graphics",
+              "others": "Black,Dell KM5221W Pro Japanese Copilot key Black Keyboard and Mouse,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
+            },
+            "productSignature": "\\99,000 | Dell Slim Desktop DS1265,AMD Ryzen 7 170 (8 Core, Up to 4.75GHz, 20MB Cache, 45W) | 8GB (1X8GB) Up to 4800MT/s DDR5 SoDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | AMD Radeon 680M Graphics | Windows 11 Home",
+            "stockInTimestamp": "2026-10-21T01:52:40.000Z",
+            "durationMinutes": 13760,
+            "durationHours": 229.3
+          },
           {
             "id": "evt-out-15",
             "type": "out",
@@ -3147,9 +3157,9 @@
         },
         "purchaseUrgency": {
           "fastSelloutMinutes": 3198,
-          "medianSelloutHours": 146.6,
-          "recommendedCheckHours": 73.3,
-          "summary": "人気商品は入荷から最短【53.3時間】で完売しており、通常の在庫も中央値として約【146.6時間】で売り切れています。入荷通知を受信後【73.3時間以内】の確認・購入判断を推奨します。"
+          "medianSelloutHours": 167.6,
+          "recommendedCheckHours": 83.8,
+          "summary": "人気商品は入荷から最短【53.3時間】で完売しており、通常の在庫も中央値として約【167.6時間】で売り切れています。入荷通知を受信後【83.8時間以内】の確認・購入判断を推奨します。"
         }
       }
     },
