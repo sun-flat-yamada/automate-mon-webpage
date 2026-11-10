@@ -1,11 +1,11 @@
 {
-  "generatedAtJst": "2026-11-09T16:44:37.480+09:00",
+  "generatedAtJst": "2026-11-10T10:45:52.599+09:00",
   "repository": "sun-flat-yamada/automate-mon-webpage",
   "overall": {
-    "totalSnapshots": 47,
-    "currentStockCount": 9,
+    "totalSnapshots": 48,
+    "currentStockCount": 8,
     "firstSnapshotDate": "2026-09-12T08:04:28.000+09:00",
-    "lastSnapshotDate": "2026-11-09T16:44:32.000+09:00",
+    "lastSnapshotDate": "2026-11-10T10:45:49.000+09:00",
     "stockIn": {
       "totalAdded": 63,
       "byDayOfWeek": [
@@ -538,10 +538,10 @@
       ]
     },
     "stockOut": {
-      "totalRemoved": 55,
+      "totalRemoved": 56,
       "minDurationMinutes": 324,
-      "medianDurationMinutes": 8806,
-      "averageDurationMinutes": 7960,
+      "medianDurationMinutes": 8793,
+      "averageDurationMinutes": 7937,
       "maxDurationMinutes": 21657,
       "durationBuckets": [
         {
@@ -556,28 +556,28 @@
           "minMinutes": 60,
           "maxMinutes": 360,
           "count": 8,
-          "percentage": 14.8
+          "percentage": 14.5
         },
         {
           "label": "6 〜 24 時間",
           "minMinutes": 360,
           "maxMinutes": 1440,
           "count": 2,
-          "percentage": 3.7
+          "percentage": 3.6
         },
         {
           "label": "1 〜 3 日",
           "minMinutes": 1440,
           "maxMinutes": 4320,
           "count": 8,
-          "percentage": 14.8
+          "percentage": 14.5
         },
         {
           "label": "3 日以上",
           "minMinutes": 4320,
           "maxMinutes": null,
-          "count": 36,
-          "percentage": 66.7
+          "count": 37,
+          "percentage": 67.3
         }
       ],
       "byDayOfWeek": [
@@ -593,42 +593,42 @@
           "dayName": "Mon",
           "dayNameJa": "月",
           "count": 5,
-          "percentage": 9.1
+          "percentage": 8.9
         },
         {
           "day": 2,
           "dayName": "Tue",
           "dayNameJa": "火",
-          "count": 23,
-          "percentage": 41.8
+          "count": 24,
+          "percentage": 42.9
         },
         {
           "day": 3,
           "dayName": "Wed",
           "dayNameJa": "水",
           "count": 8,
-          "percentage": 14.5
+          "percentage": 14.3
         },
         {
           "day": 4,
           "dayName": "Thu",
           "dayNameJa": "木",
           "count": 4,
-          "percentage": 7.3
+          "percentage": 7.1
         },
         {
           "day": 5,
           "dayName": "Fri",
           "dayNameJa": "金",
           "count": 10,
-          "percentage": 18.2
+          "percentage": 17.9
         },
         {
           "day": 6,
           "dayName": "Sat",
           "dayNameJa": "土",
           "count": 3,
-          "percentage": 5.5
+          "percentage": 5.4
         }
       ],
       "byHour": [
@@ -680,12 +680,12 @@
         {
           "hour": 9,
           "count": 5,
-          "percentage": 9.1
+          "percentage": 8.9
         },
         {
           "hour": 10,
-          "count": 2,
-          "percentage": 3.6
+          "count": 3,
+          "percentage": 5.4
         },
         {
           "hour": 11,
@@ -700,12 +700,12 @@
         {
           "hour": 13,
           "count": 20,
-          "percentage": 36.4
+          "percentage": 35.7
         },
         {
           "hour": 14,
           "count": 3,
-          "percentage": 5.5
+          "percentage": 5.4
         },
         {
           "hour": 15,
@@ -715,7 +715,7 @@
         {
           "hour": 16,
           "count": 9,
-          "percentage": 16.4
+          "percentage": 16.1
         },
         {
           "hour": 17,
@@ -725,7 +725,7 @@
         {
           "hour": 18,
           "count": 3,
-          "percentage": 5.5
+          "percentage": 5.4
         },
         {
           "hour": 19,
@@ -754,6 +754,26 @@
         }
       ],
       "recentEvents": [
+        {
+          "id": "evt-out-25",
+          "type": "out",
+          "timestamp": "2026-11-10T01:45:49.000Z",
+          "timestampJstStr": "2026-11-10T10:45:49.000+09:00",
+          "target": "dell_outlets_desktops_biz",
+          "product": {
+            "price": "\\137,500",
+            "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core Ultra 5 235 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
+            "os_office": "Windows 11 Pro",
+            "memory": "16GB (2X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+            "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+            "video_controller": "Integrated Graphics",
+            "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+          },
+          "productSignature": "\\137,500 | Dell Pro Slim Desktop QCS1250,Intel Core Ultra 5 235 (14 Core, Up to 5.00GHz, 24MB Cache, 65W) | 16GB (2X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
+          "stockInTimestamp": "2026-11-05T10:33:12.000Z",
+          "durationMinutes": 6673,
+          "durationHours": 111.2
+        },
         {
           "id": "evt-out-78",
           "type": "out",
@@ -1133,26 +1153,6 @@
           "stockInTimestamp": "2026-10-21T01:52:35.000Z",
           "durationMinutes": 8819,
           "durationHours": 147
-        },
-        {
-          "id": "evt-out-48",
-          "type": "out",
-          "timestamp": "2026-10-27T04:52:04.000Z",
-          "timestampJstStr": "2026-10-27T13:52:04.000+09:00",
-          "target": "dell_outlets_workstations",
-          "product": {
-            "price": "\\203,500",
-            "specifications": "Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W)",
-            "os_office": "Windows 11 Pro",
-            "memory": "32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-            "hdd": "512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive",
-            "video_controller": "NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP)",
-            "others": "Black,Dell KB216 Japanese Wired Rusty Black Copilot key Keyboard,No Wireless LAN Card"
-          },
-          "productSignature": "\\203,500 | Dell Pro Max Slim Desktop FCS1250,Intel Core Ultra 7 265 (20 Core, Up to 5.30GHz, 30MB Cache, 65W) | 32GB (2X16GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe Opal 2.0 Self Encrypting Gen 4 Class 40 Solid State Drive | NVIDIA RTX A400 4GB GDDR6 (4 mDP to DP) | Windows 11 Pro",
-          "stockInTimestamp": "2026-10-21T01:52:35.000Z",
-          "durationMinutes": 8819,
-          "durationHours": 147
         }
       ]
     },
@@ -1172,9 +1172,9 @@
       },
       "purchaseUrgency": {
         "fastSelloutMinutes": 324,
-        "medianSelloutHours": 146.8,
-        "recommendedCheckHours": 73.4,
-        "summary": "人気商品は入荷から最短【5.4時間】で完売しており、通常の在庫も中央値として約【146.8時間】で売り切れています。入荷通知を受信後【73.4時間以内】の確認・購入判断を推奨します。"
+        "medianSelloutHours": 146.6,
+        "recommendedCheckHours": 73.3,
+        "summary": "人気商品は入荷から最短【5.4時間】で完売しており、通常の在庫も中央値として約【146.6時間】で売り切れています。入荷通知を受信後【73.3時間以内】の確認・購入判断を推奨します。"
       }
     }
   },
@@ -3166,20 +3166,11 @@
           "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
           "video_controller": "Integrated Graphics",
           "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,MediaTek Wi-Fi 6 MT7920, 2x2, 802.11ax, Bluetooth Wireless card"
-        },
-        {
-          "price": "\\137,500",
-          "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core Ultra 5 235 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
-          "os_office": "Windows 11 Pro",
-          "memory": "16GB (2X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
-          "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
-          "video_controller": "Integrated Graphics",
-          "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
         }
       ],
-      "totalSnapshots": 15,
+      "totalSnapshots": 16,
       "firstSnapshotDate": "2026-09-12T08:04:38.000+09:00",
-      "lastSnapshotDate": "2026-11-09T09:38:29.000+09:00",
+      "lastSnapshotDate": "2026-11-10T10:45:49.000+09:00",
       "stockIn": {
         "totalAdded": 13,
         "byDayOfWeek": [
@@ -3593,11 +3584,11 @@
         ]
       },
       "stockOut": {
-        "totalRemoved": 11,
+        "totalRemoved": 12,
         "minDurationMinutes": 324,
-        "medianDurationMinutes": 338,
-        "averageDurationMinutes": 1150,
-        "maxDurationMinutes": 5165,
+        "medianDurationMinutes": 550,
+        "averageDurationMinutes": 1611,
+        "maxDurationMinutes": 6673,
         "durationBuckets": [
           {
             "label": "< 1 時間",
@@ -3611,28 +3602,28 @@
             "minMinutes": 60,
             "maxMinutes": 360,
             "count": 6,
-            "percentage": 54.5
+            "percentage": 50
           },
           {
             "label": "6 〜 24 時間",
             "minMinutes": 360,
             "maxMinutes": 1440,
             "count": 2,
-            "percentage": 18.2
+            "percentage": 16.7
           },
           {
             "label": "1 〜 3 日",
             "minMinutes": 1440,
             "maxMinutes": 4320,
             "count": 2,
-            "percentage": 18.2
+            "percentage": 16.7
           },
           {
             "label": "3 日以上",
             "minMinutes": 4320,
             "maxMinutes": null,
-            "count": 1,
-            "percentage": 9.1
+            "count": 2,
+            "percentage": 16.7
           }
         ],
         "byDayOfWeek": [
@@ -3641,28 +3632,28 @@
             "dayName": "Sun",
             "dayNameJa": "日",
             "count": 1,
-            "percentage": 9.1
+            "percentage": 8.3
           },
           {
             "day": 1,
             "dayName": "Mon",
             "dayNameJa": "月",
             "count": 1,
-            "percentage": 9.1
+            "percentage": 8.3
           },
           {
             "day": 2,
             "dayName": "Tue",
             "dayNameJa": "火",
-            "count": 2,
-            "percentage": 18.2
+            "count": 3,
+            "percentage": 25
           },
           {
             "day": 3,
             "dayName": "Wed",
             "dayNameJa": "水",
             "count": 4,
-            "percentage": 36.4
+            "percentage": 33.3
           },
           {
             "day": 4,
@@ -3676,14 +3667,14 @@
             "dayName": "Fri",
             "dayNameJa": "金",
             "count": 2,
-            "percentage": 18.2
+            "percentage": 16.7
           },
           {
             "day": 6,
             "dayName": "Sat",
             "dayNameJa": "土",
             "count": 1,
-            "percentage": 9.1
+            "percentage": 8.3
           }
         ],
         "byHour": [
@@ -3730,17 +3721,17 @@
           {
             "hour": 8,
             "count": 1,
-            "percentage": 9.1
+            "percentage": 8.3
           },
           {
             "hour": 9,
             "count": 1,
-            "percentage": 9.1
+            "percentage": 8.3
           },
           {
             "hour": 10,
-            "count": 0,
-            "percentage": 0
+            "count": 1,
+            "percentage": 8.3
           },
           {
             "hour": 11,
@@ -3765,12 +3756,12 @@
           {
             "hour": 15,
             "count": 2,
-            "percentage": 18.2
+            "percentage": 16.7
           },
           {
             "hour": 16,
             "count": 4,
-            "percentage": 36.4
+            "percentage": 33.3
           },
           {
             "hour": 17,
@@ -3785,12 +3776,12 @@
           {
             "hour": 19,
             "count": 1,
-            "percentage": 9.1
+            "percentage": 8.3
           },
           {
             "hour": 20,
             "count": 1,
-            "percentage": 9.1
+            "percentage": 8.3
           },
           {
             "hour": 21,
@@ -3805,10 +3796,30 @@
           {
             "hour": 23,
             "count": 1,
-            "percentage": 9.1
+            "percentage": 8.3
           }
         ],
         "recentEvents": [
+          {
+            "id": "evt-out-25",
+            "type": "out",
+            "timestamp": "2026-11-10T01:45:49.000Z",
+            "timestampJstStr": "2026-11-10T10:45:49.000+09:00",
+            "target": "dell_outlets_desktops_biz",
+            "product": {
+              "price": "\\137,500",
+              "specifications": "Dell Pro Slim Desktop QCS1250,Intel Core Ultra 5 235 (14 Core, Up to 5.00GHz, 24MB Cache, 65W)",
+              "os_office": "Windows 11 Pro",
+              "memory": "16GB (2X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC",
+              "hdd": "512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive",
+              "video_controller": "Integrated Graphics",
+              "others": "Black,Dell KB216 Japanese Wired Black Copilot key Keyboard,Intel Wi-Fi 6E 2x2 AX211 Wireless Card"
+            },
+            "productSignature": "\\137,500 | Dell Pro Slim Desktop QCS1250,Intel Core Ultra 5 235 (14 Core, Up to 5.00GHz, 24MB Cache, 65W) | 16GB (2X8GB) Up to 5600MT/s DDR5 UDIMM Non-ECC | 512GB PCIe M.2 NVMe QLC Gen 4 Class 25 Solid State Drive | Integrated Graphics | Windows 11 Pro",
+            "stockInTimestamp": "2026-11-05T10:33:12.000Z",
+            "durationMinutes": 6673,
+            "durationHours": 111.2
+          },
           {
             "id": "evt-out-24",
             "type": "out",
@@ -4047,9 +4058,9 @@
         },
         "purchaseUrgency": {
           "fastSelloutMinutes": 324,
-          "medianSelloutHours": 5.6,
-          "recommendedCheckHours": 2.8,
-          "summary": "人気商品は入荷から最短【5.4時間】で完売しており、通常の在庫も中央値として約【5.6時間】で売り切れています。入荷通知を受信後【2.8時間以内】の確認・購入判断を推奨します。"
+          "medianSelloutHours": 9.2,
+          "recommendedCheckHours": 4.6,
+          "summary": "人気商品は入荷から最短【5.4時間】で完売しており、通常の在庫も中央値として約【9.2時間】で売り切れています。入荷通知を受信後【4.6時間以内】の確認・購入判断を推奨します。"
         }
       }
     }
